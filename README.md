@@ -25,7 +25,7 @@ the members for the new team.<br/>
 
 ## Reasons to pick this project in Project 3:
 1. One click [installation](https://github.com/AmitMandliya/TeamFormationAssistant/wiki/Setting-Up-Development-Environment) with Docker. You can simply focus on experiments without wasting time in installation.
-2. Well documented [Wiki](https://github.com/AmitMandliya/TeamFormationAssistant/wiki) for all the underlying algorithms and databas descrption.
+2. Well documented [Wiki](https://github.com/AmitMandliya/TeamFormationAssistant/wiki) for all the underlying algorithms and database description.
 3. Extensive testing.
 4. Easy Testing Set up for Project 3.
 
