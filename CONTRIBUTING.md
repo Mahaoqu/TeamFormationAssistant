@@ -21,6 +21,12 @@ This project and everyone participating in it is governed by the [TeamFormationA
 * Use the present tense.
 * Limit the first line to 72 characters or less
 
+## Branch Naming guideline
+1. Feature development branch should begin with  name as "feature" eg: feature/fronend_testing
+2. Each feature branch should have its own tests written
+3. Bugs fixing branch should begin with "bugfix"
+4. Patching branch should have "patch" in the name
+
 ### Reporting Bugs
 Explain the problem and include additional details to help maintainers reproduce the problem:
 * Use a clear and descriptive title for the issue to identify the problem.
