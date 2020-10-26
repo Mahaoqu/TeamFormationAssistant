@@ -35,7 +35,7 @@ the members for the new team.<br/>
 
 ## Video link
 
-[![Development Environment Setup](https://github.com/AmitMandliya/TeamFormationAssistant/blob/master/images/DevelopmentEnv.png)](https://youtu.be/h9s_frfAIPU)
+[![Development Environment Setup](https://github.com/AmitMandliya/TeamFormationAssistant/blob/master/images/Development.png)](https://youtu.be/h9s_frfAIPU)
 
 ### Project 2:
 
