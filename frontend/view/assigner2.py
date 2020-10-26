@@ -1,46 +1,38 @@
-from mysql.connector import connect
 import pandas as pd
-from sklearn.preprocessing import StandardScaler
-import numpy as np
-import scipy
-import matplotlib.pyplot as plt
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.metrics import accuracy_score
 import mysql.connector
-import sys
 import math
 
 connection = mysql.connector.connect(
-    host="database",
-    database='teamformationassistant',
-    user="dbuser",
-    password="dbuserpwd"
+host="sefall2021.cosnmrdyk6wi.us-east-2.rds.amazonaws.com",
+database='teamformationassistant',
+user="root",
+password="SEFall2021"
 )
-
-# connection = mysql.connector.connect(
-# host="sefall2021.cosnmrdyk6wi.us-east-2.rds.amazonaws.com",
-# database='teamformationassistant',
-# user="root",
-# password="SEFall2021"
-# )
     
-def persistTeamData(teamData, conn):
-    if conn.is_connected():
-        cursor = conn.cursor()
+def persistTeamData(teamData):
+    if connection.is_connected():
+        cursor = connection.cursor()
         for row in teamData.index:
             sql = "INSERT INTO Team(ProjectId, ProjectName, MemberId, MemberName)VALUES(%s,%s,%s,%s);"
             cursor.execute(sql,(str(teamData.loc[row, 'ProjectId']),str(teamData.loc[row, 'ProjectName']),str(teamData.loc[row, 'MemberId']),str(teamData.loc[row, 'MemberName'])))
-        conn.commit()
+        connection.commit()
 
-def setEmployeeAssignement(employ, conn):
-    if conn.is_connected():
-        cursor = conn.cursor()
+def setEmployeeAssignement(employ):
+    if connection.is_connected():
+        cursor = connection.cursor()
         sql ="UPDATE Member SET IsAssigned= %s WHERE MemberId = %s ;"
         cursor.execute(sql,(1,employ))
-        conn.commit()
+        connection.commit()
+
+def setJobAssignement(job):
+    if connection.is_connected():
+        cursor = connection.cursor()
+        sql ="UPDATE Requirements SET IsAssigned= %s WHERE JobId= %s ;"
+        cursor.execute(sql,(1,job))
+        connection.commit()
 
 def memberToTeamMapping(MemberData,ProjectData,RequirementsData):
-    jobIDs = RequirementsData['JobId'].tolist()
+    jobIDs   = RequirementsData['JobId'].tolist()
     employee = MemberData.loc[MemberData['IsAssigned'] == 0]
     employee = employee['MemberId'].tolist()
     teamData = pd.DataFrame(columns = ['ProjectId', 'ProjectName', 'MemberId', 'MemberName']) 
@@ -81,16 +73,15 @@ def memberToTeamMapping(MemberData,ProjectData,RequirementsData):
         if (selectedEmploy not in employee):
             continue
         employee.remove(selectedEmploy)
-        setEmployeeAssignement(int(selectedEmploy), connection)
+        setEmployeeAssignement(int(selectedEmploy))
+        setJobAssignement(int(jobID))
         Member = MemberData.loc[MemberData['MemberId'] == selectedEmploy]
         MemberName = Member['MemberName'].tolist()[0]
         teamData = teamData.append({'ProjectId' :  ProjectId , 'ProjectName' : ProjectName, 'MemberId' : selectedEmploy, 'MemberName' : MemberName},  
                 ignore_index = True)
     return teamData
         
-       
-
-def assignTeam():
+def main():
     if connection.is_connected():
         Member_Query = pd.read_sql_query(
         '''select * from Member''', connection)
@@ -102,7 +93,34 @@ def assignTeam():
         'HourlyRate','MemberRole','Experience','SkillScore','AvailableHoursPerWeek'])
         ProjectData = pd.DataFrame(Project_Query, columns=['ProjectId','ProjectName','ProjectEndDate','ProjectTeamSize','Budget',
         'Tools','IsAssignmentComplete','Priority'])
-        RequirementsData = pd.DataFrame(Requirements_Query, columns=['JobId','ProjectId','LanguagePreferred','Skill','MemberRole',
+        RequirementsData = pd.DataFrame(Requirements_Query, columns=['JobId','ProjectId','LanguagePreferred','IsAssigned' ,'Skill','MemberRole',
         'AvailableHoursPerWeek','SkillWeight','ExperienceWeight','HoursWeight','LanguageWeight','BudgetWeight'])
+        RequirementsData = RequirementsData.loc[RequirementsData['IsAssigned'] == 0]
         teamData = memberToTeamMapping(MemberData,ProjectData,RequirementsData)
-        persistTeamData(teamData, connection)
+        persistTeamData(teamData)
+
+if __name__=="__main__": 
+    main() 
+
+
+
+
+
+
+
+
+
+
+
+
+  
+         
+        
+
+
+
+    
+    
+
+
+
