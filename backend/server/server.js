@@ -6,7 +6,6 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 
-
 const mysql = require('mysql');
 
 // create a connection variable
