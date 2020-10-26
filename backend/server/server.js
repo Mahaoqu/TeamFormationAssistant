@@ -34,7 +34,6 @@ app.get('/getResults', (req, res) => {
       res.send(rows);
     } else {
       console.log('Error while performing Query.');
-      console.log(fields);
     }
   });
 });
