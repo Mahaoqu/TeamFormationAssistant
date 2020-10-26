@@ -7,5 +7,5 @@ install:
 script:
     - python -m pytest
     - cd frontend/view
-    - npm install
+    - npm run build
     - npm run test
