@@ -6,3 +6,4 @@ install:
     - pip install -r ml-service/ml-server/requirements.txt
 script:
     - python -m pytest
+    - flake8 --extend-ignore=F401  
