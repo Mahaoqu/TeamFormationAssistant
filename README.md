@@ -9,12 +9,15 @@
 
 # Team Formation Assistant
 
-## Problem Statement              
+## Problem Statement
+
 Build an assistant which will take the project requirements, team members
 availability, skill level, tools preferred, etc. as input and assigns the members for
 the new team.
 <br/>
+
 ## Project Objectives
+
 ➢ Design a form for the user to enter data<br/>
 ➢ Design a dashboard to showcase the generated team assignments<br/>
 ➢ Create and Manage a database with team members, Projects, Assignments
@@ -24,35 +27,48 @@ members availability, skill level, tools preferred, etc. as input and assigns
 the members for the new team.<br/>
 
 ## Reasons to pick this project in Project 3:
+
 1. One click [installation](https://github.com/AmitMandliya/TeamFormationAssistant/wiki/Setting-Up-Development-Environment) with Docker. You can simply focus on experiments without wasting time in installation.
-2. Well documented [Wiki](https://github.com/AmitMandliya/TeamFormationAssistant/wiki) for all the underlying algorithms and databas descrption.
+2. Well documented [Wiki](https://github.com/AmitMandliya/TeamFormationAssistant/wiki) for all the underlying algorithms and database description.
 3. Extensive testing.
 4. Easy Testing Set up for Project 3.
 
 ## Video link
+
+[![Development Environment Setup](https://github.com/AmitMandliya/TeamFormationAssistant/blob/master/images/Development.png)](https://youtu.be/h9s_frfAIPU)
+
 ### Project 2:
+
 [![Team Formation Assistant Project 2](https://github.com/AmitMandliya/TeamFormationAssistant/blob/master/images/teamFormation.PNG)](https://www.youtube.com/watch?v=U7m2TXdxnak)
+
 ### Project 1:
+
 [![Team Formation Assistant](https://github.com/lokesh45/TeamFormationAssistant/blob/master/Assistant.png)](https://www.youtube.com/watch?v=LmKjp3aQPEI&feature=youtu.be)
+
 ## How we plan to carry out the project
+
 ### Algorithm Implementation
+
 We plan to code the application in Python3. Python ML libraries will be used for
 Cluster identification.<br/>
+
 ### Database Implementation:
+
 We plan to store team members into an MySQL database. Python files import the
 data and process it and store the final result back to the database.<br/>
+
 ### Frontend Implementation:
+
 Team members will be able to submit a form to consider them as part of project
 assignment.
 Final team assignment will posted on the homepage dashboard. We plan to
 implement the dashboard and form using HTML, CSS, JavaScript
 
-##### We have created a wiki page containing project details including project workflow, setup, dictionary, data model, 
+##### We have created a wiki page containing project details including project workflow, setup, dictionary, data model,
+
 ### [Wiki](https://github.com/lokesh45/TeamFormationAssistant/wiki)
 
 Here are a few screenshots of the project<br>
 ![](https://github.com/lokesh45/TeamFormationAssistant/blob/master/ss1.jpeg)<br>
 ![](https://github.com/lokesh45/TeamFormationAssistant/blob/master/ss2.jpeg)<br>
 ![](https://github.com/lokesh45/TeamFormationAssistant/blob/master/ss3.jpeg)
-
-

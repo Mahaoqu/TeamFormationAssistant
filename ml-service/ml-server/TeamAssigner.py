@@ -1,3 +1,4 @@
+from mysql.connector import connect
 import pandas as pd
 # from sklearn.preprocessing import StandardScaler
 # import numpy as np
@@ -85,7 +86,7 @@ def memberToTeamMapping(MemberData, ProjectData, RequirementsData):
         if (selectedEmploy not in employee):
             continue
         employee.remove(selectedEmploy)
-        setEmployeeAssignement(int(selectedEmploy))
+        setEmployeeAssignement(int(selectedEmploy), connection)
         Member = MemberData.loc[MemberData['MemberId'] == selectedEmploy]
         MemberName = Member['MemberName'].tolist()[0]
         teamData = teamData.append(
