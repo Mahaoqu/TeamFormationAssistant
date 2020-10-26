@@ -10,27 +10,27 @@ import mysql.connector
 import sys
 import math
 
-# connection = mysql.connector.connect(
-#     host="database",
-#     database='teamformationassistant',
-#     user="dbuser",
-#     password="dbuserpwd"
-# )
-
 connection = mysql.connector.connect(
-host="sefall2021.cosnmrdyk6wi.us-east-2.rds.amazonaws.com",
-database='teamformationassistant',
-user="root",
-password="SEFall2021"
+    host="database",
+    database='teamformationassistant',
+    user="dbuser",
+    password="dbuserpwd"
 )
+
+# connection = mysql.connector.connect(
+# host="sefall2021.cosnmrdyk6wi.us-east-2.rds.amazonaws.com",
+# database='teamformationassistant',
+# user="root",
+# password="SEFall2021"
+# )
     
-def persistTeamData(teamData):
-    if connection.is_connected():
-        cursor = connection.cursor()
+def persistTeamData(teamData, conn):
+    if conn.is_connected():
+        cursor = conn.cursor()
         for row in teamData.index:
             sql = "INSERT INTO Team(ProjectId, ProjectName, MemberId, MemberName)VALUES(%s,%s,%s,%s);"
             cursor.execute(sql,(str(teamData.loc[row, 'ProjectId']),str(teamData.loc[row, 'ProjectName']),str(teamData.loc[row, 'MemberId']),str(teamData.loc[row, 'MemberName'])))
-        connection.commit()
+        conn.commit()
 
 def setEmployeeAssignement(employ, conn):
     if conn.is_connected():
@@ -105,4 +105,4 @@ def assignTeam():
         RequirementsData = pd.DataFrame(Requirements_Query, columns=['JobId','ProjectId','LanguagePreferred','Skill','MemberRole',
         'AvailableHoursPerWeek','SkillWeight','ExperienceWeight','HoursWeight','LanguageWeight','BudgetWeight'])
         teamData = memberToTeamMapping(MemberData,ProjectData,RequirementsData)
-        persistTeamData(teamData)
+        persistTeamData(teamData, connection)
