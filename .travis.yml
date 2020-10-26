@@ -6,6 +6,7 @@ install:
     - pip install -r ml-service/ml-server/requirements.txt
     - cd frontend/view
     - npm install || true
+    - cd
 script:
     - python -m pytest
     - frontend/view
