@@ -4,8 +4,9 @@ python:
     - "3.7"
 install:
     - pip install -r ml-service/ml-server/requirements.txt
-script:
-    - python -m pytest
     - cd frontend/view
     - npm install
+script:
+    - python -m pytest
+    - frontend/view
     - npm run test
