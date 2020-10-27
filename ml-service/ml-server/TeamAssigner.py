@@ -20,6 +20,8 @@ connection = mysql.connector.connect(
 )
 
 
+
+
 def persistTeamData(teamData):
     """ Creates a dataframe containing the project ids and the members matched to that project """
     if connection.is_connected():
@@ -171,4 +173,4 @@ def assignTeam():
 
 
 if __name__ == "__main__":
-    main()
+    assignTeam()
