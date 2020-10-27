@@ -35,7 +35,8 @@ Examples of unacceptable behavior by participants include:
 * Using unacceptable language while communicating with others
 * Sarcastic replies on issues for people with legitimate concerns or doubts
 * Other conduct which could reasonably be considered inappropriate in a
- professional setting
+ professional setting.
+* Plagiarized code or contributions will not be accepted.
 
 ## Our Responsibilities
 
