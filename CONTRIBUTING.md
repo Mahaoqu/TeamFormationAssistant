@@ -11,6 +11,7 @@ This project and everyone participating in it is governed by the [TeamFormationA
 
 ### Pull Requests
 * After you submit your pull request, verify that all status checks are passing.
+* Add team member(s) as reviewers upon opening the Pull Request.
 * Give description and comments to help the reviewers understand the changes.
 * Ensure that the description and comments are self-explanatory.
 * Make sure to update the relevant file changes on README.md.
