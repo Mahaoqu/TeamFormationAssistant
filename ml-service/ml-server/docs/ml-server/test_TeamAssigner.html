@@ -30,17 +30,17 @@
 import unittest
 import pytest
 from unittest.mock import MagicMock, patch
-import TeamAssigner
+import localAssigner
 import pandas as pd
 import mysql.connector
 
 class testTeamAssigner(unittest.TestCase):
     
   def testSetEmployeeAssignment(self):
-
+    &#34;&#34;&#34; Tests the method setEmployeeAssignment of localAssigner.py &#34;&#34;&#34;
     testSQL =&#34;UPDATE Member SET IsAssigned= %s WHERE MemberId = %s ;&#34;
     with patch(target=&#39;mysql.connector.connect&#39;) as mock:
-      TeamAssigner.setEmployeeAssignement(1, mock)
+      localAssigner.setEmployeeAssignement(1, mock)
       mockCursor = mock.cursor()
 
     self.assertIsNotNone(mock)
@@ -50,24 +50,51 @@ class testTeamAssigner(unittest.TestCase):
     self.assertTrue(mock.is_connected.called)
 
   def testPersistTeamData(self):
-
+    &#34;&#34;&#34; Tests the method persistTeamData of localAssigner.py &#34;&#34;&#34;
     mockTeamDataDf = pd.DataFrame(columns = [&#34;ProjectId&#34;, &#34;ProjectName&#34;, &#34;MemberId&#34;, &#34;MemberName&#34;])
-    mockTeamDataDf = mockTeamDataDf.append({&#34;ProjectId&#34;: 1, &#34;ProjectName&#34;: &#39;ABC&#39;, &#39;MemberId&#39;: &#39;25&#39;, &#39;MemberName&#39;: &#39;John&#39;}, ignore_index=True)
-    mockTeamDataDf = mockTeamDataDf.append({&#34;ProjectId&#34;: 1, &#34;ProjectName&#34;: &#39;ABC&#39;, &#39;MemberId&#39;: &#39;30&#39;, &#39;MemberName&#39;: &#39;Jane&#39;}, ignore_index=True)
-    mockTeamDataDf = mockTeamDataDf.append({&#34;ProjectId&#34;: 2, &#34;ProjectName&#34;: &#39;XYZ&#39;, &#39;MemberId&#39;: &#39;35&#39;, &#39;MemberName&#39;: &#39;Matt&#39;}, ignore_index=True)
     mockTeamDataDf = mockTeamDataDf.append({&#34;ProjectId&#34;: 3, &#34;ProjectName&#34;: &#39;PQR&#39;, &#39;MemberId&#39;: &#39;40&#39;, &#39;MemberName&#39;: &#39;Rick&#39;}, ignore_index=True)
 
     testSQL = &#34;INSERT INTO Team(ProjectId, ProjectName, MemberId, MemberName)VALUES(%s,%s,%s,%s);&#34;
 
     with patch(target=&#39;mysql.connector.connect&#39;) as mock:
-      TeamAssigner.persistTeamData(mockTeamDataDf, mock)
+      localAssigner.persistTeamData(mockTeamDataDf, mock)
       mockCursor = mock.cursor()
     
     self.assertIsNotNone(mock)
     self.assertTrue(mock.commit.called)
-    mockCursor.execute.assert_called_with(testSQL, (str(mockTeamDataDf.loc[3, &#39;ProjectId&#39;]),str(mockTeamDataDf.loc[3, &#39;ProjectName&#39;]),str(mockTeamDataDf.loc[3, &#39;MemberId&#39;]),str(mockTeamDataDf.loc[3, &#39;MemberName&#39;])))
+    mockCursor.execute.assert_called_with(testSQL, (str(mockTeamDataDf.loc[0, &#39;ProjectId&#39;]),str(mockTeamDataDf.loc[0, &#39;ProjectName&#39;]),str(mockTeamDataDf.loc[0, &#39;MemberId&#39;]),str(mockTeamDataDf.loc[0, &#39;MemberName&#39;])))
     self.assertTrue(mockCursor.execute.called)
     self.assertTrue(mock.is_connected.called)
+
+  def testPersistTeamDataClosedConnection(self):
+    &#34;&#34;&#34; Tests the method persistTeamData of localAssigner.py for a closed MySQL connection &#34;&#34;&#34;
+
+    mockTeamDataDf = pd.DataFrame(columns = [&#34;ProjectId&#34;, &#34;ProjectName&#34;, &#34;MemberId&#34;, &#34;MemberName&#34;])
+    mockTeamDataDf = mockTeamDataDf.append({&#34;ProjectId&#34;: 3, &#34;ProjectName&#34;: &#39;PQR&#39;, &#39;MemberId&#39;: &#39;40&#39;, &#39;MemberName&#39;: &#39;Rick&#39;}, ignore_index=True)
+
+    with patch(target=&#39;mysql.connector.connect&#39;) as mock:
+      mock.is_connected = MagicMock(return_value = False)
+      localAssigner.persistTeamData(mockTeamDataDf, mock)
+      mockCursor = mock.cursor()
+
+    self.assertIsNotNone(mock)
+    self.assertTrue(mock.is_connected.called)
+    self.assertFalse(mock.commit.called)
+    self.assertFalse(mockCursor.execute.called)
+
+  def testSetEmployeeDataClosedConnection(self):
+    &#34;&#34;&#34; Tests the method setEmployeeData of localAssigner.py for a closed MySQL connection &#34;&#34;&#34;
+
+    dummyString = &#34;DUMMY SQL QUERY&#34;
+    with patch(target=&#39;mysql.connector.connect&#39;) as mock:
+      mock.is_connected = MagicMock(return_value = False)
+      localAssigner.setEmployeeAssignement(1, mock)
+      mockCursor = mock.cursor()
+    
+    self.assertIsNotNone(mock)
+    self.assertTrue(mock.is_connected.called)
+    self.assertFalse(mock.commit.called)
+    self.assertFalse(mockCursor.execute.called)
 
 if __name__ == &#39;__main__&#39;:
   unittest.main()</code></pre>
@@ -122,10 +149,10 @@ not have a method with the specified name.</p></div>
 <pre><code class="python">class testTeamAssigner(unittest.TestCase):
     
   def testSetEmployeeAssignment(self):
-
+    &#34;&#34;&#34; Tests the method setEmployeeAssignment of localAssigner.py &#34;&#34;&#34;
     testSQL =&#34;UPDATE Member SET IsAssigned= %s WHERE MemberId = %s ;&#34;
     with patch(target=&#39;mysql.connector.connect&#39;) as mock:
-      TeamAssigner.setEmployeeAssignement(1, mock)
+      localAssigner.setEmployeeAssignement(1, mock)
       mockCursor = mock.cursor()
 
     self.assertIsNotNone(mock)
@@ -135,24 +162,51 @@ not have a method with the specified name.</p></div>
     self.assertTrue(mock.is_connected.called)
 
   def testPersistTeamData(self):
-
+    &#34;&#34;&#34; Tests the method persistTeamData of localAssigner.py &#34;&#34;&#34;
     mockTeamDataDf = pd.DataFrame(columns = [&#34;ProjectId&#34;, &#34;ProjectName&#34;, &#34;MemberId&#34;, &#34;MemberName&#34;])
-    mockTeamDataDf = mockTeamDataDf.append({&#34;ProjectId&#34;: 1, &#34;ProjectName&#34;: &#39;ABC&#39;, &#39;MemberId&#39;: &#39;25&#39;, &#39;MemberName&#39;: &#39;John&#39;}, ignore_index=True)
-    mockTeamDataDf = mockTeamDataDf.append({&#34;ProjectId&#34;: 1, &#34;ProjectName&#34;: &#39;ABC&#39;, &#39;MemberId&#39;: &#39;30&#39;, &#39;MemberName&#39;: &#39;Jane&#39;}, ignore_index=True)
-    mockTeamDataDf = mockTeamDataDf.append({&#34;ProjectId&#34;: 2, &#34;ProjectName&#34;: &#39;XYZ&#39;, &#39;MemberId&#39;: &#39;35&#39;, &#39;MemberName&#39;: &#39;Matt&#39;}, ignore_index=True)
     mockTeamDataDf = mockTeamDataDf.append({&#34;ProjectId&#34;: 3, &#34;ProjectName&#34;: &#39;PQR&#39;, &#39;MemberId&#39;: &#39;40&#39;, &#39;MemberName&#39;: &#39;Rick&#39;}, ignore_index=True)
 
     testSQL = &#34;INSERT INTO Team(ProjectId, ProjectName, MemberId, MemberName)VALUES(%s,%s,%s,%s);&#34;
 
     with patch(target=&#39;mysql.connector.connect&#39;) as mock:
-      TeamAssigner.persistTeamData(mockTeamDataDf, mock)
+      localAssigner.persistTeamData(mockTeamDataDf, mock)
       mockCursor = mock.cursor()
     
     self.assertIsNotNone(mock)
     self.assertTrue(mock.commit.called)
-    mockCursor.execute.assert_called_with(testSQL, (str(mockTeamDataDf.loc[3, &#39;ProjectId&#39;]),str(mockTeamDataDf.loc[3, &#39;ProjectName&#39;]),str(mockTeamDataDf.loc[3, &#39;MemberId&#39;]),str(mockTeamDataDf.loc[3, &#39;MemberName&#39;])))
+    mockCursor.execute.assert_called_with(testSQL, (str(mockTeamDataDf.loc[0, &#39;ProjectId&#39;]),str(mockTeamDataDf.loc[0, &#39;ProjectName&#39;]),str(mockTeamDataDf.loc[0, &#39;MemberId&#39;]),str(mockTeamDataDf.loc[0, &#39;MemberName&#39;])))
     self.assertTrue(mockCursor.execute.called)
-    self.assertTrue(mock.is_connected.called)</code></pre>
+    self.assertTrue(mock.is_connected.called)
+
+  def testPersistTeamDataClosedConnection(self):
+    &#34;&#34;&#34; Tests the method persistTeamData of localAssigner.py for a closed MySQL connection &#34;&#34;&#34;
+
+    mockTeamDataDf = pd.DataFrame(columns = [&#34;ProjectId&#34;, &#34;ProjectName&#34;, &#34;MemberId&#34;, &#34;MemberName&#34;])
+    mockTeamDataDf = mockTeamDataDf.append({&#34;ProjectId&#34;: 3, &#34;ProjectName&#34;: &#39;PQR&#39;, &#39;MemberId&#39;: &#39;40&#39;, &#39;MemberName&#39;: &#39;Rick&#39;}, ignore_index=True)
+
+    with patch(target=&#39;mysql.connector.connect&#39;) as mock:
+      mock.is_connected = MagicMock(return_value = False)
+      localAssigner.persistTeamData(mockTeamDataDf, mock)
+      mockCursor = mock.cursor()
+
+    self.assertIsNotNone(mock)
+    self.assertTrue(mock.is_connected.called)
+    self.assertFalse(mock.commit.called)
+    self.assertFalse(mockCursor.execute.called)
+
+  def testSetEmployeeDataClosedConnection(self):
+    &#34;&#34;&#34; Tests the method setEmployeeData of localAssigner.py for a closed MySQL connection &#34;&#34;&#34;
+
+    dummyString = &#34;DUMMY SQL QUERY&#34;
+    with patch(target=&#39;mysql.connector.connect&#39;) as mock:
+      mock.is_connected = MagicMock(return_value = False)
+      localAssigner.setEmployeeAssignement(1, mock)
+      mockCursor = mock.cursor()
+    
+    self.assertIsNotNone(mock)
+    self.assertTrue(mock.is_connected.called)
+    self.assertFalse(mock.commit.called)
+    self.assertFalse(mockCursor.execute.called)</code></pre>
 </details>
 <h3>Ancestors</h3>
 <ul class="hlist">
@@ -164,46 +218,69 @@ not have a method with the specified name.</p></div>
 <span>def <span class="ident">testPersistTeamData</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Tests the method persistTeamData of localAssigner.py</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def testPersistTeamData(self):
-
+  &#34;&#34;&#34; Tests the method persistTeamData of localAssigner.py &#34;&#34;&#34;
   mockTeamDataDf = pd.DataFrame(columns = [&#34;ProjectId&#34;, &#34;ProjectName&#34;, &#34;MemberId&#34;, &#34;MemberName&#34;])
-  mockTeamDataDf = mockTeamDataDf.append({&#34;ProjectId&#34;: 1, &#34;ProjectName&#34;: &#39;ABC&#39;, &#39;MemberId&#39;: &#39;25&#39;, &#39;MemberName&#39;: &#39;John&#39;}, ignore_index=True)
-  mockTeamDataDf = mockTeamDataDf.append({&#34;ProjectId&#34;: 1, &#34;ProjectName&#34;: &#39;ABC&#39;, &#39;MemberId&#39;: &#39;30&#39;, &#39;MemberName&#39;: &#39;Jane&#39;}, ignore_index=True)
-  mockTeamDataDf = mockTeamDataDf.append({&#34;ProjectId&#34;: 2, &#34;ProjectName&#34;: &#39;XYZ&#39;, &#39;MemberId&#39;: &#39;35&#39;, &#39;MemberName&#39;: &#39;Matt&#39;}, ignore_index=True)
   mockTeamDataDf = mockTeamDataDf.append({&#34;ProjectId&#34;: 3, &#34;ProjectName&#34;: &#39;PQR&#39;, &#39;MemberId&#39;: &#39;40&#39;, &#39;MemberName&#39;: &#39;Rick&#39;}, ignore_index=True)
 
   testSQL = &#34;INSERT INTO Team(ProjectId, ProjectName, MemberId, MemberName)VALUES(%s,%s,%s,%s);&#34;
 
   with patch(target=&#39;mysql.connector.connect&#39;) as mock:
-    TeamAssigner.persistTeamData(mockTeamDataDf, mock)
+    localAssigner.persistTeamData(mockTeamDataDf, mock)
     mockCursor = mock.cursor()
   
   self.assertIsNotNone(mock)
   self.assertTrue(mock.commit.called)
-  mockCursor.execute.assert_called_with(testSQL, (str(mockTeamDataDf.loc[3, &#39;ProjectId&#39;]),str(mockTeamDataDf.loc[3, &#39;ProjectName&#39;]),str(mockTeamDataDf.loc[3, &#39;MemberId&#39;]),str(mockTeamDataDf.loc[3, &#39;MemberName&#39;])))
+  mockCursor.execute.assert_called_with(testSQL, (str(mockTeamDataDf.loc[0, &#39;ProjectId&#39;]),str(mockTeamDataDf.loc[0, &#39;ProjectName&#39;]),str(mockTeamDataDf.loc[0, &#39;MemberId&#39;]),str(mockTeamDataDf.loc[0, &#39;MemberName&#39;])))
   self.assertTrue(mockCursor.execute.called)
   self.assertTrue(mock.is_connected.called)</code></pre>
+</details>
+</dd>
+<dt id="ml-server.test_TeamAssigner.testTeamAssigner.testPersistTeamDataClosedConnection"><code class="name flex">
+<span>def <span class="ident">testPersistTeamDataClosedConnection</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Tests the method persistTeamData of localAssigner.py for a closed MySQL connection</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def testPersistTeamDataClosedConnection(self):
+  &#34;&#34;&#34; Tests the method persistTeamData of localAssigner.py for a closed MySQL connection &#34;&#34;&#34;
+
+  mockTeamDataDf = pd.DataFrame(columns = [&#34;ProjectId&#34;, &#34;ProjectName&#34;, &#34;MemberId&#34;, &#34;MemberName&#34;])
+  mockTeamDataDf = mockTeamDataDf.append({&#34;ProjectId&#34;: 3, &#34;ProjectName&#34;: &#39;PQR&#39;, &#39;MemberId&#39;: &#39;40&#39;, &#39;MemberName&#39;: &#39;Rick&#39;}, ignore_index=True)
+
+  with patch(target=&#39;mysql.connector.connect&#39;) as mock:
+    mock.is_connected = MagicMock(return_value = False)
+    localAssigner.persistTeamData(mockTeamDataDf, mock)
+    mockCursor = mock.cursor()
+
+  self.assertIsNotNone(mock)
+  self.assertTrue(mock.is_connected.called)
+  self.assertFalse(mock.commit.called)
+  self.assertFalse(mockCursor.execute.called)</code></pre>
 </details>
 </dd>
 <dt id="ml-server.test_TeamAssigner.testTeamAssigner.testSetEmployeeAssignment"><code class="name flex">
 <span>def <span class="ident">testSetEmployeeAssignment</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Tests the method setEmployeeAssignment of localAssigner.py</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def testSetEmployeeAssignment(self):
-
+  &#34;&#34;&#34; Tests the method setEmployeeAssignment of localAssigner.py &#34;&#34;&#34;
   testSQL =&#34;UPDATE Member SET IsAssigned= %s WHERE MemberId = %s ;&#34;
   with patch(target=&#39;mysql.connector.connect&#39;) as mock:
-    TeamAssigner.setEmployeeAssignement(1, mock)
+    localAssigner.setEmployeeAssignement(1, mock)
     mockCursor = mock.cursor()
 
   self.assertIsNotNone(mock)
@@ -211,6 +288,30 @@ not have a method with the specified name.</p></div>
   mockCursor.execute.assert_called_once_with(testSQL, (1,1))
   self.assertTrue(mockCursor.execute.called)
   self.assertTrue(mock.is_connected.called)</code></pre>
+</details>
+</dd>
+<dt id="ml-server.test_TeamAssigner.testTeamAssigner.testSetEmployeeDataClosedConnection"><code class="name flex">
+<span>def <span class="ident">testSetEmployeeDataClosedConnection</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Tests the method setEmployeeData of localAssigner.py for a closed MySQL connection</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def testSetEmployeeDataClosedConnection(self):
+  &#34;&#34;&#34; Tests the method setEmployeeData of localAssigner.py for a closed MySQL connection &#34;&#34;&#34;
+
+  dummyString = &#34;DUMMY SQL QUERY&#34;
+  with patch(target=&#39;mysql.connector.connect&#39;) as mock:
+    mock.is_connected = MagicMock(return_value = False)
+    localAssigner.setEmployeeAssignement(1, mock)
+    mockCursor = mock.cursor()
+  
+  self.assertIsNotNone(mock)
+  self.assertTrue(mock.is_connected.called)
+  self.assertFalse(mock.commit.called)
+  self.assertFalse(mockCursor.execute.called)</code></pre>
 </details>
 </dd>
 </dl>
@@ -235,7 +336,9 @@ not have a method with the specified name.</p></div>
 <h4><code><a title="ml-server.test_TeamAssigner.testTeamAssigner" href="#ml-server.test_TeamAssigner.testTeamAssigner">testTeamAssigner</a></code></h4>
 <ul class="">
 <li><code><a title="ml-server.test_TeamAssigner.testTeamAssigner.testPersistTeamData" href="#ml-server.test_TeamAssigner.testTeamAssigner.testPersistTeamData">testPersistTeamData</a></code></li>
+<li><code><a title="ml-server.test_TeamAssigner.testTeamAssigner.testPersistTeamDataClosedConnection" href="#ml-server.test_TeamAssigner.testTeamAssigner.testPersistTeamDataClosedConnection">testPersistTeamDataClosedConnection</a></code></li>
 <li><code><a title="ml-server.test_TeamAssigner.testTeamAssigner.testSetEmployeeAssignment" href="#ml-server.test_TeamAssigner.testTeamAssigner.testSetEmployeeAssignment">testSetEmployeeAssignment</a></code></li>
+<li><code><a title="ml-server.test_TeamAssigner.testTeamAssigner.testSetEmployeeDataClosedConnection" href="#ml-server.test_TeamAssigner.testTeamAssigner.testSetEmployeeDataClosedConnection">testSetEmployeeDataClosedConnection</a></code></li>
 </ul>
 </li>
 </ul>
