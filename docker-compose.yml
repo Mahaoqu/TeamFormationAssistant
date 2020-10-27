@@ -1,4 +1,4 @@
-version: "3.6"
+version: '3.6'
 
 services:
   database:
@@ -22,7 +22,7 @@ services:
     build:
       context: ./mocker
     container_name: mocker
-    command: ["npm", "start"]
+    command: ['npm', 'start']
     depends_on:
       - database
     networks:
@@ -32,7 +32,7 @@ services:
     build:
       context: ./backend
     container_name: node_server
-    command: ["npm", "start"]
+    command: ['npm', 'start']
     depends_on:
       - database
     ports:
@@ -44,7 +44,7 @@ services:
     build:
       context: ./ml-service
     container_name: ml_server
-    command: ["flask", "run", "--host=0.0.0.0"]
+    command: ['flask', 'run', '--host=0.0.0.0']
     depends_on:
       - mocker
     ports:
@@ -52,18 +52,18 @@ services:
     networks:
       - application_network
 
-  frontend:
-    build:
-      context: ./frontend
-    container_name: frontend
-    command: ["npm", "start"]
-    depends_on:
-      - node_server
-    ports:
-      - 3000:3000
-    stdin_open: true
-    networks:
-      - application_network
+  # frontend:
+  #   build:
+  #     context: ./frontend
+  #   container_name: frontend
+  #   command: ['npm', 'start']
+  #   depends_on:
+  #     - node_server
+  #   ports:
+  #     - 3000:3000
+  #   stdin_open: true
+  #   networks:
+  #     - application_network
 
 volumes:
   db:
