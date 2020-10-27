@@ -8,6 +8,9 @@ This project and everyone participating in it is governed by the [TeamFormationA
 * Avoid code smells and writing spaghetti code
 * Use Tabs instead of 4 spaces
 * Write clear and concise comments
+* Please use Camel-case pattern to name method and variables
+* Avoid using _ or - in methond and variable names.
+* For writing unit tests, please mock all the dependancies and just test functionality of that particular method / class.
 
 ### Pull Requests
 * After you submit your pull request, verify that all status checks are passing.
@@ -23,6 +26,8 @@ This project and everyone participating in it is governed by the [TeamFormationA
 ### Git Commit Messages
 * Use the present tense.
 * Limit the first line to 72 characters or less.
+* Please be consice in commit messages.
+* Avoid re-use of commit messages.
 
 ## Branch Naming guideline
 1. Feature development branch should begin with  name as "feature" eg: feature/fronend_testing
