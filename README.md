@@ -64,8 +64,12 @@ assignment.
 Final team assignment will posted on the homepage dashboard. We plan to
 implement the dashboard and form using HTML, CSS, JavaScript
 
+### Linting: Code Styling, Formatting and Syntax Checking:
+Flake8, ESlint, Prettier
+
 ### Automated Analysis Tool used:
 [Code Climate](https://codeclimate.com/github/AmitMandliya/TeamFormationAssistant)
+
 ##### We have created a wiki page containing project details including project workflow, setup, dictionary, data model,
 
 ### [Wiki](https://github.com/lokesh45/TeamFormationAssistant/wiki)
