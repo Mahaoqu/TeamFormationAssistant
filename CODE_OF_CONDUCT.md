@@ -2,8 +2,8 @@
 
 ## Our Pledge
 
-In the interest of fostering an open and welcoming environment, we as
-contributors and maintainers pledge to making participation in our project and
+In the interest of fostering an open and welcoming environment, we, as
+contributors and maintainers, pledge to making participation in our project and
 our community a harassment-free experience for everyone, regardless of age, body
 size, disability, ethnicity, sex characteristics, gender identity and expression,
 level of experience, education, socio-economic status, nationality, personal
@@ -21,6 +21,7 @@ include:
 * Focusing on what is best for the community
 * Showing empathy towards other community members
 * Including new comers with respect and grace
+* Accepting differences in thought and opinion
 
 Examples of unacceptable behavior by participants include:
 
@@ -31,6 +32,7 @@ Examples of unacceptable behavior by participants include:
 * Public or private harassment
 * Publishing others' private information, such as a physical or electronic
  address, without explicit permission
+* Using unacceptable language while communicating with others
 * Sarcastic replies on issues for people with legitimate concerns or doubts
 * Other conduct which could reasonably be considered inappropriate in a
  professional setting
