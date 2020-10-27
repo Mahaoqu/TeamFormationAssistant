@@ -13,10 +13,10 @@ import mysql.connector
 # import math
 
 connection = mysql.connector.connect(
-    host="sefall2021.cosnmrdyk6wi.us-east-2.rds.amazonaws.com",
-    database="teamformationassistant",
-    user="root",
-    password="SEFall2021",
+    host="database",
+    database='teamformationassistant',
+    user="dbuser",
+    password="dbuserpwd"
 )
 
 
