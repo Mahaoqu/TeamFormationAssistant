@@ -52,18 +52,18 @@ services:
     networks:
       - application_network
 
-  # frontend:
-  #   build:
-  #     context: ./frontend
-  #   container_name: frontend
-  #   command: ['npm', 'start']
-  #   depends_on:
-  #     - node_server
-  #   ports:
-  #     - 3000:3000
-  #   stdin_open: true
-  #   networks:
-  #     - application_network
+  frontend:
+    build:
+      context: ./frontend
+    container_name: frontend
+    command: ['npm', 'start']
+    depends_on:
+      - node_server
+    ports:
+      - 3000:3000
+    stdin_open: true
+    networks:
+      - application_network
 
 volumes:
   db:
