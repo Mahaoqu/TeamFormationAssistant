@@ -20,7 +20,6 @@ connection = mysql.connector.connect(
 )
 
 
-
 def persistTeamData(teamData, conn):
     """ Creates a dataframe containing the project ids and the members matched to that project """
     if conn.is_connected():
@@ -86,11 +85,11 @@ def memberToTeamMapping(MemberData, ProjectData, RequirementsData):
             if reqLanguage in employData["Languages"].tolist()[0].split(","):
                 languageScore = 1
             memscore = (
-                (skillweight * skillScore) / 100
-                + (experienceWeight * expScore) / 10
-                + (hoursWeight * availableHours) / 40
-                + (languageWeight * languageScore) / 5
-                + (budgetWeight * hourlyRate) / 100
+                    (skillweight * skillScore) / 100
+                    + (experienceWeight * expScore) / 10
+                    + (hoursWeight * availableHours) / 40
+                    + (languageWeight * languageScore) / 5
+                    + (budgetWeight * hourlyRate) / 100
             )
             if memscore > highScore:
                 selectedEmploy = employ
@@ -116,7 +115,7 @@ def memberToTeamMapping(MemberData, ProjectData, RequirementsData):
 
 def assignTeam():
     """ Runner function which makes subsequeent function calls and fires SQL queries to perform the team matching """
-    if  connection.is_connected():
+    if connection.is_connected():
         Member_Query = pd.read_sql_query("""select * from Member""", connection)
         Project_Query = pd.read_sql_query("""select * from Project""", connection)
         Requirements_Query = pd.read_sql_query(

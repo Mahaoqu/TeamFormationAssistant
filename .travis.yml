@@ -10,4 +10,5 @@ script:
     - python -m pytest
     - cd frontend/view
     - npm run test
-    - flake8 --extend-ignore=F401
+    - flake8 --extend-ignore=F401,E501,E122,F821,F841 --exclude=node_modules
+
