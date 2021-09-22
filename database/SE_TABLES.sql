@@ -13,31 +13,50 @@ DROP TABLE IF EXISTS Candidate;
 DROP TABLE IF EXISTS User_Roles;
 DROP TABLE IF EXISTS Roles;
 
-CREATE TABLE Users(
-UserId 					INT NOT NULL AUTO_INCREMENT,
-UerName 				VARCHAR(225) NOT NULL,
-UserPassword 		VARCHAR(225) NOT NULL,
-UserEmail 	 		VARCHAR(225) NOT NULL,
+-- ----------------------------
+-- Table structure for user_roles
+-- ----------------------------
+DROP TABLE IF EXISTS `user_roles`;
+CREATE TABLE `user_roles`  (
+  `createdAt` datetime NOT NULL,
+  `updatedAt` datetime NOT NULL,
+  `roleId` int(11) NOT NULL,
+  `userId` int(11) NOT NULL,
+  PRIMARY KEY (`roleId`, `userId`) USING BTREE,
+  INDEX `userId`(`userId`) USING BTREE,
+  CONSTRAINT `user_roles_ibfk_1` FOREIGN KEY (`roleId`) REFERENCES `roles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `user_roles_ibfk_2` FOREIGN KEY (`userId`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
-PRIMARY KEY (UserId)
-);
+-- ----------------------------
+-- Records of user_roles
+-- ----------------------------
+INSERT INTO `user_roles` VALUES ('2021-09-21 16:23:15', '2021-09-21 16:23:15', 1, 1);
+INSERT INTO `user_roles` VALUES ('2021-09-21 19:11:14', '2021-09-21 19:11:14', 1, 4);
+INSERT INTO `user_roles` VALUES ('2021-09-21 17:04:29', '2021-09-21 17:04:29', 2, 3);
+INSERT INTO `user_roles` VALUES ('2021-09-21 16:45:03', '2021-09-21 16:45:03', 3, 2);
 
-CREATE TABLE Roles(
-RoleId 					INT NOT NULL AUTO_INCREMENT,
-RoleName 				VARCHAR(225) NOT NULL,
+-- ----------------------------
+-- Table structure for users
+-- ----------------------------
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE `users`  (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `password` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `createdAt` datetime NOT NULL,
+  `updatedAt` datetime NOT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
-
-PRIMARY KEY (RoleId)
-
-);
-
-CREATE TABLE User_Roles(
-	
-	RoleId	INT NOT NULL REFERENCES Roles(RoleId),
-	
-	UserId	INT NOT NULL REFERENCES Users(UserId)
-    	
-);
+-- ----------------------------
+-- Records of users
+-- ----------------------------
+INSERT INTO `users` VALUES (1, 'yliang', 'yliang24@ncsu.edu', '$2a$08$K4mX1SDDdIgAlBwhz5gWueGrIIK0.xDPgBJWmJ1GVSiNst3XGr86C', '2021-09-21 16:23:15', '2021-09-21 16:23:15');
+INSERT INTO `users` VALUES (2, 'admin', 'admin@ncsu.edu', '$2a$08$PhkNxvO29XIYpZqwHnN2eOHGnLzWKpnsV7sV/f/RA0kTzI7dnCm5q', '2021-09-21 16:45:03', '2021-09-21 16:45:03');
+INSERT INTO `users` VALUES (3, 'manager', 'manager@ncsu.edu', '$2a$08$8ZbPVlB1RYMz//rUOm5sJeGyWBvBa1KX2ANi.eUDFQHVr1Llfo9j6', '2021-09-21 17:04:29', '2021-09-21 17:04:29');
+INSERT INTO `users` VALUES (4, 'yliang123', 'yliang4@ncsu.edu', '$2a$08$oOZdHq8EvorsW1T7uKVD6e9i14EkxnP3LR7eF.56rh/D855POhDZ2', '2021-09-21 19:11:14', '2021-09-21 19:11:14');
 
 
 CREATE TABLE Job(
