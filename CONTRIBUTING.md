@@ -1,49 +1,87 @@
-# Contributing to TeamFormationAssistant
-The following is a set of guidelines for contributing to TeamFormationAssistant on GitHub.
+## CONTRIBUTING to HW2b
 
-## Code of Conduct
-This project and everyone participating in it is governed by the [TeamFormationAssistant Code of Conduct](https://github.com/lokesh45/TeamFormationAssistant/blob/master/CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code.
+First off, thank you for taking the time to contribute!
 
-### Coding Guidelines
-* Avoid code smells and writing spaghetti code
-* Use Tabs instead of 4 spaces
-* Write clear and concise comments
-* Please use Camel-case pattern to name method and variables
-* Avoid using _ or - in methond and variable names.
-* For writing unit tests, please mock all the dependancies and just test functionality of that particular method / class.
+The following is the guidelines for contributing to hw2b on GitHub. These are mostly guidelines, not rules.
+
+### Before Getting Started
+
+- You need to know the packages you need.
+- You need to make sure the design decisions.
+  - when you make a significant decision, you need to know how you maintain the project and what you can or cannot support.
+  - submit the meaningful questions bravely.
+
+### Getting Started
+
+- Make sure you have GitHub account.
+
+- Make the repository on GitHub.
+
+  
+
+### How to Contribute
+
+First, you need to report bugs, you can create bug reports and please include as many details as possible. The information it asks can help to resolve the problem faster.
+
+Then, suggest enhancements. You can submit an enhancement suggestion for our project, including completely new features and minor improvements to existing functionality. You also need to suggest as many details as possible which can help to understand the suggestion and find the related suggestions.
+
+### Documentation Guide
+
+- Use markdown for .md documents.
 
 ### Pull Requests
-* After you submit your pull request, verify that all status checks are passing.
-* Add team member(s) as reviewers upon opening the Pull Request.
-* Give description and comments to help the reviewers understand the changes.
-* Ensure that the description and comments are self-explanatory.
-* Make sure to update the relevant file changes on README.md.
-* Package-lock.json is required for travis CI to run, so do not add it to .gitignore.
-* Add appropriate labels to the pull requests for better resolution.
-* The code will not be accepted if there is low readability and code smells.
-* Code not passing style checkers and code formatters will not be accepted.
 
-### Git Commit Messages
-* Use the present tense.
-* Limit the first line to 72 characters or less.
-* Please be consice in commit messages.
-* Avoid re-use of commit messages.
+The process described here has several goals:
 
-## Branch Naming guideline
-1. Feature development branch should begin with  name as "feature" eg: feature/fronend_testing
-2. Each feature branch should have its own tests written
-3. Bugs fixing branch should begin with "bugfix"
-4. Patching branch should have "patch" in the name
+- Maintain project quality.
+- Fix problems that are important to users.
+- Engage the community in working.
+- Enable a sustainable system for project maintainers to review contributions.
 
-### Reporting Bugs
-Explain the problem and include additional details to help maintainers reproduce the problem:
-* Use a clear and descriptive title for the issue to identify the problem.
-* Describe the exact steps which reproduce the problem in as many details as possible.
-* Provide specific examples to demonstrate the steps. Include links to files or GitHub projects.
+While the prerequisites above must be satisfied prior to having your pull request reviewed, the reviewer(s) may ask you to complete additional design work, tests, or other changes before your pull request can be ultimately accepted.
 
-### Suggesting Enhancements
-* Use a clear and descriptive title for the issue to identify the suggestion.
-* Provide a step-by-step description of the suggested enhancement in as many details as possible.
+### Committing Changes
 
-## Attribution
-This is adapted from [Atom](https://github.com/atom/atom), available at [(https://github.com/atom/atom/blob/master/CONTRIBUTING.md)]
+You first need to follow the pull request above.
+
+Then, please avoid working directly on master branch and you need to create a new branch from where you want to start your work.
+
+Last but not least, you need to write meaningful commit messages and test for your changes.
+
+### Submitting Changes
+
+- Push the changes to the repository.
+- Submit a pull request to the original repository and follow the pull requests above.
+- Wait for feedback on the request.
+
+### Table of Contents
+
+- .gitignore
+
+- .trivis.yml
+
+- CITATION.md
+
+- CODE-OF-CONDUCT.md
+
+- CONTRIBUTING.md
+
+- LICENSE.md
+
+- README.md
+
+- setup.py
+
+- requirements.txt
+
+- code/
+
+  _init _.py
+
+- test/
+
+  README.md
+
+- data/
+
+  README.md
