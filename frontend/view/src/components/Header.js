@@ -18,6 +18,8 @@ import {NavDropdown} from 'react-bootstrap';
 // import AuthVerify from "./common/auth-verify";
 import EventBus from "../common/EventBus";
 import TeamMatch from "./teammatch";
+import Projectinc from "./projectinc";
+
 class Header extends Component {
     constructor(props) {
       super(props);
@@ -75,14 +77,14 @@ class Header extends Component {
       {showManagerBoard && (
         <NavDropdown title="project" id="collasible-nav-dropdown">
           <NavDropdown.Item href="/teamMatch">team match</NavDropdown.Item>
-          <NavDropdown.Item href="/man">project management</NavDropdown.Item> 
+          <NavDropdown.Item href="/proj_inc">project management</NavDropdown.Item>
         </NavDropdown>
         )}
   
       {showManagerBoard && (
         <NavDropdown title="recruit" id="collasible-nav-dropdown">
-          <NavDropdown.Item href="/man">candidate match</NavDropdown.Item>
-            <NavDropdown.Item href="/man">job management</NavDropdown.Item>
+          <NavDropdown.Item href="/jobMatch">candidate match</NavDropdown.Item>
+            <NavDropdown.Item href="/job_inc">job management</NavDropdown.Item>
         </NavDropdown>
       )}
   
@@ -95,7 +97,7 @@ class Header extends Component {
        
        {!showManagerBoard && ( 
       <fragment>
-      <NavDropdown.Item href="/user">project application</NavDropdown.Item>
+          <NavDropdown.Item href="/user">project application</NavDropdown.Item>
           <NavDropdown.Item href="/user">job application</NavDropdown.Item>
           <NavDropdown.Item href="/user">my application</NavDropdown.Item>
       </fragment>
@@ -155,6 +157,7 @@ class Header extends Component {
               <Route exact path="/profile" component={Profile} />
               <Route path="/user" component={BoardUser} />
               <Route path="/teamMatch" component={TeamMatch} />
+              <Route path="/proj_inc" component={Projectinc} />
               <Route path="/admin" component={BoardAdmin} />
               <Route path="/teamMatch" Component={TeamMatch}/>
             </Switch>
