@@ -81,7 +81,8 @@ class Header extends Component {
   
       {showManagerBoard && (
         <NavDropdown title="recruit" id="collasible-nav-dropdown">
-          <NavDropdown.Item href="/man">job management</NavDropdown.Item> 
+          <NavDropdown.Item href="/man">candidate match</NavDropdown.Item>
+            <NavDropdown.Item href="/man">job management</NavDropdown.Item>
         </NavDropdown>
       )}
   
@@ -94,12 +95,13 @@ class Header extends Component {
        
        {!showManagerBoard && ( 
       <fragment>
-      <NavDropdown.Item href="/user">my application</NavDropdown.Item>
+      <NavDropdown.Item href="/user">project application</NavDropdown.Item>
+          <NavDropdown.Item href="/user">job application</NavDropdown.Item>
+          <NavDropdown.Item href="/user">my application</NavDropdown.Item>
       </fragment>
   )}
       {showManagerBoard && (  
         <fragment>
-        <NavDropdown.Item href="/man">candidate match</NavDropdown.Item>
         <NavDropdown.Item href="/man">application management</NavDropdown.Item> 
         </fragment>
         )}
