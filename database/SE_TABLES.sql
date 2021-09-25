@@ -115,7 +115,7 @@ CREATE TABLE Requirements(
 	HoursWeight				INT,
 	LanguageWeight			INT,
 	BudgetWeight			INT,
-	PRIMARY KEY (JobId)
+	PRIMARY KEY (RequirementsId)
 );
 
 -- ----------------------------
