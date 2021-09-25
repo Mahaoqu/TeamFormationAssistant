@@ -1,82 +1,54 @@
-# Contributor Covenant Code of Conduct
+## Code of Conduct
 
-## Our Pledge
+### Promise
 
-In the interest of fostering an open and welcoming environment, we, as
-contributors and maintainers, pledge to making participation in our project and
-our community a harassment-free experience for everyone, regardless of age, body
-size, disability, ethnicity, sex characteristics, gender identity and expression,
-level of experience, education, socio-economic status, nationality, personal
-appearance, race, religion, or sexual identity and orientation.
-We strive to create a truly open experience for everyone
+We promise that our project and community is harassment-free for everyone, regardless of gender, age, disability, education, nationality and race.
 
-## Our Standards
+### Standards
 
-Examples of behavior that contributes to creating a positive environment
-include:
+- Examples of acceptable behavior to create our environment include:
+  - respect to all different points.
+  - Using inclusive language.
+  - Being enthusiastic to other project or community members.
+  - Accept different and constructive criticism from others.
 
-* Using welcoming and inclusive language
-* Being respectful of differing viewpoints and experiences
-* Gracefully accepting constructive criticism
-* Focusing on what is best for the community
-* Showing empathy towards other community members
-* Including new comers with respect and grace
-* Accepting differences in thought and opinion
+- Examples of unacceptable behavior to create our environment includes:
+  - Insulting comments and personal or political attacks.
+  - leaking other's private information (e.g. physical address, mobile phone number or e-mail address)
+  - harassment or attack from online or offline.
+  - Personal hatred.
 
-Examples of unacceptable behavior by participants include:
+### Responsibilities
 
-* The use of sexualized language or imagery and unwelcome sexual attention or
- advances
-* Trolling, insulting/derogatory comments, and personal or political attacks
-* Racial discrimination
-* Public or private harassment
-* Publishing others' private information, such as a physical or electronic
- address, without explicit permission
-* Using unacceptable language while communicating with others
-* Sarcastic replies on issues for people with legitimate concerns or doubts
-* Other conduct which could reasonably be considered inappropriate in a
- professional setting.
-* Plagiarized code or contributions will not be accepted.
+Project creators and maintainers are responsible for the standards and behaviors that are mentioned above.
 
-## Our Responsibilities
+ Project creators and maintainers have responsibilites to guarantee any behaviors that are not acceptable.
 
-Project maintainers are responsible for clarifying the standards of acceptable
-behavior and are expected to take appropriate and fair corrective action in
-response to any instances of unacceptable behavior.
+ Project creators and maintainers have right to guarantee all codes and commits in the community and delete or remove the harmful words.
 
-Project maintainers have the right and responsibility to remove, edit, or
-reject comments, commits, code, wiki edits, issues, and other contributions
-that are not aligned to this Code of Conduct, or to ban temporarily or
-permanently any contributor for other behaviors that they deem inappropriate,
-threatening, offensive, or harmful.
+### Scope
 
-## Scope
+The Code of Conduct are available both in this project and public. 
 
-This Code of Conduct applies both within project spaces and in public spaces
-when an individual is representing the project or its community. Examples of
-representing a project or community include using an official project e-mail
-address, posting via an official social media account, or acting as an appointed
-representative at an online or offline event. 
+Project creators and maintainers have the right to explain and clarify the scope of  the Code of Conduct.
 
-## Enforcement
+### Enforcement
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported by contacting the project team at amitmandliya.davviet@gmail.com. All
-complaints will be reviewed and investigated and will result in a response that
-is deemed necessary and appropriate to the circumstances. The project team is
-obligated to maintain confidentiality with regard to the reporter of an incident.
-Further details of specific enforcement policies may be posted separately.
+If anyone finds any unacceptable commits, behaviors or codes, you can contact the project creator from piazza. Project creators and maintainers have right to guarantee all codes and commits in the community and delete or remove the harmful words.
 
-Project maintainers who do not follow or enforce the Code of Conduct in good
-faith may face temporary or permanent repercussions as determined by other
-members of the project's leadership.
+And anyone in the project does not follow the Code of Conduct can be remove or ban permanently, you can also contact other maintainers to reflect this situation.
 
-## Attribution
+### Attribution
 
-This Code of Conduct is adapted from the [Contributor Covenant][homepage], version 1.4,
-available at https://www.contributor-covenant.org/version/1/4/code-of-conduct.html
+This Code of Conduct is adapted from [Contributor Covenant](https://www.contributor-covenant.org)
 
-[homepage]: https://www.contributor-covenant.org
+If you have any other question, please search in [FAQ](https://www.contributor-covenant.org/faq/)
 
-For answers to common questions about this code of conduct, see
-https://www.contributor-covenant.org/faq
+
+
+
+
+
+
+
+

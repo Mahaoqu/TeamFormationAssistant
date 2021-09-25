@@ -47,7 +47,7 @@ ApplicationLanguages  			VARCHAR(225) NOT NULL,
 AppPhone 	 		VARCHAR(225) NOT NULL,
 AppAddress 				VARCHAR(225) NOT NULL,
 AppSkillScore 					INT,
-AppExperience						VARCHAR(225) NOT NULL,
+AppExperience					INT,
 PRIMARY KEY (ApplicationId)
 );
 
@@ -78,9 +78,9 @@ CREATE TABLE Member(
 
 CREATE TABLE Candidate(
 	ProjectId	INT NOT NULL REFERENCES Project(ProjectId),
-	ProjectName	INT NOT NULL REFERENCES Project(ProjectName),
+	ProjectName	VARCHAR(255) NOT NULL,
 	ApplicationId	INT NOT NULL REFERENCES Application(ApplicationId),
-	ApplicationName	INT NOT NULL REFERENCES Application(ApplicationName)
+	ApplicationName	VARCHAR(255) NOT NULL
 );
 
 
@@ -98,13 +98,13 @@ CREATE TABLE Project(
 
 CREATE TABLE Team(
 	MemberId	INT NOT NULL REFERENCES Member(MemberId),
-	ProjectName varchar(255),
+	ProjectName 	VARCHAR(255) NOT NULL,
 	ProjectId	INT NOT NULL REFERENCES Project(ProjectId),
-    	MemberName		VARCHAR(255) NOT NULL
+    	MemberName	VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE Requirements(
-	JobId					INT NOT NULL AUTO_INCREMENT,
+	RequirementsId					INT NOT NULL AUTO_INCREMENT,
 	ProjectId				INT NOT NULL REFERENCES Project(ProjectId),
 	LanguagePreferred 				VARCHAR(255) NOT NULL,
 	Skill					INT NOT NULL,
@@ -115,7 +115,7 @@ CREATE TABLE Requirements(
 	HoursWeight				INT,
 	LanguageWeight			INT,
 	BudgetWeight			INT,
-	PRIMARY KEY (JobId)
+	PRIMARY KEY (RequirementsId)
 );
 
 -- ----------------------------
