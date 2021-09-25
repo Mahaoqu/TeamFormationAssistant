@@ -19,7 +19,7 @@ connection = mysql.connector.connect(
     password="dbuserpwd"
 )
 
-
+# for assignTeam
 def persistTeamData(teamData):
     """ Creates a dataframe containing the project ids and the members matched to that project """
     if connection.is_connected():
@@ -39,6 +39,7 @@ def persistTeamData(teamData):
         connection.commit()
 
 
+# for memberToTeamMapping
 def setEmployeeAssignement(employ):
     """ Updates the member details in the database if he or she is assigned to a project """
     if connection.is_connected():
@@ -47,18 +48,18 @@ def setEmployeeAssignement(employ):
         cursor.execute(sql, (1, employ))
         connection.commit()
 
-
+# for assignTeam
 def memberToTeamMapping(MemberData, ProjectData, RequirementsData):
     """ Matches the members to the project teams """
-    jobIDs = RequirementsData["JobId"].tolist()
+    requirementsIDs = RequirementsData["RequirementsId"].tolist()
     employee = MemberData.loc[MemberData["IsAssigned"] == 0]
     employee = employee["MemberId"].tolist()
     teamData = pd.DataFrame(
         columns=["ProjectId", "ProjectName", "MemberId", "MemberName"]
     )
 
-    for jobID in jobIDs:
-        Req = RequirementsData.loc[RequirementsData["JobId"] == jobID]
+    for requirementsID in requirementsIDs:
+        Req = RequirementsData.loc[RequirementsData["RequirementsId"] == requirementsID]
         reqLanguage = Req["LanguagePreferred"].tolist()[0]
         skillweight = float(Req["SkillWeight"])
         experienceWeight = float(Req["ExperienceWeight"])
@@ -69,7 +70,7 @@ def memberToTeamMapping(MemberData, ProjectData, RequirementsData):
         Project = ProjectData.loc[ProjectData["ProjectId"] == ProjectId]
         ProjectName = Project["ProjectName"].tolist()
         if len(ProjectName) == 0:
-            ProjectName = "Not Provided"
+            ProjectName = "Not Provided22"
         else:
             ProjectName = Project["ProjectName"].tolist()[0]
 
@@ -153,7 +154,7 @@ def assignTeam():
         RequirementsData = pd.DataFrame(
             Requirements_Query,
             columns=[
-                "JobId",
+                "RequirementsId",
                 "ProjectId",
                 "LanguagePreferred",
                 "Skill",
