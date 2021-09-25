@@ -80,7 +80,8 @@ CREATE TABLE Candidate(
 	ProjectId	INT NOT NULL REFERENCES Project(ProjectId),
 	ProjectName	VARCHAR(255) NOT NULL,
 	ApplicationId	INT NOT NULL REFERENCES Application(ApplicationId),
-	ApplicationName	VARCHAR(255) NOT NULL
+	ApplicationName	VARCHAR(255) NOT NULL,
+	CONSTRAINT pk_proj_app PRIMARY KEY (ProjectId, ApplicationId)
 );
 
 
