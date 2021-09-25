@@ -19,7 +19,7 @@ def persistCandidateData(candidateData):
     if connection.is_connected():
         cursor = connection.cursor()
         for row in candidateData.index:
-            sql = "INSERT INTO Candidate(ProjectId, ProjectName, \
+            sql = "REPLACE INTO Candidate(ProjectId, ProjectName, \
                   ApplicationId, ApplicationName)VALUES(%s,%s,%s,%s);"
             cursor.execute(
                 sql,
@@ -56,9 +56,7 @@ def applicationToCandidateMapping(ApplicationData, ProjectData, RequirementsData
         reqLanguage = Req["LanguagePreferred"].tolist()[0]
         skillweight = float(Req["SkillWeight"])
         experienceWeight = float(Req["ExperienceWeight"])
-        hoursWeight = float(Req["HoursWeight"])
         languageWeight = float(Req["LanguageWeight"])
-        budgetWeight = float(Req["BudgetWeight"])
         ProjectId = Req["ProjectId"].tolist()[0]
         Project = ProjectData.loc[ProjectData["ProjectId"] == ProjectId]
         ProjectName = Project["ProjectName"].tolist()
