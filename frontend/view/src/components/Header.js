@@ -69,7 +69,7 @@ class Header extends Component {
             <div>
                 <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                     <Container>
-                        <Navbar.Brand href="/">Teamformation Assistant</Navbar.Brand>
+                        <Navbar.Brand href="/login">Teamformation Assistant</Navbar.Brand>
                         <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className="me-auto">
