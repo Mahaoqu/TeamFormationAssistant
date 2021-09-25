@@ -104,7 +104,7 @@ CREATE TABLE Team(
 );
 
 CREATE TABLE Requirements(
-	JobId					INT NOT NULL AUTO_INCREMENT,
+	RequirementsId					INT NOT NULL AUTO_INCREMENT,
 	ProjectId				INT NOT NULL REFERENCES Project(ProjectId),
 	LanguagePreferred 				VARCHAR(255) NOT NULL,
 	Skill					INT NOT NULL,
