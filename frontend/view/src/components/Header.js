@@ -19,6 +19,7 @@ import {NavDropdown} from 'react-bootstrap';
 import EventBus from "../common/EventBus";
 import TeamMatch from "./teammatch";
 import Projectinc from "./projectinc";
+import Jobinc from "./jobinc.component";
 
 class Header extends Component {
     constructor(props) {
@@ -155,6 +156,7 @@ class Header extends Component {
                         <Route path="/user" component={BoardUser}/>
                         <Route path="/teamMatch" component={TeamMatch}/>
                         <Route path="/proj_inc" component={Projectinc}/>
+                        <Route path="/job_inc" component={Jobinc}/>
                         <Route path="/admin" component={BoardAdmin}/>
                         <Route path="/teamMatch" Component={TeamMatch}/>
                     </Switch>
