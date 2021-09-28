@@ -23,6 +23,7 @@ const WEIGHTS = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
 const numMembers = 5;
 const numProjects = 3;
 const numApplications = 3;
+const numJobs = 3;
 
 main();
 
@@ -80,7 +81,37 @@ async function main() {
             values.unshift(projectId);
             connection.query(requirementQuery, values);
         }
+
+        // Requirements
+        for (let j = 0; j < project.ProjectTeamSize; j++) {
+            let requirement = generateMockRequirements();
+
+            let requirementQuery =
+                "INSERT INTO Requirements (ProjectId, LanguagePreferred, Skill, MemberRole, AvailableHoursPerWeek, SkillWeight, ExperienceWeight, HoursWeight, LanguageWeight, BudgetWeight) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+            let values = Object.values(requirement);
+            values.unshift(projectId);
+            connection.query(requirementQuery, values);
+        }
+
+        // Jobs
+        for (let j = 0; j < numJobs; j++) {
+            let job = generateMockJob();
+
+            let jobQuery =
+                "INSERT INTO Job (ProjectId, JobName, JobPhone, JobRole, Description, JobAddress) VALUES(?, ?, ?, ?, ?, ?);";
+            let values = Object.values(job);
+            values.unshift(projectId);
+            connection.query(jobQuery, values);
+        }
     }
+
+    // Generate mock jobs
+    // for (let i = 0; i < numJobs; i++) {
+    //     let job = generateMockJob();
+    //     let jobQuery =
+    //         "INSERT INTO Job () VALUES(); ";
+    //     connection.query(jobQuery, Object.values(application));
+    // }
 
     // console.log(projects);
     connection.end();
@@ -113,6 +144,18 @@ function generateMockProject() {
         Priority: getRandomInt(0, 4),
     };
 }
+
+// Generate a mock Job
+function generateMockJob() {
+    return {
+        JobName: faker.name.findName(),
+        JobPhone: faker.phone.phoneNumber(),
+        JobRole: sampleSize(MEMBER_ROLE),
+        Description: "Join us",
+        JobAddress: faker.address.streetAddress(),
+    };
+}
+
 
 // Generate a mock application
 function generateMockApplication() {
