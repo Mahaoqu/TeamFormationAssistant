@@ -22,6 +22,8 @@ import Projectinc from "./projectinc";
 import Members from "./employee-management";
 import AddMember from "./addMember";
 import CandidateMatch from "./candidateMatch";
+import Jobinc from "./jobinc.component";
+
 class Header extends Component {
     constructor(props) {
         super(props);
@@ -162,6 +164,7 @@ class Header extends Component {
                         <Route path="/members" component={Members}/>
                         <Route path="/add_member" component={AddMember}/>
                         <Route path="/candidateMatch" component={CandidateMatch}/>
+                        <Route path="/job_inc" component={Jobinc}/>
                     </Switch>
 
                 </div>

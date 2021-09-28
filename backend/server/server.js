@@ -60,6 +60,11 @@ app.post('/add_member', (req, res) => {
     return res.redirect('http://localhost:3000/members');
   });
 
+
+// routes
+
+
+
 app.post('/ProjectDetails', (req, res) => {
     console.log(req.body);
     var records = [[req.body.name, req.body.enddate, req.body.teamsize, req.body.budget, req.body.tools, req.body.priority, 0]];
@@ -86,13 +91,31 @@ app.post('/ProjectDetails', (req, res) => {
             colname = `languagepreferred${i}`;
         }
     }
-  
+
     // res.json('Form received...Thank You for signing up :D');
 
     // execute the algorithm from here
     fetch('http://localhost:5000/executeAlgo');
 
     return res.redirect('http://localhost:3000/TeamFormationAssistant/ProjectDetails/Success');
+});
+
+app.post('/JobDetails', (req, res) => {
+    console.log(req.body);
+    var records = [[req.body.name, req.body.projectid, req.body.jobphone, req.body.jobrole, req.body.description, req.body.jobaddress]];
+    console.log(records);
+    if (records[0][0] != null) {
+        con.query('INSERT INTO Job (JobName, ProjectId, JobPhone, JobRole, Description, JobAddress) VALUES ?', [records], (err, res, fields) => {
+            if (err) throw err;
+
+            console.log(res);
+        });
+    }
+
+    // execute the algorithm from here
+    fetch('http://localhost:5000/executeAlgo');
+
+    return res.redirect('http://localhost:3000/TeamFormationAssistant/JobDetails/Success');
 });
 
 // routes

@@ -30,6 +30,9 @@ renderTeam(response, index){
       <td>{response.ProjectName}</td>
       <td>{response.ApplicationId}</td>
       <td>{response.ApplicationName}</td>
+      <td> <>
+       <Button href="#">Send Offer</Button> 
+                </></td>
     </tr>
   )
 }
@@ -56,6 +59,7 @@ return (
                 <th>Project Name</th>
                 <th>Application Id</th>
                 <th>Application Name</th>
+                <th>Operation</th>
               </tr>
             </thead>
             <tbody>

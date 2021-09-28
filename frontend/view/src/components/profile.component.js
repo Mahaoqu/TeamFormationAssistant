@@ -26,7 +26,6 @@ export default class Profile extends Component {
     }
 
     const { currentUser } = this.state;
-    console.log(currentUser.id)
     return (
       <div className="container">
         {(this.state.userReady) ?
