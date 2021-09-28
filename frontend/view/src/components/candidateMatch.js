@@ -4,7 +4,7 @@ import UserService from "../services/user.service";
 import EventBus from "../common/EventBus";
 import * as ReactBootstrap from "react-bootstrap";
 import {Button} from 'react-bootstrap';
-export default class TeamMatch extends Component {  constructor(props) {
+export default class CandidateMatch extends Component {  constructor(props) {
   super(props);
   this.state = {
     data: []
@@ -14,7 +14,7 @@ export default class TeamMatch extends Component {  constructor(props) {
 
 
 componentDidMount() {
-const apiUrl = 'http://localhost:8080/api/test/teams';
+const apiUrl = 'http://localhost:8080/api/test/candidates';
 fetch(apiUrl)
   .then(response => response.json())
   .then(data => this.setState({data: data}));
@@ -28,8 +28,8 @@ renderTeam(response, index){
     <tr key={index}>
       <td>{response.ProjectId}</td>
       <td>{response.ProjectName}</td>
-      <td>{response.MemberId}</td>
-      <td>{response.MemberName}</td>
+      <td>{response.ApplicationId}</td>
+      <td>{response.ApplicationName}</td>
     </tr>
   )
 }
@@ -41,12 +41,12 @@ return (
 
     <br/>
     <div className="midpart">
-        <h2 align="center">Team match</h2>
+        <h2 align="center">Candidate Match</h2>
         <div  style={{display: 'flex', justifyContent: 'right'}} >
-        <Button   href="http://localhost:5000/executeAlgo">Match</Button> 
+        <Button   href="http://localhost:5000/executeCand">Macth</Button> 
         </div>
     </div>
-  
+
     <div className = "test">
       <div className="formblock" align = 'center'>
           <ReactBootstrap.Table striped bordered hover>
@@ -54,8 +54,8 @@ return (
               <tr>
                 <th>Project ID</th>
                 <th>Project Name</th>
-                <th>Member ID</th>
-                <th>Member Name</th>
+                <th>Application Id</th>
+                <th>Application Name</th>
               </tr>
             </thead>
             <tbody>

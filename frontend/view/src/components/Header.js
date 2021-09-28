@@ -21,7 +21,7 @@ import TeamMatch from "./teammatch";
 import Projectinc from "./projectinc";
 import Members from "./employee-management";
 import AddMember from "./addMember";
-
+import CandidateMatch from "./candidateMatch";
 class Header extends Component {
     constructor(props) {
         super(props);
@@ -86,7 +86,7 @@ class Header extends Component {
 
                                 {showManagerBoard && (
                                     <NavDropdown title="recruit" id="collasible-nav-dropdown">
-                                        <NavDropdown.Item href="/jobMatch">candidate match</NavDropdown.Item>
+                                        <NavDropdown.Item href="/candidateMatch">candidate match</NavDropdown.Item>
                                         <NavDropdown.Item href="/job_inc">job management</NavDropdown.Item>
                                     </NavDropdown>
                                 )}
@@ -161,6 +161,7 @@ class Header extends Component {
                         <Route path="/admin" component={BoardAdmin}/>
                         <Route path="/members" component={Members}/>
                         <Route path="/add_member" component={AddMember}/>
+                        <Route path="/candidateMatch" component={CandidateMatch}/>
                     </Switch>
 
                 </div>
