@@ -80,6 +80,24 @@ app.post('/ProjectDetails', (req, res) => {
     return res.redirect('http://localhost:3000/TeamFormationAssistant/ProjectDetails/Success');
 });
 
+app.post('/JobDetails', (req, res) => {
+    console.log(req.body);
+    var records = [[req.body.name, req.body.projectid, req.body.jobphone, req.body.jobrole, req.body.description, req.body.jobaddress]];
+    console.log(records);
+    if (records[0][0] != null) {
+        con.query('INSERT INTO Job (JobName, ProjectId, JobPhone, JobRole, Description, JobAddress) VALUES ?', [records], (err, res, fields) => {
+            if (err) throw err;
+
+            console.log(res);
+        });
+    }
+
+    // execute the algorithm from here
+    fetch('http://localhost:5000/executeAlgo');
+
+    return res.redirect('http://localhost:3000/TeamFormationAssistant/JobDetails/Success');
+});
+
 // routes
 require('./app/routes/auth.routes')(app);
 require('./app/routes/user.routes')(app);
