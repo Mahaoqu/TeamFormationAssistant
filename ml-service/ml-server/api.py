@@ -11,3 +11,10 @@ def execute_algo():
     return {
         "msg": "success",
     }
+
+@app.route("/executeCand")
+def execute_cand():
+    assignCandidate()
+    return {
+        "msg": "CandidateAssigner success",
+    }
