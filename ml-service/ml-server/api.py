@@ -8,7 +8,7 @@ app = Flask(__name__)
 @app.route("/executeAlgo")
 def execute_algo():
     assignTeam()
-    return redirect("http://localhost:3000/teamMatch")
+    return redirect("http://3.83.120.177:3000/teamMatch")
     # return {
     #     "msg": "success",
     # }
@@ -16,7 +16,7 @@ def execute_algo():
 @app.route("/executeCand")
 def execute_cand():
     assignCandidate()
-    return redirect("http://localhost:3000/candidateMatch")
+    return redirect("http://3.83.120.177:3000/candidateMatch")
     # return {
     #     "msg": "CandidateAssigner success",
     # }

@@ -6,7 +6,7 @@ const fetch = require("node-fetch");
 const app = express();
 
 var corsOptions = {
-    origin: "http://localhost:3000"
+    origin: "http://3.83.120.177:3000"
 };
 
 app.use(cors(corsOptions));
@@ -57,7 +57,7 @@ app.post('/add_member', (req, res) => {
       });
     }
     // res.json('Form received...Thank You for signing up :D');
-    return res.redirect('http://localhost:3000/members');
+    return res.redirect('http://3.83.120.177:3000/members');
   });
 
 
@@ -95,9 +95,9 @@ app.post('/ProjectDetails', (req, res) => {
     // res.json('Form received...Thank You for signing up :D');
 
     // execute the algorithm from here
-    fetch('http://localhost:5000/executeAlgo');
+    fetch('http://3.83.120.177:5000/executeAlgo');
 
-    return res.redirect('http://localhost:3000/TeamFormationAssistant/ProjectDetails/Success');
+    return res.redirect('http://3.83.120.177:3000/TeamFormationAssistant/ProjectDetails/Success');
 });
 
 app.post('/JobDetails', (req, res) => {
@@ -113,9 +113,9 @@ app.post('/JobDetails', (req, res) => {
     }
 
     // execute the algorithm from here
-    fetch('http://localhost:5000/executeAlgo');
+    fetch('http://3.83.120.177:5000/executeAlgo');
 
-    return res.redirect('http://localhost:3000/TeamFormationAssistant/JobDetails/Success');
+    return res.redirect('http://3.83.120.177:3000/TeamFormationAssistant/JobDetails/Success');
 });
 
 // routes

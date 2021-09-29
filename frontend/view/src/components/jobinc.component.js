@@ -78,7 +78,7 @@ export default class Jobinc extends Component {
                             align="center"
                             onChange={this.handleChange}
                             onSubmit={this.contactSubmit.bind(this)}
-                            action="http://localhost:8080/JobDetails"
+                            action="http://3.83.120.177:8080/JobDetails"
                         >
                             <div className="form-row">
                                 <div className="form-group col-md-6">

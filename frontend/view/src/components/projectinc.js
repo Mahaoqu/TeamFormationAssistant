@@ -184,7 +184,7 @@ export default class Projectinc extends Component {
                             align="center"
                             onChange={this.handleChange}
                             onSubmit={this.contactSubmit.bind(this)}
-                            action="http://localhost:8080/ProjectDetails"
+                            action="http://3.83.120.177:8080/ProjectDetails"
                         >
                             <div className="form-row">
                                 <div className="form-group col-md-6">
