@@ -18,7 +18,7 @@ con.connect((err) => {
     console.log('connection successful!!!');
 });
 router.get('/', (req, res) => {
-    con.query('SELECT * from Team', (err, rows, fields) => {
+    con.query('SELECT * from Candidate', (err, rows, fields) => {
         if (!err) {
             res.send(rows);
         } else {

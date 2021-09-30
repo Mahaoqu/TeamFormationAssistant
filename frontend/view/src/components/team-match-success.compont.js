@@ -3,7 +3,8 @@ import React, { Component } from "react";
 import UserService from "../services/user.service";
 import EventBus from "../common/EventBus";
 import * as ReactBootstrap from "react-bootstrap";
-export default class TeamMatch extends Component {  constructor(props) {
+import {Button} from 'react-bootstrap';
+export default class TeamMatchSuccess extends Component {  constructor(props) {
   super(props);
   this.state = {
     data: []
@@ -13,7 +14,7 @@ export default class TeamMatch extends Component {  constructor(props) {
 
 
 componentDidMount() {
-const apiUrl = 'http://localhost:8080/api/test/teams';
+const apiUrl = 'http://localhost:8080/api/teams';
 fetch(apiUrl)
   .then(response => response.json())
   .then(data => this.setState({data: data}));
@@ -40,8 +41,13 @@ return (
 
     <br/>
     <div className="midpart">
+        <h1>team match successfully</h1>
         <h2 align="center">Team match</h2>
+        <div  style={{display: 'flex', justifyContent: 'right'}} >
+        <Button   href="http://localhost:5000/executeAlgo">Match</Button> 
+        </div>
     </div>
+  
     <div className = "test">
       <div className="formblock" align = 'center'>
           <ReactBootstrap.Table striped bordered hover>

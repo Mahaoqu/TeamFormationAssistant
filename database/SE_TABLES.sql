@@ -37,6 +37,7 @@ JobPhone  			VARCHAR(225) NOT NULL,
 JobRole 	 		VARCHAR(225) NOT NULL,
 Description 				VARCHAR(225) NOT NULL,
 JobAddress 					VARCHAR(225) NOT NULL,
+ProjectId           INT,
 PRIMARY KEY (JobId)
 );
 

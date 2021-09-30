@@ -2,7 +2,7 @@ module.exports = {
     HOST: "database",
     USER: "dbuser",
     PASSWORD: "dbuserpwd",
-    DATABASE: "teamformationassistant",
+    DB: "teamformationassistant",
     dialect: "mysql",
     pool: {
         max: 5,
