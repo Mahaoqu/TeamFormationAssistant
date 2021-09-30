@@ -11,5 +11,5 @@ script:
     - cd backend
     - python server/test/test_api.py
     - cd ..
-    - coverage run --source=backend -m pytest backend/test/
+    - coverage run --source=backend -m pytest backend/server/test/
     - coveralls

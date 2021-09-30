@@ -5,6 +5,7 @@ import mysql.connector as conn
 try:
     Connection = conn.connect(
         host="3.83.120.177",
+        port="3306",
         user="dbuser",
         password="dbuserpwd",
         database="teamformation",
