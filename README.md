@@ -64,7 +64,7 @@ implement the dashboard and form using HTML, CSS, JavaScript
 Flake8, ESlint, Prettier
 
 ### Automated Analysis Tool used:
-[Code Climate](https://codeclimate.com/github/AmitMandliya/TeamFormationAssistant)
+[Code Climate](https://codeclimate.com/github/yliang123/TeamFormationAssistant)
 
 ##### We have created a wiki page containing project details including project workflow, setup, dictionary, data model,
 
