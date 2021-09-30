@@ -9,7 +9,7 @@ install:
 script:
     - python -m pytest
     - cd backend
-    - python test/test_api.py
+    - python server/test/test_api.py
     - cd ..
     - coverage run --source=backend -m pytest backend/test/
     - coveralls
