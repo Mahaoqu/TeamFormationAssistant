@@ -11,13 +11,14 @@
 
 ## Problem Statement
 
-Build an assistant for project management (which will take the project requirements, team members availability, skill level, tools preferred, etc. as input and assigns the employees for projects. )& job management(which allows users to apply to jobs and manager to review the applications or audit applications automatically by our Machine Learning algorithm).
+Build an assistant for project management (which will take the project requirements, team members availability, skill level, tools preferred, etc. as input and assigns the employees for projects)
+& job management(which allows users to apply to jobs and manager to review the applications or audit applications automatically by our Machine Learning algorithm).
 <br/>
 
 ## Project Objectives
 
-➢ Design a form for the manager to enter projects requirements & new jobs informations<br/>
-➢ Design a dashboard to showcase the generated projects assignments & jobs assignments<br/>
+➢ Design a form for the manager to enter projects requirements & new jobs informations.<br/>
+➢ Design a dashboard to showcase the generated projects assignments & jobs assignments.<br/>
 ➢ Create and Manage a database with employees, Projects, Assignments data.<br/>
 ➢ Write an algorithm which will take the project requirements, team members availability, skill level, tools preferred, etc. as input and assigns the applicants for new jobs and employees for the new projects.<br/>
 
