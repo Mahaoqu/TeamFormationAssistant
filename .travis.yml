@@ -8,7 +8,9 @@ install:
     - cd ../..
 script:
     - python -m pytest
-    - cd frontend/view
-    - npm run test
-    - flake8 --extend-ignore=F401,E501,E122,F821,F841 --exclude=node_modules
+    - cd backend
+    - python test/test_api.py
+    - cd ..
+    - coverage run --source=backend -m pytest backend/test/
+    - coveralls
 
