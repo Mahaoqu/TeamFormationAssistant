@@ -8,7 +8,6 @@ install:
     - cd ../..
     - cd backend/server
     - npm install || true
-    - npm start
 script:
     - python -m pytest
     - cd backend
