@@ -18,12 +18,28 @@ con.connect((err) => {
     console.log('connection successful!!!');
 });
 router.get('/', (req, res) => {
-    con.query('SELECT JobId, JobName from Job', (err, rows, fields) => {
+    con.query('SELECT * from Job', (err, rows, fields) => {
         if (!err) {
             res.send(rows);
         } else {
             console.log('Error while performing Query.');
         }
     });
+});
+router.post('/', (req, res) => {
+    console.log(req.body);
+    var records = [[req.body.name, req.body.projectid, req.body.jobphone, req.body.jobrole, req.body.description, req.body.jobaddress]];
+    console.log(records);
+    if (records[0][0] != null) {
+        con.query('INSERT INTO Job (JobName, ProjectId, JobPhone, JobRole, Description, JobAddress) VALUES ?', [records], (err, res, fields) => {
+            if (err) throw err;
+
+            console.log(res);
+        });
+    }
+
+    // execute the algorithm from here
+
+    return res.redirect('http://localhost:3000/add_job_success');
 });
 module.exports = router;

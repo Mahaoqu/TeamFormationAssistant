@@ -1,13 +1,9 @@
 import React, { Component } from "react";
-
-import UserService from "../services/user.service";
-import EventBus from "../common/EventBus";
 import * as ReactBootstrap from "react-bootstrap";
 import {Button} from 'react-bootstrap';
-import AddMember from "./addMember";
+import AddMember from "./add-member.component";
 import {Switch, Route, Link} from "react-router-dom";
-import TeamMatch from "./teammatch";
-export default class Members extends Component {  constructor(props) {
+export default class Member extends Component {  constructor(props) {
   super(props);
   this.state = {
     data: []
@@ -17,7 +13,7 @@ export default class Members extends Component {  constructor(props) {
  
 
 componentDidMount() {
-const apiUrl = 'http://localhost:8080/api/test/members';
+const apiUrl = 'http://localhost:8080/api/members';
 fetch(apiUrl)
   .then(response => response.json())
   .then(data => this.setState({data: data}));
@@ -81,7 +77,6 @@ return (
     </div>
     <Switch>
     <Route path="/add_member" component={AddMember}/>
-    <Route path="/teamMatch" component={TeamMatch}/>
     </Switch>
   </div>
 );

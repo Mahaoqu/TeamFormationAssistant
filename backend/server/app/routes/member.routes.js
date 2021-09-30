@@ -26,4 +26,19 @@ router.get('/', (req, res) => {
         }
     });
 });
+
+router.post('/', (req, res) => {
+    const records = [[req.body.name, req.body.hourlyrate, req.body.dob,
+      req.body.languages, 0, req.body.memberrole, req.body.experience, req.body.skillscore, req.body.availablehoursperweek]];
+    if (records[0][0] != null) {
+      con.query('INSERT INTO Member (MemberName,HourlyRate,DOB,Languages,IsAssigned,MemberRole,Experience,SkillScore,AvailableHoursPerWeek) VALUES ?', [records], (err, res, fields) => {
+        if (err) throw err;
+  
+        console.log(res);
+      });
+    }
+    // res.json('Form received...Thank You for signing up :D');
+    return res.redirect('http://localhost:3000/add_member_success');
+  });
+
 module.exports = router;

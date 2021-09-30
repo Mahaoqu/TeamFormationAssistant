@@ -1,7 +1,7 @@
 import React, {Component} from "react";
-import "./projectinc.css"
+import "./add-project.component"
 
-export default class Jobinc extends Component {
+export default class AddJob extends Component {
 
     constructor(props) {
         super(props);
@@ -78,7 +78,7 @@ export default class Jobinc extends Component {
                             align="center"
                             onChange={this.handleChange}
                             onSubmit={this.contactSubmit.bind(this)}
-                            action="http://localhost:8080/JobDetails"
+                            action="http://localhost:8080/api/jobs"
                         >
                             <div className="form-row">
                                 <div className="form-group col-md-6">

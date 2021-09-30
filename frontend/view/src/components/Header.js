@@ -8,7 +8,7 @@ import Register from "./register.component";
 import Home from "./home.component";
 import Profile from "./profile.component";
 import BoardUser from "./board-user.component";
-import BoardManager from "./teammatch";
+import BoardManager from "./team-match.component";
 import BoardAdmin from "./board-admin.component";
 import {Navbar} from 'react-bootstrap';
 import {Nav} from 'react-bootstrap';
@@ -17,13 +17,19 @@ import {NavDropdown} from 'react-bootstrap';
 
 // import AuthVerify from "./common/auth-verify";
 import EventBus from "../common/EventBus";
-import TeamMatch from "./teammatch";
-import Projectinc from "./projectinc";
-import Members from "./employee-management";
-import AddMember from "./addMember";
-import CandidateMatch from "./candidateMatch";
-import Jobinc from "./jobinc.component";
-import JobApp from "./jobapp.component";
+import TeamMatch from "./team-match.component";
+import AddProject from "./add-project.component";
+import Member from "./member.component";
+import AddMember from "./add-member.component";
+import CandidateMatch from "./candidate-match.component";
+import AddJob from "./add-job.component";
+import Job from "./job.component";
+import Project from "./project.component";
+import AddJobSuccess from "./add-job-success.component";
+import AddMemberSuccess from "./add-member-success.component";
+import AddProjectSuccess from "./add-project-success.component";
+import CandidateMatchSuccess from "./candidate-match-success.component";
+import TeamMatchSuccess from "./team-match-success.compont";
 
 class Header extends Component {
     constructor(props) {
@@ -81,15 +87,15 @@ class Header extends Component {
                                 <Nav.Link href="/home">home</Nav.Link>
                                 {showManagerBoard && (
                                     <NavDropdown title="project" id="collasible-nav-dropdown">
-                                        <NavDropdown.Item href="/teamMatch">team match</NavDropdown.Item>
-                                        <NavDropdown.Item href="/proj_inc">project management</NavDropdown.Item>
+                                        <NavDropdown.Item href="/team_match">team match</NavDropdown.Item>
+                                        <NavDropdown.Item href="/projects">project management</NavDropdown.Item>
                                     </NavDropdown>
                                 )}
 
                                 {showManagerBoard && (
                                     <NavDropdown title="recruit" id="collasible-nav-dropdown">
-                                        <NavDropdown.Item href="/candidateMatch">candidate match</NavDropdown.Item>
-                                        <NavDropdown.Item href="/job_inc">job management</NavDropdown.Item>
+                                        <NavDropdown.Item href="/candidate_match">candidate match</NavDropdown.Item>
+                                        <NavDropdown.Item href="/jobs">job management</NavDropdown.Item>
                                     </NavDropdown>
                                 )}
 
@@ -102,7 +108,7 @@ class Header extends Component {
 
                                     {!showManagerBoard && (
                                         <fragment>
-                                            <NavDropdown.Item href="/job_app">job application</NavDropdown.Item>
+                                            <NavDropdown.Item href="/jobs">job</NavDropdown.Item>
                                             <NavDropdown.Item href="/">my application</NavDropdown.Item>
                                         </fragment>
                                     )}
@@ -157,14 +163,20 @@ class Header extends Component {
                         <Route exact path="/register" component={Register}/>
                         <Route exact path="/profile" component={Profile}/>
                         <Route path="/user" component={BoardUser}/>
-                        <Route path="/teamMatch" component={TeamMatch}/>
-                        <Route path="/proj_inc" component={Projectinc}/>
+                        <Route path="/team_match" component={TeamMatch}/>
+                        <Route path="/add_project" component={AddProject}/>
                         <Route path="/admin" component={BoardAdmin}/>
-                        <Route path="/members" component={Members}/>
+                        <Route path="/members" component={Member}/>
                         <Route path="/add_member" component={AddMember}/>
-                        <Route path="/candidateMatch" component={CandidateMatch}/>
-                        <Route path="/job_inc" component={Jobinc}/>
-                        <Route path="/job_app" component={JobApp}/>
+                        <Route path="/candidate_match" component={CandidateMatch}/>
+                        <Route path="/add_job" component={AddJob}/>
+                        <Route path="/jobs" component={Job}/>
+                        <Route path="/projects" component={Project}/>
+                        <Route path="/add_job_success" component={AddJobSuccess}/>
+                        <Route path="/add_member_success" component={AddMemberSuccess}/>
+                        <Route path="/add_project_success" component={AddProjectSuccess}/>
+                        <Route path="/candidate_match_success" component={CandidateMatchSuccess}/>
+                        <Route path="/team_match_success" component={TeamMatchSuccess}/>
                     </Switch>
 
                 </div>

@@ -16,10 +16,11 @@ app.use(bodyParser.json());
 
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({extended: true}));
-app.use('/api/test/teams', require('./app/routes/team.routes'))
-app.use('/api/test/members', require('./app/routes/member.routes'))
-app.use('/api/test/candidates', require('./app/routes/candidate.routes'))
-app.use('/api/getJob', require('./app/routes/job.routes'))
+app.use('/api/teams', require('./app/routes/team.routes'))
+app.use('/api/members', require('./app/routes/member.routes'))
+app.use('/api/candidates', require('./app/routes/candidate.routes'))
+app.use('/api/jobs', require('./app/routes/job.routes'))
+app.use('/api/projects', require('./app/routes/project.routes'))
 // database
 const db = require("./app/models");
 const Role = db.role;
@@ -47,77 +48,8 @@ con.connect((err) => {
 app.get("/", (req, res) => {
     res.json({message: "Welcome to Teamformation Assistant."});
 });
-app.post('/add_member', (req, res) => {
-    const records = [[req.body.name, req.body.hourlyrate, req.body.dob,
-      req.body.languages, 0, req.body.memberrole, req.body.experience, req.body.skillscore, req.body.availablehoursperweek]];
-    if (records[0][0] != null) {
-      con.query('INSERT INTO Member (MemberName,HourlyRate,DOB,Languages,IsAssigned,MemberRole,Experience,SkillScore,AvailableHoursPerWeek) VALUES ?', [records], (err, res, fields) => {
-        if (err) throw err;
-  
-        console.log(res);
-      });
-    }
-    // res.json('Form received...Thank You for signing up :D');
-    return res.redirect('http://localhost:3000/members');
-  });
 
 
-// routes
-
-
-
-app.post('/ProjectDetails', (req, res) => {
-    console.log(req.body);
-    var records = [[req.body.name, req.body.enddate, req.body.teamsize, req.body.budget, req.body.tools, req.body.priority, 0]];
-    console.log(records);
-    if (records[0][0] != null) {
-        con.query('INSERT INTO Project (ProjectName,ProjectEndDate,ProjectTeamSize,Budget,Tools,Priority,IsAssignmentComplete) VALUES ?', [records], (err, res, fields) => {
-            if (err) throw err;
-
-            console.log(res);
-        });
-
-        let i = 0;
-        let colname = `languagepreferred${i}`;
-
-        while (colname in req.body) {
-            var records = [[req.body.languagepreferred0, Number(req.body.skill0), req.body.memberrole0, Number(req.body.availablehoursperweek0), Number(req.body.skillweight[i]), Number(req.body.experienceweight[i]), Number(req.body.hoursweight[i]), Number(req.body.languageweight[i]), Number(req.body.budgetweight[i])]];
-            console.log(records);
-            con.query('CALL populateRequirements ?', [records], (err, res, fields) => {
-                if (err) throw err;
-
-                console.log(res);
-            });
-            i += 1;
-            colname = `languagepreferred${i}`;
-        }
-    }
-
-    // res.json('Form received...Thank You for signing up :D');
-
-    // execute the algorithm from here
-    fetch('http://localhost:5000/executeAlgo');
-
-    return res.redirect('http://localhost:3000/TeamFormationAssistant/ProjectDetails/Success');
-});
-
-app.post('/JobDetails', (req, res) => {
-    console.log(req.body);
-    var records = [[req.body.name, req.body.projectid, req.body.jobphone, req.body.jobrole, req.body.description, req.body.jobaddress]];
-    console.log(records);
-    if (records[0][0] != null) {
-        con.query('INSERT INTO Job (JobName, ProjectId, JobPhone, JobRole, Description, JobAddress) VALUES ?', [records], (err, res, fields) => {
-            if (err) throw err;
-
-            console.log(res);
-        });
-    }
-
-    // execute the algorithm from here
-    fetch('http://localhost:5000/executeAlgo');
-
-    return res.redirect('http://localhost:3000/TeamFormationAssistant/JobDetails/Success');
-});
 
 // routes
 require('./app/routes/auth.routes')(app);
