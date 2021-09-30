@@ -27,3 +27,5 @@ Flask-Cors==3.0.9
 pytest
 pdoc
 flake8==3.8.4
+coveralls
+coverage
