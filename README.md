@@ -31,7 +31,7 @@ Build an assistant for project management(which will take the project requiremen
 
 ## Video link
 
-[![Development Environment Setup](https://github.com/AmitMandliya/TeamFormationAssistant/blob/master/images/Development.png)](https://youtu.be/kS40Xt5pI4I)
+[![Development Environment Setup](https://github.com/AmitMandliya/TeamFormationAssistant/blob/master/images/Development.png)](https://youtu.be/WLMfi0sLFsA)
 
 ### Project 2:
 
