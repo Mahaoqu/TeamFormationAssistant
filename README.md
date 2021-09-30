@@ -25,8 +25,10 @@ Build an assistant for project management(which will take the project requiremen
 
 ## Video link
 
+Development Environment Setup
 [![Development Environment Setup](https://github.com/AmitMandliya/TeamFormationAssistant/blob/master/images/Development.png)](https://youtu.be/WLMfi0sLFsA)
 
+Main Functions and Procedure
 [![Main Functions and Procedure](https://github.com/AmitMandliya/TeamFormationAssistant/blob/master/images/teamFormation.PNG)](https://youtu.be/Xtcq-58arUU)
 
 ## Project 3:
