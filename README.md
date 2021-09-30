@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/AmitMandliya/TeamFormationAssistant.svg?branch=master)](https://travis-ci.org/AmitMandliya/TeamFormationAssistant)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8475.svg)](https://doi.org/10.5281/zenodo.8475)
+[![DOI](https://zenodo.org/badge/408224049.svg)](https://zenodo.org/badge/latestdoi/408224049)
 ![GitHub last commit](https://img.shields.io/github/last-commit/AmitMandliya/TeamFormationAssistant)
 ![GitHub repo size](https://img.shields.io/github/repo-size/AmitMandliya/TeamFormationAssistant)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
