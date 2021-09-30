@@ -19,6 +19,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use('/api/test/teams', require('./app/routes/team.routes'))
 app.use('/api/test/members', require('./app/routes/member.routes'))
 app.use('/api/test/candidates', require('./app/routes/candidate.routes'))
+app.use('/api/getJob', require('./app/routes/job.routes'))
 // database
 const db = require("./app/models");
 const Role = db.role;

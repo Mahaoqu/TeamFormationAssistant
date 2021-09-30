@@ -23,6 +23,7 @@ import Members from "./employee-management";
 import AddMember from "./addMember";
 import CandidateMatch from "./candidateMatch";
 import Jobinc from "./jobinc.component";
+import JobApp from "./jobapp.component";
 
 class Header extends Component {
     constructor(props) {
@@ -70,11 +71,10 @@ class Header extends Component {
         const {currentUser, showManagerBoard, showAdminBoard} = this.state;
 
         return (
-          
             <div>
                 <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                     <Container>
-                        <Navbar.Brand href="/login">Teamformation Assistant</Navbar.Brand>
+                        <Navbar.Brand href="/home">Teamformation Assistant</Navbar.Brand>
                         <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className="me-auto">
@@ -102,9 +102,8 @@ class Header extends Component {
 
                                     {!showManagerBoard && (
                                         <fragment>
-                                            <NavDropdown.Item href="/user">project application</NavDropdown.Item>
-                                            <NavDropdown.Item href="/user">job application</NavDropdown.Item>
-                                            <NavDropdown.Item href="/user">my application</NavDropdown.Item>
+                                            <NavDropdown.Item href="/job_app">job application</NavDropdown.Item>
+                                            <NavDropdown.Item href="/">my application</NavDropdown.Item>
                                         </fragment>
                                     )}
                                     {showManagerBoard && (
@@ -165,6 +164,7 @@ class Header extends Component {
                         <Route path="/add_member" component={AddMember}/>
                         <Route path="/candidateMatch" component={CandidateMatch}/>
                         <Route path="/job_inc" component={Jobinc}/>
+                        <Route path="/job_app" component={JobApp}/>
                     </Switch>
 
                 </div>
