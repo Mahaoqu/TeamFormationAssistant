@@ -10,7 +10,7 @@ install:
     - npm install || true
 script:
     - python -m pytest
-    - cd backend
+    - cd ..
     - python server/test/test_api.py
     - cd ..
     - coverage run --source=backend -m pytest backend/server/test/
