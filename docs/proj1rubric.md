@@ -14,12 +14,12 @@
 |Docs: how: for common use cases X,Y,Z mini-tutorials showing worked examples on how to do X,Y,Z|3|doc page entries|
 |Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes you want to rush out and use the thing| 3| |
 |Docs: short video, animated, hosted on your repo. That convinces people why they want to work on your code.|3 | evidence in youtube[https://youtu.be/WLMfi0sLFsA] and [https://youtu.be/Xtcq-58arUU] |
-| Use of version control tools| 3| |
-|Use of  style checkers |3 |config files in GH showing your config| 
-| Use of code  formatters. | 3|config files in GH showing your this formatter's  config|
-| Use of syntax checkers| 3 |config files iin  GH showing this checker's config|
-| Use of code coverage | 3|config files in GH|
-| other automated analysis tools| 3|config files in GH|
+| Use of version control tools| 3|https://github.com/yliang123/TeamFormationAssistant |
+|Use of  style checkers |3 |https://codeclimate.com/github/yliang123/TeamFormationAssistant| 
+| Use of code  formatters. | 3|https://codeclimate.com/github/yliang123/TeamFormationAssistant|
+| Use of syntax checkers| 3 |https://codeclimate.com/github/yliang123/TeamFormationAssistant|
+| Use of code coverage | 3|https://codeclimate.com/github/yliang123/TeamFormationAssistant|
+| other automated analysis tools| 3|https://codeclimate.com/github/yliang123/TeamFormationAssistant|
 | test cases exist|3|dozens of tests and those test cases are more than 30% of the  code base|
 | test cases are routinely executed|3 |e.g. travis-com.com or github actions or something|
  | the files CONTRIBUTING.md lists coding standards and lots of tips on how to extend the system without screwing things up| 3| |
