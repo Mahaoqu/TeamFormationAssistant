@@ -75,6 +75,5 @@ Flake8, ESlint, Prettier
 ### [Wiki](https://github.com/lokesh45/TeamFormationAssistant/wiki)
 
 Here are a few screenshots of the project<br>
-![](https://github.com/lokesh45/TeamFormationAssistant/blob/master/ss1.jpeg)<br>
-![](https://github.com/lokesh45/TeamFormationAssistant/blob/master/ss2.jpeg)<br>
-![](https://github.com/lokesh45/TeamFormationAssistant/blob/master/ss3.jpeg)
+![](https://github.com/yliang123/TeamFormationAssistant/blob/master/images/Screen%20Shot%202021-09-30%20at%203.45.46%20PM.png)<br>
+![](https://github.com/yliang123/TeamFormationAssistant/blob/master/images/Screen%20Shot%202021-09-30%20at%203.46.40%20PM.png)
