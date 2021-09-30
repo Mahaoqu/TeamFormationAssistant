@@ -68,7 +68,7 @@ Flake8, ESlint, Prettier
 
 ##### We have created a wiki page containing project details including project workflow, setup, dictionary, data model,
 
-### [Wiki](https://github.com/lokesh45/TeamFormationAssistant/wiki)
+### [Wiki](https://github.com/yliang123/TeamFormationAssistant/wiki)
 
 Here are a few screenshots of the project<br>
 ![](https://github.com/yliang123/TeamFormationAssistant/blob/master/images/Screen%20Shot%202021-09-30%20at%203.45.46%20PM.png)<br>
