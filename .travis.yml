@@ -13,4 +13,3 @@ script:
     - cd ..
     - coverage run --source=backend -m pytest backend/test/
     - coveralls
-

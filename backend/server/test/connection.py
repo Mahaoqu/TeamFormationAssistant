@@ -4,17 +4,17 @@ import mysql.connector as conn
 # Connect to Local MYSQL database on Dev team Desktops. FOr production Environments connect to AWS
 try:
     Connection = conn.connect(
-        host="database",
+        host="3.83.120.177",
         user="dbuser",
         password="dbuserpwd",
-        database="teamformationassistant",
+        database="teamformation",
     )
     print("Connected to Developer Database")
 except:
     Connection = conn.connect(
-        host="database",
-        user="root",
-        password="SEFall2021",
+        host="localhost",
+        user="dbuser",
+        password="dbuserpwd",
         database="teamformationassistant",
     )
     print("Switching to root user")
@@ -23,17 +23,16 @@ except:
 def connect():
     try:
         Connection = conn.connect(
-            host="database",
-            user="root",
-            password="DatabasePass@54",
-            database="teamformationassistant",
-            auth_plugin="mysql_native_password",
+            host="3.83.120.177",
+            user="dbuser",
+            password="dbuserpwd",
+            database="teamformation",
         )
     except:
         Connection = conn.connect(
-            host="database",
-            user="root",
-            password="SEFall2021",
+            host="localhost",
+            user="dbuser",
+            password="dbuserpwd",
             database="teamformationassistant",
         )
 
