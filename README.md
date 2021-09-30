@@ -11,20 +11,16 @@
 
 ## Problem Statement
 
-Build an assistant which will take the project requirements, team members
-availability, skill level, tools preferred, etc. as input and assigns the members for
-the new team.
+Build an assistant for project management(which will take the project requirements, team members availability, skill level, tools preferred, etc. as input and assigns the employees for projects) & job management(which allows users to apply to jobs and manager to review the applications or audit applications automatically by Machine Learning algorithm).
 <br/>
 
 ## Project Objectives
 
-➢ Design a form for the user to enter data<br/>
-➢ Design a dashboard to showcase the generated team assignments<br/>
-➢ Create and Manage a database with team members, Projects, Assignments
-data.<br/>
-➢ Write an algorithm which will take the project requirements, team
-members availability, skill level, tools preferred, etc. as input and assigns
-the members for the new team.<br/>
+➢ Design a form for the manager to enter projects requirements & new jobs informations.<br/>
+➢ Design a dashboard to showcase the generated projects assignments & jobs assignments.<br/>
+➢ Create and Manage a database with employees, Projects, Assignments data.<br/>
+➢ Write an algorithm which will take the project requirements, team members availability, skill level, tools preferred, etc. as input and assigns the applicants for new jobs and employees for the new projects.<br/>
+
 
 ## Reasons to pick this project in Project 3:
 
@@ -75,6 +71,5 @@ Flake8, ESlint, Prettier
 ### [Wiki](https://github.com/lokesh45/TeamFormationAssistant/wiki)
 
 Here are a few screenshots of the project<br>
-![](https://github.com/lokesh45/TeamFormationAssistant/blob/master/ss1.jpeg)<br>
-![](https://github.com/lokesh45/TeamFormationAssistant/blob/master/ss2.jpeg)<br>
-![](https://github.com/lokesh45/TeamFormationAssistant/blob/master/ss3.jpeg)
+![](https://github.com/yliang123/TeamFormationAssistant/blob/master/images/Screen%20Shot%202021-09-30%20at%203.45.46%20PM.png)<br>
+![](https://github.com/yliang123/TeamFormationAssistant/blob/master/images/Screen%20Shot%202021-09-30%20at%203.46.40%20PM.png)
