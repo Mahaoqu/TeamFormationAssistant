@@ -21,8 +21,15 @@ Build an assistant for project management(which will take the project requiremen
 ➢ Create and Manage a database with employees, Projects, Assignments data.<br/>
 ➢ Write an algorithm which will take the project requirements, team members availability, skill level, tools preferred, etc. as input and assigns the applicants for new jobs and employees for the new projects.<br/>
 
+## Project 4:
 
-## Reasons to pick this project in Project 3:
+## Video link
+
+[![Development Environment Setup](https://github.com/AmitMandliya/TeamFormationAssistant/blob/master/images/Development.png)](https://youtu.be/WLMfi0sLFsA)
+
+[![Main Functions and Procedure](https://github.com/AmitMandliya/TeamFormationAssistant/blob/master/images/teamFormation.PNG)](https://youtu.be/Xtcq-58arUU)
+
+## Project 3:
 
 1. One click [installation](https://github.com/AmitMandliya/TeamFormationAssistant/wiki/Setting-Up-Development-Environment) with Docker. You can simply focus on experiments without wasting time in installation.
 2. Well documented [Wiki](https://github.com/AmitMandliya/TeamFormationAssistant/wiki) for all the underlying algorithms and database description.
