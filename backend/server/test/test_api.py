@@ -44,6 +44,22 @@ class Api(unittest.TestCase):
         # self.assertIsNotNone(data[0]['ProjectId'])
         # self.assertNotEqual(len(data[0]['ProjectName']), 0)
 
+    def test_get_project_data(self):
+        response = requests.get("http://3.83.120.177:8080/api/projects")
+        self.assertEqual(response.status_code, 200)
+
+    def test_get_team_data(self):
+        response = requests.get("http://3.83.120.177:8080/api/teams")
+        self.assertEqual(response.status_code, 200)
+
+    def test_get_member_data(self):
+        response = requests.get("http://3.83.120.177:8080/api/members")
+        self.assertEqual(response.status_code, 200)
+
+    def test_get_candidate_data(self):
+        response = requests.get("http://3.83.120.177:8080/api/candidates")
+        self.assertEqual(response.status_code, 200)
+
     def test_member_signup_success(self):
         response = self.connection.add_job(TEST_DATA_JOB)
         # self.assertEqual(response, True)
