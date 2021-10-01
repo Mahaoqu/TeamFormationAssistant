@@ -6,11 +6,11 @@ install:
     - cd frontend/view
     - npm install || true
     - cd ../..
+    - cd backend/server
+    - npm install || true
 script:
+    - pwd
     - python -m pytest
-    - cd backend
-    - python server/test/test_api.py
-    - cd ..
-    - coverage run --source=backend -m pytest backend/test/
-    - coveralls
-
+    - cd ../..
+    - coverage run --source=backend -m pytest backend/server/test/
+#    - coveralls --service=github
