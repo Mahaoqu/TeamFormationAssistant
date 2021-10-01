@@ -39,7 +39,7 @@ class Api(unittest.TestCase):
         self.connection = connection
 
     def test_get_job_data(self):
-        response = requests.get("http://localhost:8080/api/job")
+        response = requests.get("http://3.83.120.177:8080/api/jobs")
         data = json.loads(response.get_data())
         self.assertEqual(response.status_code, 200)
         # self.assertNotEqual(len(data[0]['MemberName']), 0)
