@@ -1,0 +1,89 @@
+###########################
+Function:api/projects/post
+Description: When a new project is created, insert the information of new project into the table “project”
+Inputs: - ProjectName - ProjectEndDate - ProjectTeamSize - Budget - Tools - Priority 
+- IsAssignmentComplete：whether the project is assigned to employees
+Outputs: None
+###########################
+
+###########################
+Function: api/projects/get
+Description: Query all data stored in the table “Project”
+Inputs: None
+Outputs: -ProjectId - ProjectName - ProjectEndDate - ProjectTeamSize - Budget - Tools - Priority 
+- IsAssignmentComplete：whether the project is assigned to employees
+###########################
+
+###########################
+Function: api/teams
+Description: Query all data in the table”Team”
+Inputs: None
+Outputs: - MemberName - ProjectName
+###########################
+
+###########################
+Function: api/members/post
+Description: Insert the information of current user into the table”Member”
+Inputs: - MemberName - HourlyRate - DOB: date of birth 
+- Languages: the programming languages current user prefers 
+- IsAssigned : Whether the current user is assigned to a job 
+- MemberRole - Experience - SkillScore - AvailableHoursPerWeek
+Outputs: None
+###########################
+
+###########################
+Function: api/members/get
+Description: Get all data stored in the table “Member”
+Inputs: None
+Outputs: - MemberId - MemberName - HourlyRate - DOB: date of birth 
+- Languages: the programming languages current user prefers 
+- IsAssigned : Whether the current user is assigned to a job 
+- MemberRole - Experience - SkillScore - AvailableHoursPerWeek
+###########################
+
+###########################
+Function: api/candidates/get
+Description: Get all data stored in the table “Candidates”
+Inputs: None
+Outputs: -ProjectId - ApplicationId - ProjectName - ApplicationName
+###########################
+
+###########################
+Function: api/jobs/get
+Description: Get all data stored in the table “Job”
+Inputs: None
+Outputs: - JobId - JobName - JobRole - JobPhone - JobAddress - Description - ProjectId
+###########################
+
+###########################
+Function: api/jobs/post
+Description: When a new job is created by manager or admin, insert all related information into the table “Job”
+Inputs: - JobName - ProjectId - JobPhone - JobRole - Description - JobAddress
+Outputs: None
+###########################
+
+###########################
+Function: api.py/execute_algo()
+Description: Execute the machine learning algorithm for the project assignment to employees
+Inputs: - MemberId - MemberName - HourlyRate - DOB: date of birth 
+- Languages: the programming languages current user prefers 
+- IsAssigned : Whether the current user is assigned to a job 
+- MemberRole - Experience - SkillScore - AvailableHoursPerWeek
+-ProjectId - ProjectName - ProjectEndDate - ProjectTeamSize - Budget - Tools - Priority 
+- IsAssignmentComplete：whether the project is assigned to employees 
+- RequirementsId - LanguagePreferred - Skill - SkillWeight - ExperienceWeight - HoursWeight 
+- LanguageWeight - BudgetWeight
+Outputs: - ProjectId - ProjectName - MemberId - MemberName
+###########################
+
+###########################
+Function: api.py/execute_cand()
+Description: Execute the machine learning algorithm for the job assignment to applicants
+Inputs: - ApplicationId - ApplicationName - ApplicationLanguages - AppPhone - AppAddress 
+- AppSkillScore - AppExperience
+-ProjectId - ProjectName - ProjectEndDate - ProjectCandidateSize - Budget - Tools - Priority 
+- IsAssignmentComplete：whether the project is assigned to employees 
+- RequirementsId - LanguagePreferred - Skill -MemberRole - AvailableHoursPerWeek - SkillWeight - ExperienceWeight - HoursWeight 
+- LanguageWeight - BudgetWeight
+Outputs: - ProjectId - ProjectName - ApplicationId - ApplicationName
+###########################
