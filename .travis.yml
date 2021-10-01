@@ -11,7 +11,6 @@ install:
 script:
     - pwd
     - python -m pytest
-    - python test/test_api.py
     - cd ../..
     - coverage run --source=backend -m pytest backend/server/test/
     - coveralls --service=github
