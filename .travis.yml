@@ -8,10 +8,9 @@ install:
     - cd ../..
     - cd backend/server
     - npm install || true
+    - cd ../..
 script:
     - python -m pytest
-    - cd ..
-    - python server/test/test_api.py
-    - cd ..
+    - python backend/server/test/test_api.py
     - coverage run --source=backend -m pytest backend/server/test/
     - coveralls
