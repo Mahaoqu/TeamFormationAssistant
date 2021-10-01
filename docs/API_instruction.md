@@ -1,12 +1,12 @@
-###########################
-Function:api/projects/post
-Description: When a new project is created, insert the information of new project into the table “project”
-Inputs: - ProjectName - ProjectEndDate - ProjectTeamSize - Budget - Tools - Priority 
+<h1>API_Instruction</h1>
+
+**Function:api/projects/post**<br>
+**Description**: When a new project is created, insert the information of new project into the table “project”<br>
+**Inputs**: - ProjectName - ProjectEndDate - ProjectTeamSize - Budget - Tools - Priority <br>
 - IsAssignmentComplete：whether the project is assigned to employees
 Outputs: None
-###########################
 
-###########################
+
 Function: api/projects/get
 Description: Query all data stored in the table “Project”
 Inputs: None
