@@ -29,3 +29,4 @@ pdoc
 flake8==3.8.4
 coveralls
 coverage
+jest
