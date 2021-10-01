@@ -9,6 +9,7 @@ install:
     - cd backend/server
     - npm install || true
 script:
+    - pwd
     - python -m pytest
     - python test/test_api.py
     - cd ../..
