@@ -7,10 +7,8 @@ import sys
 import requests
 
 sys.path.append(".")
-# from test.connection import connect
-# from test import connection
-from server.test.connection import connect
-from server.test import connection
+from test.connection import connect
+from test import connection
 
 TEST_DATA_JOB = {
     "JobName": "testscript",
