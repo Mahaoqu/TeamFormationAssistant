@@ -7,8 +7,8 @@ import mysql.connector
 # import math
 
 connection = mysql.connector.connect(
-    host="database",
-    database="teamformationassistant",
+    host="3.83.120.177",
+    database="teamformation",
     user="dbuser",
     password="dbuserpwd"
 )

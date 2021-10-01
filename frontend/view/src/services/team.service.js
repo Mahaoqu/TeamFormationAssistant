@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8080/api/test/teams";
+const API_URL = "http://3.83.120.177:8080/api/test/teams";
 class TeamServices{
         getTeams() {
         try {

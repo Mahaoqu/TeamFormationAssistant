@@ -1,8 +1,8 @@
 module.exports = {
-    HOST: "database",
+    HOST: "3.83.120.177",
     USER: "dbuser",
     PASSWORD: "dbuserpwd",
-    DB: "teamformationassistant",
+    DB: "teamformation",
     dialect: "mysql",
     pool: {
         max: 5,

@@ -28,7 +28,7 @@ export default class AddJobSuccess extends Component {
 
             });
         }
-        const apiUrl = 'http://localhost:8080/api/jobs';
+        const apiUrl = 'http://3.83.120.177:8080/api/jobs';
         fetch(apiUrl)
             .then(response => response.json())
             .then(data => this.setState({data: data}));

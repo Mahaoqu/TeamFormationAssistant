@@ -4,11 +4,11 @@ const mysql = require('mysql2');
 
 // create a connection variable
 const con = mysql.createConnection({
-    host: 'database', // server ip address
+    host: '3.83.120.177', // server ip address
     port: '3306',
     user: 'dbuser', // user name
     password: 'dbuserpwd', // password
-    database: 'teamformationassistant', // database name
+    database: 'teamformation', // database name
 });
 
 // connect to the database.
@@ -40,6 +40,6 @@ router.post('/', (req, res) => {
 
     // execute the algorithm from here
 
-    return res.redirect('http://localhost:3000/add_job_success');
+    return res.redirect('http://3.83.120.177:3000/add_job_success');
 });
 module.exports = router;

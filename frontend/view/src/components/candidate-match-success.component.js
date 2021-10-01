@@ -14,7 +14,7 @@ export default class CandidateMatchSuccess extends Component {  constructor(prop
 
 
 componentDidMount() {
-const apiUrl = 'http://localhost:8080/api/candidates';
+const apiUrl = 'http://3.83.120.177:8080/api/candidates';
 fetch(apiUrl)
   .then(response => response.json())
   .then(data => this.setState({data: data}));
@@ -47,7 +47,7 @@ return (
         <h1>candidate match successfully</h1>
         <h2 align="center">Candidate Match</h2>
         <div  style={{display: 'flex', justifyContent: 'right'}} >
-        <Button   href="http://localhost:5000/executeCand">Macth</Button> 
+        <Button   href="http://3.83.120.177:5000/executeCand">Macth</Button> 
         </div>
     </div>
 

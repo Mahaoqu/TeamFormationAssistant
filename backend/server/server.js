@@ -6,7 +6,7 @@ const fetch = require("node-fetch");
 const app = express();
 
 var corsOptions = {
-    origin: "http://localhost:3000"
+    origin: "http://3.83.120.177:3000"
 };
 
 app.use(cors(corsOptions));
@@ -30,11 +30,11 @@ const dbConfig = require('./app/config/db.config')
 
 // create a connection variable
 const con = mysql.createConnection({
-    host: 'database', // server ip address
+    host: '3.83.120.177', // server ip address
     port: '3306',
     user: 'dbuser', // user name
     password: 'dbuserpwd', // password
-    database: 'teamformationassistant'
+    database: 'teamformation'
 });
 
 // connect to the database.

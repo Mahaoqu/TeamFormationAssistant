@@ -14,7 +14,7 @@ export default class TeamMatchSuccess extends Component {  constructor(props) {
 
 
 componentDidMount() {
-const apiUrl = 'http://localhost:8080/api/teams';
+const apiUrl = 'http://3.83.120.177:8080/api/teams';
 fetch(apiUrl)
   .then(response => response.json())
   .then(data => this.setState({data: data}));
@@ -44,7 +44,7 @@ return (
         <h1>team match successfully</h1>
         <h2 align="center">Team match</h2>
         <div  style={{display: 'flex', justifyContent: 'right'}} >
-        <Button   href="http://localhost:5000/executeAlgo">Match</Button> 
+        <Button   href="http://3.83.120.177:5000/executeAlgo">Match</Button> 
         </div>
     </div>
   

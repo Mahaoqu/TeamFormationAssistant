@@ -188,7 +188,7 @@ export default class AddProjectSuccess extends Component {
                             align="center"
                             onChange={this.handleChange}
                             onSubmit= {this.contactSubmit.bind(this)}
-                            action = "http://localhost:8080/api/projects"
+                            action = "http://3.83.120.177:8080/api/projects"
                             >
                             <div className="form-row">
                             <div className="form-group col-md-6">

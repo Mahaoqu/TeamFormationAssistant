@@ -101,7 +101,7 @@ export default class AddMember extends Component {
         <Notify isShow={this.state.formflag} />
         <div className = "test">
           <div className="formblock">
-            <form method= 'post' align = 'center' action = 'http://localhost:8080/api/members' onSubmit= {this.contactSubmit.bind(this)}>
+            <form method= 'post' align = 'center' action = 'http://3.83.120.177:8080/api/members' onSubmit= {this.contactSubmit.bind(this)}>
                 <div className="form-row">
                   <div className="form-group col-md-6">
                     <label htmlFor="name" className="form-check-label">Name</label>

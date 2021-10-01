@@ -30,9 +30,9 @@ main();
 async function main() {
     // establish mysql server connection
     const connection = await mysql.createConnection({
-        host: "database",
+        host: "3.83.120.177",
         port: "3306",
-        database: "teamformationassistant",
+        database: "teamformation",
         user: "dbuser",
         password: "dbuserpwd",
         multipleStatements: true,
