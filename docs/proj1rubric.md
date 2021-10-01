@@ -11,7 +11,7 @@
 | DOI badge: exists |3 | https://github.com/yliang123/TeamFormationAssistant#readme|
 |Docs: doco generated , format not ugly |3|https://github.com/yliang123/TeamFormationAssistant/tree/master/docs|
 |Docs: what: point descriptions of each class/function (in isolation) |3| |
-|Docs: how: for common use cases X,Y,Z mini-tutorials showing worked examples on how to do X,Y,Z|3|doc page entries|
+|Docs: how: for common use cases X,Y,Z mini-tutorials showing worked examples on how to do X,Y,Z|3|https://github.com/yliang123/TeamFormationAssistant/blob/master/docs/API_instruction|
 |Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes you want to rush out and use the thing| 3| |
 |Docs: short video, animated, hosted on your repo. That convinces people why they want to work on your code.|3 | evidence in youtube[https://youtu.be/WLMfi0sLFsA] and [https://youtu.be/Xtcq-58arUU] |
 | Use of version control tools| 3|https://github.com/yliang123/TeamFormationAssistant |
