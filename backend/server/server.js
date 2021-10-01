@@ -30,11 +30,13 @@ const dbConfig = require('./app/config/db.config')
 
 // create a connection variable
 const con = mysql.createConnection({
-    host: 'database', // server ip address
+    // host: 'database', // server ip address
+    host: '3.83.120.177',
     port: '3306',
     user: 'dbuser', // user name
     password: 'dbuserpwd', // password
-    database: 'teamformationassistant'
+    // database: 'teamformationassistant'
+    database: 'teamformation'
 });
 
 // connect to the database.

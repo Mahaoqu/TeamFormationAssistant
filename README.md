@@ -1,11 +1,7 @@
-[![Build Status](https://travis-ci.org/AmitMandliya/TeamFormationAssistant.svg?branch=master)](https://travis-ci.org/AmitMandliya/TeamFormationAssistant)
+[![Build Status](https://app.travis-ci.com/yliang123/TeamFormationAssistant.svg?branch=master)](https://app.travis-ci.com/yliang123/TeamFormationAssistant)
 [![DOI](https://zenodo.org/badge/408224049.svg)](https://zenodo.org/badge/latestdoi/408224049)
-![GitHub last commit](https://img.shields.io/github/last-commit/AmitMandliya/TeamFormationAssistant)
-![GitHub repo size](https://img.shields.io/github/repo-size/AmitMandliya/TeamFormationAssistant)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
 [![Documentation Status](https://readthedocs.org/projects/ansicolortags/badge/?version=latest)](http://ansicolortags.readthedocs.io/?badge=latest)
 ![GitHub language count](https://img.shields.io/github/languages/count/AmitMandliya/TeamFormationAssistant?style=flat-square)
-![GitHub Hacktoberfest combined status](https://img.shields.io/github/hacktoberfest/2020/AmitMandliya/TeamFormationAssistant)
 
 # Team Formation Assistant
 
