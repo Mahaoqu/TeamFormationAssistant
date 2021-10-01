@@ -13,4 +13,4 @@ script:
     - python -m pytest
     - cd ../..
     - coverage run --source=backend -m pytest backend/server/test/
-    - coveralls --service=github
+#    - coveralls --service=github

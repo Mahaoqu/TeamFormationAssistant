@@ -4,7 +4,7 @@
   "description": "Node.js Demo for JWT Authentication",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --coverage --coverageReporters=text-lcov | coveralls"
   },
   "keywords": [
     "node.js",
