@@ -2,6 +2,7 @@
 [![DOI](https://zenodo.org/badge/408224049.svg)](https://zenodo.org/badge/latestdoi/408224049)
 [![Documentation Status](https://readthedocs.org/projects/ansicolortags/badge/?version=latest)](http://ansicolortags.readthedocs.io/?badge=latest)
 ![GitHub language count](https://img.shields.io/github/languages/count/AmitMandliya/TeamFormationAssistant?style=flat-square)
+<img src=https://img.shields.io/github/license/yliang123/TeamFormationAssistant>
 
 # Team Formation Assistant
 
@@ -17,8 +18,11 @@ Build an assistant for project management(which will take the project requiremen
 ➢ Create and Manage a database with employees, Projects, Assignments data.<br/>
 ➢ Write an algorithm which will take the project requirements, team members availability, skill level, tools preferred, etc. as input and assigns the applicants for new jobs and employees for the new projects.<br/>
 
-## Project 4:
+## Project 1:
 
+1. One click [installation](https://github.com/yliang123/TeamFormationAssistant/wiki/Setting-Up-Development-Environment) with Docker. You can simply focus on experiments without wasting time in installation.
+2. Well documented [Wiki](https://github.com/yliang123/TeamFormationAssistant/wiki) for all the underlying algorithms and database description.
+3. Extensive testing.
 ## Video link
 
 Development Environment Setup
@@ -27,23 +31,10 @@ Development Environment Setup
 Main Functions and Procedure
 [![Main Functions and Procedure](https://github.com/AmitMandliya/TeamFormationAssistant/blob/master/images/teamFormation.PNG)](https://youtu.be/Xtcq-58arUU)
 
-## Project 3:
+Introduction 
+[![Team Formation Assistant Project 2](https://github.com/yliang123/CSC510-Group18/blob/main/teamformation.png)](https://www.youtube.com/watch?v=U7m2TXdxnak)
 
-1. One click [installation](https://github.com/AmitMandliya/TeamFormationAssistant/wiki/Setting-Up-Development-Environment) with Docker. You can simply focus on experiments without wasting time in installation.
-2. Well documented [Wiki](https://github.com/AmitMandliya/TeamFormationAssistant/wiki) for all the underlying algorithms and database description.
-3. Extensive testing.
-4. Easy [Testing Set](https://github.com/AmitMandliya/TeamFormationAssistant/wiki/Expermientation-Set-up-for-Project-3) up for Project 3.
-
-## Video link
-
-[![Development Environment Setup](https://github.com/AmitMandliya/TeamFormationAssistant/blob/master/images/Development.png)](https://youtu.be/WLMfi0sLFsA)
-
-### Project 2:
-
-[![Team Formation Assistant Project 2](https://github.com/AmitMandliya/TeamFormationAssistant/blob/master/images/teamFormation.PNG)](https://www.youtube.com/watch?v=U7m2TXdxnak)
-
-### Project 1:
-
+Introduction 
 [![Team Formation Assistant](https://github.com/lokesh45/TeamFormationAssistant/blob/master/Assistant.png)](https://www.youtube.com/watch?v=LmKjp3aQPEI&feature=youtu.be)
 
 ## How we plan to carry out the project
