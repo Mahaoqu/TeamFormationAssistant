@@ -2,11 +2,11 @@ FROM node:14
 
 WORKDIR /usr/src/app
 
-COPY server/package*.json ./
+COPY package*.json ./
 
 RUN npm install
 
-COPY ./server .
+COPY . .
 
 EXPOSE 8080
 

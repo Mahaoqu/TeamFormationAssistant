@@ -159,3 +159,5 @@ dmypy.json
 *.html linguist-detectable=false
 
 /NodeJS/node_modules/*
+
+db

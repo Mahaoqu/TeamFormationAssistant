@@ -211,3 +211,4 @@ BEGIN
 END//   
 
 DELIMITER ;
+GRANT INSERT, SELECT, DELETE, UPDATE ON database.* TO 'dbuser'@'%%' IDENTIFIED BY 'password';
