@@ -3,30 +3,30 @@ import { Column, Entity, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
 
 @Entity()
 export class Project {
-    @PrimaryGeneratedColumn()
-    id: number;
+  @PrimaryGeneratedColumn()
+  id: number;
 
-    @Column()
-    name: string;
+  @Column()
+  name: string;
 
-    @Column()
-    endDate: Date;
+  @Column()
+  endDate: Date;
 
-    @Column()
-    teamSize: number;
+  @Column()
+  teamSize: number;
 
-    @Column("float")
-    budget: number;
+  @Column('float')
+  budget: number;
 
-    @Column()
-    tools: string;
+  @Column()
+  tools: string;
 
-    @Column()
-    isAssignmentComplete: boolean
+  @Column()
+  isAssignmentComplete: boolean;
 
-    @Column()
-    priority: number
+  @Column()
+  priority: number;
 
-    @OneToMany(() => Requirement, requirement => requirement.project)
-    requirements: Requirement[];
+  @OneToMany(() => Requirement, (requirement) => requirement.project)
+  requirements: Requirement[];
 }

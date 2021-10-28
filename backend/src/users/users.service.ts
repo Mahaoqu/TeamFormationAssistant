@@ -11,14 +11,32 @@ export class UsersService {
   constructor(
     @InjectRepository(User)
     private readonly usersRepository: Repository<User>,
-  ) { }
+  ) {}
 
   // Temp use....
   async onModuleInit() {
     console.log(`Initialization 3 admin users ...`);
-    const u1: User = { id: 1, name: "admin", email: "admin@ncsu.edu", password: await bcrypt.hash("123456", 8), role: UserRole.ADMIN }
-    const u2: User = { id: 2, name: "manager", email: "admin@ncsu.edu", password: await bcrypt.hash("123456", 8), role: UserRole.MANAGER }
-    const u3: User = { id: 3, name: "yliang", email: "admin@ncsu.edu", password: await bcrypt.hash("123456", 8), role: UserRole.USER }
+    const u1: User = {
+      id: 1,
+      name: 'admin',
+      email: 'admin@ncsu.edu',
+      password: await bcrypt.hash('123456', 8),
+      role: UserRole.ADMIN,
+    };
+    const u2: User = {
+      id: 2,
+      name: 'manager',
+      email: 'admin@ncsu.edu',
+      password: await bcrypt.hash('123456', 8),
+      role: UserRole.MANAGER,
+    };
+    const u3: User = {
+      id: 3,
+      name: 'yliang',
+      email: 'admin@ncsu.edu',
+      password: await bcrypt.hash('123456', 8),
+      role: UserRole.USER,
+    };
 
     await this.usersRepository.save(u1);
     await this.usersRepository.save(u2);
@@ -27,14 +45,16 @@ export class UsersService {
 
   async createWithUniqueNameEmail(createUserDto: CreateUserDto) {
     const user = new User();
-    const n = this.usersRepository.findAndCount({ name: createUserDto.username });
+    const n = this.usersRepository.findAndCount({
+      name: createUserDto.username,
+    });
     const e = this.usersRepository.findAndCount({ email: createUserDto.email });
 
     if ((await n)[1] != 0)
-      throw new HttpException("Username existed", HttpStatus.BAD_REQUEST)
+      throw new HttpException('Username existed', HttpStatus.BAD_REQUEST);
 
     if ((await e)[1] != 0)
-      throw new HttpException("Email existed!", HttpStatus.BAD_REQUEST)
+      throw new HttpException('Email existed!', HttpStatus.BAD_REQUEST);
 
     user.name = createUserDto.username;
     user.email = createUserDto.email;
@@ -44,7 +64,7 @@ export class UsersService {
   }
 
   async update(id: number, updateUserDto: UpdateUserDto): Promise<User> {
-    const user = await this.usersRepository.findOne(id)
+    const user = await this.usersRepository.findOne(id);
     user.name = updateUserDto.username;
     user.email = updateUserDto.email;
     user.password = updateUserDto.password;
@@ -65,7 +85,10 @@ export class UsersService {
 
     var passwordIsValid = await bcrypt.compare(password, user.password);
     if (!passwordIsValid) {
-      throw new HttpException('Username or password invalid', HttpStatus.FORBIDDEN);
+      throw new HttpException(
+        'Username or password invalid',
+        HttpStatus.FORBIDDEN,
+      );
     }
 
     return user;

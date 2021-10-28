@@ -6,7 +6,7 @@ import { UsersService } from './users.service';
 const createUserDto: CreateUserDto = {
   username: 'name',
   email: 'email',
-  password: 'xxxxx'
+  password: 'xxxxx',
 };
 
 describe('UsersController', () => {
@@ -30,12 +30,12 @@ describe('UsersController', () => {
               {
                 name: 'name',
                 email: 'email',
-                password: 'xxxxx'
+                password: 'xxxxx',
               },
               {
                 name: 'name',
                 email: 'email',
-                password: 'xxxxx'
+                password: 'xxxxx',
               },
             ]),
             findOne: jest.fn().mockImplementation((id: string) =>
@@ -43,7 +43,7 @@ describe('UsersController', () => {
                 name: 'name',
                 email: 'email',
                 password: 'xxxxx',
-                id
+                id,
               }),
             ),
             remove: jest.fn(),

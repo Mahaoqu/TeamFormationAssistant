@@ -1,14 +1,14 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import UserService from "../services/user.service";
-import EventBus from "../common/EventBus";
+import UserService from '../services/user.service';
+import EventBus from '../common/EventBus';
 
 export default class BoardAdmin extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      content: ""
+      content: '',
     };
   }
 
@@ -16,7 +16,7 @@ export default class BoardAdmin extends Component {
     UserService.getAdminBoard().then(
       response => {
         this.setState({
-          content: response.data
+          content: response.data,
         });
       },
       error => {
@@ -26,13 +26,13 @@ export default class BoardAdmin extends Component {
               error.response.data &&
               error.response.data.message) ||
             error.message ||
-            error.toString()
+            error.toString(),
         });
 
         if (error.response && error.response.status === 401) {
-          EventBus.dispatch("logout");
+          EventBus.dispatch('logout');
         }
-      }
+      },
     );
   }
 

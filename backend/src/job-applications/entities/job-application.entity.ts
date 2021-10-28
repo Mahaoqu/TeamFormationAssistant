@@ -4,15 +4,15 @@ import { Column, Entity, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
 
 @Entity()
 export class JobApplication {
-    @PrimaryGeneratedColumn()
-    id: number;
+  @PrimaryGeneratedColumn()
+  id: number;
 
-    @Column()
-    status: string;
+  @Column()
+  status: string;
 
-    @ManyToOne(() => User)
-    user: User;
+  @ManyToOne(() => User)
+  user: User;
 
-    @ManyToOne(() => Application)
-    application: Application;
+  @ManyToOne(() => Application)
+  application: Application;
 }

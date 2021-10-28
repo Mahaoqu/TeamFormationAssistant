@@ -11,10 +11,9 @@ export class ProjectsService {
   constructor(
     @InjectRepository(Project)
     private readonly projectRepository: Repository<Project>,
-
-    // @InjectRepository(Requirement)
-    // private readonly requirementsRepository: Repository<Requirement>,
-  ) { }
+  ) // @InjectRepository(Requirement)
+  // private readonly requirementsRepository: Repository<Requirement>,
+  {}
 
   create(createProjectDto: CreateProjectDto) {
     return 'This action adds a new project';

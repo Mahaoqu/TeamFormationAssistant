@@ -11,7 +11,7 @@ export class MembersService {
     @InjectRepository(Member)
     private readonly membersRepository: Repository<Member>,
   ) {}
-  
+
   create(createMemberDto: CreateMemberDto) {
     return this.membersRepository.save(createMemberDto);
   }

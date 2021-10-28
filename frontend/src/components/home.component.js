@@ -1,13 +1,13 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import UserService from "../services/user.service";
+import UserService from '../services/user.service';
 
 export default class Home extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      content: ""
+      content: '',
     };
   }
 
@@ -15,7 +15,7 @@ export default class Home extends Component {
     UserService.getPublicContent().then(
       response => {
         this.setState({
-          content: response.data
+          content: response.data,
         });
       },
       error => {
@@ -23,9 +23,9 @@ export default class Home extends Component {
           content:
             (error.response && error.response.data) ||
             error.message ||
-            error.toString()
+            error.toString(),
         });
-      }
+      },
     );
   }
 

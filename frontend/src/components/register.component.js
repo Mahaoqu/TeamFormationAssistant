@@ -1,10 +1,10 @@
-import React, { Component } from "react";
-import Form from "react-validation/build/form";
-import Input from "react-validation/build/input";
-import CheckButton from "react-validation/build/button";
-import { isEmail } from "validator";
+import React, { Component } from 'react';
+import Form from 'react-validation/build/form';
+import Input from 'react-validation/build/input';
+import CheckButton from 'react-validation/build/button';
+import { isEmail } from 'validator';
 
-import AuthService from "../services/auth.service";
+import AuthService from '../services/auth.service';
 
 const required = value => {
   if (!value) {
@@ -55,29 +55,29 @@ export default class Register extends Component {
     this.onChangePassword = this.onChangePassword.bind(this);
 
     this.state = {
-      username: "",
-      email: "",
-      password: "",
+      username: '',
+      email: '',
+      password: '',
       successful: false,
-      message: ""
+      message: '',
     };
   }
 
   onChangeUsername(e) {
     this.setState({
-      username: e.target.value
+      username: e.target.value,
     });
   }
 
   onChangeEmail(e) {
     this.setState({
-      email: e.target.value
+      email: e.target.value,
     });
   }
 
   onChangePassword(e) {
     this.setState({
-      password: e.target.value
+      password: e.target.value,
     });
   }
 
@@ -85,8 +85,8 @@ export default class Register extends Component {
     e.preventDefault();
 
     this.setState({
-      message: "",
-      successful: false
+      message: '',
+      successful: false,
     });
 
     this.form.validateAll();
@@ -95,12 +95,12 @@ export default class Register extends Component {
       AuthService.register(
         this.state.username,
         this.state.email,
-        this.state.password
+        this.state.password,
       ).then(
         response => {
           this.setState({
             message: response.data.message,
-            successful: true
+            successful: true,
           });
         },
         error => {
@@ -113,9 +113,9 @@ export default class Register extends Component {
 
           this.setState({
             successful: false,
-            message: resMessage
+            message: resMessage,
           });
-        }
+        },
       );
     }
   }
@@ -185,8 +185,8 @@ export default class Register extends Component {
                 <div
                   className={
                     this.state.successful
-                      ? "alert alert-success"
-                      : "alert alert-danger"
+                      ? 'alert alert-success'
+                      : 'alert alert-danger'
                   }
                   role="alert"
                 >
@@ -195,7 +195,7 @@ export default class Register extends Component {
               </div>
             )}
             <CheckButton
-              style={{ display: "none" }}
+              style={{ display: 'none' }}
               ref={c => {
                 this.checkBtn = c;
               }}

@@ -4,12 +4,12 @@ import { Column, Entity, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
 
 @Entity()
 export class Team {
-    @PrimaryGeneratedColumn()
-    id: number;
+  @PrimaryGeneratedColumn()
+  id: number;
 
-    @ManyToOne(() => Project)
-    project: Project;
+  @ManyToOne(() => Project)
+  project: Project;
 
-    @ManyToOne(() => Member)
-    member: Member;
+  @ManyToOne(() => Member)
+  member: Member;
 }

@@ -10,8 +10,8 @@ export class ApplicationsService {
   constructor(
     @InjectRepository(Application)
     private readonly applicationsRepository: Repository<Application>,
-  ) { }
-  
+  ) {}
+
   create(createApplicationDto: CreateApplicationDto) {
     return 'This action adds a new application';
   }

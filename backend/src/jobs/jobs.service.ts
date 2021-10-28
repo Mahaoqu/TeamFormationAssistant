@@ -10,8 +10,8 @@ export class JobsService {
   constructor(
     @InjectRepository(Job)
     private readonly jobsRepository: Repository<Job>,
-  ) { }
-  
+  ) {}
+
   create(createJobDto: CreateJobDto) {
     return 'This action adds a new job';
   }

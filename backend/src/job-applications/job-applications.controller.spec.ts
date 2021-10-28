@@ -11,7 +11,9 @@ describe('JobApplicationsController', () => {
       providers: [JobApplicationsService],
     }).compile();
 
-    controller = module.get<JobApplicationsController>(JobApplicationsController);
+    controller = module.get<JobApplicationsController>(
+      JobApplicationsController,
+    );
   });
 
   it('should be defined', () => {

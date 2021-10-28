@@ -1,9 +1,9 @@
-import { Controller, Get } from "@nestjs/common";
+import { Controller, Get } from '@nestjs/common';
 
 @Controller()
 export class AppController {
-    @Get('/test/all')
-    test() {
-        return 'Public Content.'
-    }
+  @Get('/test/all')
+  test() {
+    return 'Public Content.';
+  }
 }

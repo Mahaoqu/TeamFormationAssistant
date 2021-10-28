@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
+import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 
-const parseJwt = (token) => {
+const parseJwt = token => {
   try {
     return JSON.parse(atob(token.split('.')[1]));
   } catch (e) {
@@ -14,7 +14,7 @@ class AuthVerify extends Component {
     super(props);
 
     props.history.listen(() => {
-      const user = JSON.parse(localStorage.getItem("user"));
+      const user = JSON.parse(localStorage.getItem('user'));
 
       if (user) {
         const decodedJwt = parseJwt(user.accessToken);
