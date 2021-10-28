@@ -1,0 +1,10 @@
+{
+    "type": "mysql",
+    "host": "database",
+    "port": 3306,
+    "username": "dbuser",
+    "password": "dbuserpwd",
+    "database": "teamformationassistant",
+    "entities": ["dist/**/**/*.entity{.ts,.js}"],
+    "synchronize": true
+  }

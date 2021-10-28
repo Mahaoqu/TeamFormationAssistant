@@ -6,6 +6,13 @@
 
 # Team Formation Assistant
 
+To run the local environment:
+
+```
+npm i
+docker-compose up --build -d
+```
+
 ## Problem Statement
 
 Build an assistant for project management(which will take the project requirements, team members availability, skill level, tools preferred, etc. as input and assigns the employees for projects) & job management(which allows users to apply to jobs and manager to review the applications or audit applications automatically by Machine Learning algorithm).
