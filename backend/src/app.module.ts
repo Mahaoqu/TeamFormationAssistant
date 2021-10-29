@@ -1,4 +1,5 @@
 import { Module } from '@nestjs/common';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 import { UsersModule } from './users/users.module';
 import { JobsModule } from './jobs/jobs.module';
 import { ApplicationsModule } from './applications/applications.module';
@@ -9,12 +10,39 @@ import { JobApplicationsModule } from './job-applications/job-applications.modul
 import { CandidatesModule } from './candidates/candidates.module';
 import { TeamModule } from './team/team.module';
 import { AppController } from './app.controller';
-import { User } from './users/entities/user.entity';
 import { AuthModule } from './auth/auth.module';
+import { join } from 'path';
+import { ServeStaticModule } from '@nestjs/serve-static';
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot(),
+    ConfigModule.forRoot({
+      envFilePath: ['.env', '../.env'],
+    }),
+
+    // Read db config async
+    TypeOrmModule.forRootAsync({
+      imports: [ConfigModule],
+      inject: [ConfigService],
+      useFactory: (configService: ConfigService) => {
+        const type = configService.get('DB_TYPE');
+        const host = configService.get('DB_HOST');
+        const port = configService.get<number>('DB_PORT');
+        const username = configService.get('DB_USERNAME');
+        const password = configService.get('DB_PASSWORD');
+        const database = configService.get('DB_DATABASE');
+        return {
+          type,
+          host,
+          port,
+          username,
+          password,
+          database,
+          entities: ['dist/**/**/*.entity{.ts,.js}'],
+          synchronize: true,
+        };
+      },
+    }),
     UsersModule,
     JobsModule,
     ApplicationsModule,
@@ -24,6 +52,9 @@ import { AuthModule } from './auth/auth.module';
     TeamModule,
     CandidatesModule,
     AuthModule,
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, '..', 'frontend', 'build'),
+    }),
   ],
   controllers: [AppController],
   providers: [],

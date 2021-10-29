@@ -14,6 +14,7 @@ export class UsersService {
   ) {}
 
   // Temp use....
+  // TODO: Fix it
   async onModuleInit() {
     console.log(`Initialization 3 admin users ...`);
     const u1: User = {
@@ -26,14 +27,14 @@ export class UsersService {
     const u2: User = {
       id: 2,
       name: 'manager',
-      email: 'admin@ncsu.edu',
+      email: 'manager@ncsu.edu',
       password: await bcrypt.hash('123456', 8),
       role: UserRole.MANAGER,
     };
     const u3: User = {
       id: 3,
       name: 'yliang',
-      email: 'admin@ncsu.edu',
+      email: 'yliang@ncsu.edu',
       password: await bcrypt.hash('123456', 8),
       role: UserRole.USER,
     };
