@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import * as ReactBootstrap from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
-import AddMember from './add-member.component';
-import { Switch, Route, Link } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import AddProject from './add-project.component';
 export default class Project extends Component {
   constructor(props) {

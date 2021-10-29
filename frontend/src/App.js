@@ -3,26 +3,25 @@ import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter, Route } from 'react-router-dom';
 
-import Login from './components/login.component';
-import Register from './components/register.component';
-import Home from './components/home.component';
-import Profile from './components/profile.component';
-import BoardUser from './components/board-user.component';
-import BoardManager from './components/team-match.component';
-import BoardAdmin from './components/board-admin.component';
-import TeamMatch from './components/team-match.component';
-import AddProject from './components/add-project.component';
-import Member from './components/member.component';
-import AddMember from './components/add-member.component';
-import CandidateMatch from './components/candidate-match.component';
-import AddJob from './components/add-job.component';
-import Job from './components/job.component';
-import Project from './components/project.component';
-import AddJobSuccess from './components/add-job-success.component';
-import AddMemberSuccess from './components/add-member-success.component';
-import AddProjectSuccess from './components/add-project-success.component';
-import CandidateMatchSuccess from './components/candidate-match-success.component';
-import TeamMatchSuccess from './components/team-match-success.compont';
+import Login from './board/login.component';
+import Register from './board/register.component';
+import Home from './board/home.component';
+import Profile from './board/profile.component';
+import BoardUser from './board/board-user.component';
+import BoardAdmin from './board/board-admin.component';
+import TeamMatch from './teams/team-match.component';
+import AddProject from './projects/add-project.component';
+import Member from './members/member.component';
+import AddMember from './members/add-member.component';
+import CandidateMatch from './candidates/candidate-match.component';
+import AddJob from './jobs/add-job.component';
+import Job from './jobs/job.component';
+import Project from './projects/project.component';
+import AddJobSuccess from './jobs/add-job-success.component';
+import AddMemberSuccess from './members/add-member-success.component';
+import AddProjectSuccess from './projects/add-project-success.component';
+import CandidateMatchSuccess from './candidates/candidate-match-success.component';
+import TeamMatchSuccess from './teams/team-match-success.component';
 
 class App extends Component {
   render() {

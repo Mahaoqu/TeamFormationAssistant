@@ -1,35 +1,9 @@
-import React, { Component } from 'react';
-import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-import AuthService from '../services/auth.service';
-import Login from './login.component';
-import Register from './register.component';
-import Home from './home.component';
-import Profile from './profile.component';
-import BoardUser from './board-user.component';
-import BoardManager from './team-match.component';
-import BoardAdmin from './board-admin.component';
-import { Navbar } from 'react-bootstrap';
-import { Nav } from 'react-bootstrap';
-import { Container } from 'react-bootstrap';
-import { NavDropdown } from 'react-bootstrap';
-
-// import AuthVerify from "./common/auth-verify";
-import EventBus from '../common/EventBus';
-import TeamMatch from './team-match.component';
-import AddProject from './add-project.component';
-import Member from './member.component';
-import AddMember from './add-member.component';
-import CandidateMatch from './candidate-match.component';
-import AddJob from './add-job.component';
-import Job from './job.component';
-import Project from './project.component';
-import AddJobSuccess from './add-job-success.component';
-import AddMemberSuccess from './add-member-success.component';
-import AddProjectSuccess from './add-project-success.component';
-import CandidateMatchSuccess from './candidate-match-success.component';
-import TeamMatchSuccess from './team-match-success.compont';
+import React, { Component } from 'react';
+import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import EventBus from './common/EventBus';
+import AuthService from './services/auth.service';
 
 class Header extends Component {
   constructor(props) {

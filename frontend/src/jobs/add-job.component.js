@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './add-project.component';
 
 export default class AddJob extends Component {
   constructor(props) {
