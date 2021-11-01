@@ -53,7 +53,7 @@ import { ServeStaticModule } from '@nestjs/serve-static';
     CandidatesModule,
     AuthModule,
     ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '..', 'frontend', 'build'),
+      rootPath: join(__dirname, '..', 'static'),
     }),
   ],
   controllers: [AppController],
