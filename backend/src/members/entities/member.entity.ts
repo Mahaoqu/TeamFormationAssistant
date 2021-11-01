@@ -6,7 +6,7 @@ export class Member {
   id: number;
 
   @Column()
-  name: string;
+  name: string; 
 
   @Column()
   dob: Date;

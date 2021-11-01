@@ -57,33 +57,33 @@ export class ProjectsService {
   async create(createProjectDto: CreateProjectDto) {
     const proj = new Project();
     const n = this.projectRepository.findAndCount({
-      name:createProjectDto.project_name
+      name:createProjectDto.name
     });
     const b = this.projectRepository.findAndCount({
-      budget:createProjectDto.project_budget
+      budget:createProjectDto.budget
     });
     const e = this.projectRepository.findAndCount({
-      endDate:createProjectDto.project_end_date
+      endDate:createProjectDto.endDate
     });
     const p = this.projectRepository.findAndCount({
-      priority:createProjectDto.project_priority
+      priority:createProjectDto.priority
     });
     const a = this.projectRepository.findAndCount({
-      isAssignmentComplete:createProjectDto.project_is_assignment_complete
+      isAssignmentComplete:createProjectDto.isAssignmentComplete
     });
     const te = this.projectRepository.findAndCount({
-      teamSize:createProjectDto.project_team_size
+      teamSize:createProjectDto.teamSize
     });
     const to = this.projectRepository.findAndCount({
-      tools:createProjectDto.project_tool
+      tools:createProjectDto.tools
     });
-    proj.name = createProjectDto.project_name;
-    proj.budget = createProjectDto.project_budget;
-    proj.endDate = createProjectDto.project_end_date;
-    proj.priority = createProjectDto.project_priority;
-    proj.isAssignmentComplete = createProjectDto.project_is_assignment_complete;
-    proj.teamSize = createProjectDto.project_team_size
-    proj.tools = createProjectDto.project_tool;
+    proj.name = createProjectDto.name;
+    proj.budget = createProjectDto.budget;
+    proj.endDate = createProjectDto.endDate;
+    proj.priority = createProjectDto.priority;
+    proj.isAssignmentComplete = createProjectDto.isAssignmentComplete;
+    proj.teamSize = createProjectDto.teamSize
+    proj.tools = createProjectDto.tools;
 
     await this.projectRepository.save(proj);
   }
@@ -98,14 +98,14 @@ export class ProjectsService {
 
   async update(id: number, updateProjectDto: UpdateProjectDto) {
     const proj = await this.projectRepository.findOne(id);
-    proj.id = updateProjectDto.project_id;
-    proj.name = updateProjectDto.project_name;
-    proj.budget = updateProjectDto.project_budget;
-    proj.endDate = updateProjectDto.project_end_date;
-    proj.isAssignmentComplete = updateProjectDto.project_is_assignment_complete;
-    proj.priority = updateProjectDto.project_priority;
-    proj.teamSize = updateProjectDto.project_team_size;
-    proj.tools = updateProjectDto.project_tool;
+    //proj.id = updateProjectDto.project_id;
+    proj.name = updateProjectDto.name;
+    proj.budget = updateProjectDto.budget;
+    proj.endDate = updateProjectDto.endDate;
+    proj.isAssignmentComplete = updateProjectDto.isAssignmentComplete;
+    proj.priority = updateProjectDto.priority;
+    proj.teamSize = updateProjectDto.teamSize;
+    proj.tools = updateProjectDto.tools;
     return this.projectRepository.save(proj);
   }
 

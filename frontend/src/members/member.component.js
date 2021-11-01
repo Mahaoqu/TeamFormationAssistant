@@ -23,15 +23,15 @@ export default class Member extends Component {
   renderMember(response, index) {
     return (
       <tr key={index}>
-        <td>{response.MemberId}</td>
-        <td>{response.MemberName}</td>
-        <td>{response.Languages}</td>
-        <td>{response.IsAssigned}</td>
-        <td>{response.HourlyRate}</td>
-        <td>{response.MemberRole}</td>
-        <td>{response.Experience}</td>
-        <td>{response.SkillScore}</td>
-        <td>{response.AvailableHoursPerWeek}</td>
+        <td>{response.id}</td>
+        <td>{response.name}</td>
+        <td>{response.languages}</td>
+        <td>{response.isAssigned}</td>
+        <td>{response.hourlyRate}</td>
+        <td>{response.memberRole}</td>
+        <td>{response.experience}</td>
+        <td>{response.skillScore}</td>
+        <td>{response.availableHoursPerWeek}</td>
       </tr>
     );
   }

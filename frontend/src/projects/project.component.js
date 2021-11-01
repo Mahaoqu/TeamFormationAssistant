@@ -50,7 +50,7 @@ export default class Project extends Component {
         <div className="midpart">
           <h2 align="center">Projects</h2>
           <div style={{ display: 'flex', justifyContent: 'right' }}>
-            <Button href="/add_project">Add Porject</Button>
+            <Button href="/add_project">Add Project</Button>
           </div>
         </div>
 
