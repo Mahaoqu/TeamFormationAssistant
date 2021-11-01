@@ -16,8 +16,8 @@ export class ProjectsService {
   {}
   async onModuleInit(){
     console.log('initialize some projects');
-    const p1: Project={
-      id: 1,
+    const p0: Project={
+      id: 0,
       name: 'CaloriesTracker',
       endDate: new Date('December 17, 1995 03:24:00'),
       teamSize: 2,
@@ -27,7 +27,31 @@ export class ProjectsService {
       priority: 1,
       requirements: []
     };
+    const p1: Project={
+      id: 1,
+      name: 'CaloriesTracker II',
+      endDate: new Date('December 18, 1995 03:24:00'),
+      teamSize: 1,
+      budget: 500,
+      tools: 'Python',
+      isAssignmentComplete: false,
+      priority: 1,
+      requirements: []
+    };
+    const p2: Project={
+      id: 2,
+      name: 'CaloriesTracker III',
+      endDate: new Date('December 18, 1995 03:24:00'),
+      teamSize: 20,
+      budget: 10000,
+      tools: 'C++',
+      isAssignmentComplete: false,
+      priority: 1,
+      requirements: []
+    };
+    await this.projectRepository.save(p0);
     await this.projectRepository.save(p1);
+    await this.projectRepository.save(p2);
   }
 
   async create(createProjectDto: CreateProjectDto) {

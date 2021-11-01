@@ -7,23 +7,30 @@ export default class Project extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      test:{},
       data: [],
     };
   }
 
   componentDidMount() {
     const apiUrl = 'http://localhost:8080/api/projects';
+    
     fetch(apiUrl)
       .then(response => response.json())
-      .then(data => this.setState({ data: data }));
+      .then(data => this.setState
+        ({ data: data }));
+
     var newData = this.state.data.concat([this.state.data]);
     this.setState({ data: newData });
+    
+    
   }
 
   renderMember(response, index) {
+    console.log(index);
     return (
       <tr key={index}>
-        <td>{response.ProjectId}</td>
+        <td>{index}</td>
         <td>{response.ProjectName}</td>
         <td>{response.ProjectEndDate}</td>
         <td>{response.ProjectTeamSize}</td>
@@ -49,7 +56,7 @@ export default class Project extends Component {
 
         <div className="test">
           <div className="formblock" align="center">
-            <ReactBootstrap.Table striped bordered hover>
+            <ReactBootstrap.Table striped bordered hover variant="dark">
               <thead className="thead-dark">
                 <tr>
                   <th>Project Id</th>
@@ -72,4 +79,18 @@ export default class Project extends Component {
       </div>
     );
   }
+  
+ /*
+  render(){
+    return (
+      <div>
+       <ul>
+          {
+            this.state.data
+          }
+       </ul>
+      </div>
+    )
+  }
+   */
 }
