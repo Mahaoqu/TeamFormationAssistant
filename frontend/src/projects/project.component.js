@@ -31,13 +31,13 @@ export default class Project extends Component {
     return (
       <tr key={index}>
         <td>{index}</td>
-        <td>{response.ProjectName}</td>
-        <td>{response.ProjectEndDate}</td>
-        <td>{response.ProjectTeamSize}</td>
-        <td>{response.Budget}</td>
-        <td>{response.IsAssignmentComplete}</td>
-        <td>{response.Priority}</td>
-        <td>{response.Tools}</td>
+        <td>{response.name}</td>
+        <td>{response.endDate}</td>
+        <td>{response.teamSize}</td>
+        <td>{response.budget}</td>
+        <td>{response.isAssignmentComplete}</td>
+        <td>{response.priority}</td>
+        <td>{response.tools}</td>
       </tr>
     );
   }
