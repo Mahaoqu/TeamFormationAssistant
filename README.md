@@ -59,11 +59,9 @@ Flake8, ESlint, Prettier
 ### Automated Analysis Tool used:
 [Code Climate](https://codeclimate.com/github/yliang123/TeamFormationAssistant)
 
-##### More Information
+### For more information, check out the [wiki](https://github.com/yliang123/TeamFormationAssistant/wiki).
 
-### For more information, check out the [wiki](https://github.com/yliang123/TeamFormationAssistant/wiki)
-
-Here are a few screenshots of the project<br>
+Project Screenshots:<br>
 ![](https://github.com/yliang123/TeamFormationAssistant/blob/master/images/Screen%20Shot%202021-09-30%20at%203.45.46%20PM.png)<br>
 ![](https://github.com/yliang123/TeamFormationAssistant/blob/master/images/Screen%20Shot%202021-09-30%20at%203.46.40%20PM.png)
 
