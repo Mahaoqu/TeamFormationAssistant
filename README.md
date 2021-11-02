@@ -16,6 +16,8 @@ In addition, this project has the following features to aid team creation:
 ➢ A database using MySQL to store the employees, projects, assignments data.<br/>
 ➢ An algorithm which will take the project requirements, team members availability, skill level, tools preferred, etc. as input and assigns the applicants for new jobs and employees for the new projects.<br/>
 
+# Click for video:
+
 [![Team Formation Assistant Project 2](https://github.com/yliang123/CSC510-Group18/blob/main/teamformation.png)](https://www.youtube.com/watch?v=U7m2TXdxnak)
 
 [![Team Formation Assistant](https://github.com/lokesh45/TeamFormationAssistant/blob/master/Assistant.png)](https://www.youtube.com/watch?v=LmKjp3aQPEI&feature=youtu.be)
@@ -30,7 +32,7 @@ Steps for execution:
 npm i
 docker-compose up --build -d
 ```
-6. Next, open your browser and type in localhost:8000 in the search bar to open the web UI of the application
+6. Next, open your browser and type in localhost:8080 in the search bar to open the web UI of the application
 
 ## Project Details
 
