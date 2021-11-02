@@ -25,19 +25,6 @@ Build an assistant for project management(which will take the project requiremen
 ➢ Create and Manage a database with employees, Projects, Assignments data.<br/>
 ➢ Write an algorithm which will take the project requirements, team members availability, skill level, tools preferred, etc. as input and assigns the applicants for new jobs and employees for the new projects.<br/>
 
-## Project 1:
-
-1. One click [installation](https://github.com/yliang123/TeamFormationAssistant/wiki/Setting-Up-Development-Environment) with Docker. You can simply focus on experiments without wasting time in installation.
-2. Well documented [Wiki](https://github.com/yliang123/TeamFormationAssistant/wiki) for all the underlying algorithms and database description.
-3. Extensive testing.
-## Video link
-
-Development Environment Setup
-[![Development Environment Setup](https://github.com/AmitMandliya/TeamFormationAssistant/blob/master/images/Development.png)](https://youtu.be/WLMfi0sLFsA)
-
-Main Functions and Procedure
-[![Main Functions and Procedure](https://github.com/AmitMandliya/TeamFormationAssistant/blob/master/images/teamFormation.PNG)](https://youtu.be/Xtcq-58arUU)
-
 Introduction 
 [![Team Formation Assistant Project 2](https://github.com/yliang123/CSC510-Group18/blob/main/teamformation.png)](https://www.youtube.com/watch?v=U7m2TXdxnak)
 
@@ -76,3 +63,16 @@ Flake8, ESlint, Prettier
 Here are a few screenshots of the project<br>
 ![](https://github.com/yliang123/TeamFormationAssistant/blob/master/images/Screen%20Shot%202021-09-30%20at%203.45.46%20PM.png)<br>
 ![](https://github.com/yliang123/TeamFormationAssistant/blob/master/images/Screen%20Shot%202021-09-30%20at%203.46.40%20PM.png)
+
+## Project 1:
+
+1. One click [installation](https://github.com/yliang123/TeamFormationAssistant/wiki/Setting-Up-Development-Environment) with Docker. You can simply focus on experiments without wasting time in installation.
+2. Well documented [Wiki](https://github.com/yliang123/TeamFormationAssistant/wiki) for all the underlying algorithms and database description.
+3. Extensive testing.
+## Video link
+
+Development Environment Setup
+[![Development Environment Setup](https://github.com/AmitMandliya/TeamFormationAssistant/blob/master/images/Development.png)](https://youtu.be/WLMfi0sLFsA)
+
+Main Functions and Procedure
+[![Main Functions and Procedure](https://github.com/AmitMandliya/TeamFormationAssistant/blob/master/images/teamFormation.PNG)](https://youtu.be/Xtcq-58arUU)
