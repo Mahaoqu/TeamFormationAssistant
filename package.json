@@ -1,7 +1,0 @@
-{
-  "name": "teamformarion-assistant",
-  "workspaces": [
-    "backend",
-    "frontend"
-  ]
-}
