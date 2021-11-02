@@ -1,7 +1,7 @@
 # Team Formation Assistant
 
 [![Build Status](https://app.travis-ci.com/yliang123/TeamFormationAssistant.svg?branch=master)](https://app.travis-ci.com/yliang123/TeamFormationAssistant)
-[![DOI](https://zenodo.org/badge/408224049.svg)](https://zenodo.org/badge/latestdoi/408224049)
+[![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.5542332.svg)](https://zenodo.org/badge/latestdoi/408224049)
 [![Documentation Status](https://readthedocs.org/projects/ansicolortags/badge/?version=latest)](http://ansicolortags.readthedocs.io/?badge=latest)
 ![GitHub language count](https://img.shields.io/github/languages/count/AmitMandliya/TeamFormationAssistant?style=flat-square)
 <img src=https://img.shields.io/github/license/yliang123/TeamFormationAssistant>
