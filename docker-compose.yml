@@ -16,8 +16,7 @@ services:
 
   node_server:
     restart: always
-    build:
-      context: ./backend
+    build: .
     command: ['npm', 'start']
     environment:
       - PORT=8080
@@ -27,9 +26,6 @@ services:
       - DB_USERNAME=dbuser
       - DB_PASSWORD=dbuserpwd
       - DB_DATABASE=teamformationassistant
-
-  frontend:
-    build:
-      context: ./frontend
     ports:
-      - 8080:80 
+      - 8080:8080
+

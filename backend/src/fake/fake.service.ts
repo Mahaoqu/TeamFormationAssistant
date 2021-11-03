@@ -56,12 +56,6 @@ export class FakeService {
 
     @InjectRepository(Project)
     private readonly projectRepository: Repository<Project>,
-
-    @InjectRepository(Application)
-    private readonly applicationRepository: Repository<Application>,
-
-    @InjectRepository(Candidate)
-    private readonly candidateRepository: Repository<Candidate>,
   ) {}
 
   generate_fake_data() {
