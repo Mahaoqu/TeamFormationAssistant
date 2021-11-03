@@ -53,49 +53,49 @@ class Header extends Component {
 
     return (
       <div>
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
           <Container>
             <Navbar.Brand href="/home">Teamformation Assistant</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="me-auto">
-                <Nav.Link href="/home">home</Nav.Link>
+                <Nav.Link href="/home">Home</Nav.Link>
                 {showManagerBoard && (
-                  <NavDropdown title="project" id="collasible-nav-dropdown">
+                  <NavDropdown title="Project" id="collasible-nav-dropdown">
                     <NavDropdown.Item href="/team_match">
-                      team match
+                      Team match
                     </NavDropdown.Item>
                     <NavDropdown.Item href="/projects">
-                      project management
+                      Project management
                     </NavDropdown.Item>
                   </NavDropdown>
                 )}
 
                 {showManagerBoard && (
-                  <NavDropdown title="recruit" id="collasible-nav-dropdown">
+                  <NavDropdown title="Recruit" id="collasible-nav-dropdown">
                     <NavDropdown.Item href="/candidate_match">
-                      candidate match
+                      Candidate match
                     </NavDropdown.Item>
                     <NavDropdown.Item href="/jobs">
-                      job management
+                      Job management
                     </NavDropdown.Item>
                   </NavDropdown>
                 )}
 
                 {showAdminBoard && (
-                  <NavDropdown title="employee" id="collasible-nav-dropdown">
+                  <NavDropdown title="Employee" id="collasible-nav-dropdown">
                     <NavDropdown.Item href="/members">
-                      employee management
+                      Employee management
                     </NavDropdown.Item>
                   </NavDropdown>
                 )}
                 {currentUser && (
-                  <NavDropdown title="application" id="collasible-nav-dropdown">
+                  <NavDropdown title="Application" id="collasible-nav-dropdown">
                     {!showManagerBoard && (
                       <fragment>
-                        <NavDropdown.Item href="/jobs">job</NavDropdown.Item>
-                        <NavDropdown.Item href="/">
-                          my application
+                        <NavDropdown.Item href="/jobs">Jobs</NavDropdown.Item>
+                        <NavDropdown.Item href="/application">
+                          My application
                         </NavDropdown.Item>
                       </fragment>
                     )}
@@ -123,7 +123,7 @@ class Header extends Component {
                         className="nav-link"
                         onClick={this.logOut}
                       >
-                        LogOut
+                        Logout
                       </a>
                     </li>
                   </div>
