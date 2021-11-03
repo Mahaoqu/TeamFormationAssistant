@@ -9,7 +9,7 @@ export class Member {
   name: string; 
 
   @Column()
-  dob: Date;
+  birthday: Date;
 
   @Column()
   languages: string;
@@ -21,7 +21,7 @@ export class Member {
   hourlyRate: number;
 
   @Column()
-  memberRole: string;
+  role: string;
 
   @Column()
   experience: number;

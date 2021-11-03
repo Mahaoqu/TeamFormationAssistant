@@ -13,6 +13,7 @@ import { AppController } from './app.controller';
 import { AuthModule } from './auth/auth.module';
 import { join } from 'path';
 import { ServeStaticModule } from '@nestjs/serve-static';
+import { FakeModule } from './fake/fake.module';
 
 @Module({
   imports: [
@@ -55,6 +56,7 @@ import { ServeStaticModule } from '@nestjs/serve-static';
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'static'),
     }),
+    FakeModule,
   ],
   controllers: [AppController],
   providers: [],

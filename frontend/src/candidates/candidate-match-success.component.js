@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-
-import UserService from '../services/user.service';
-import EventBus from '../common/EventBus';
 import * as ReactBootstrap from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
+
 export default class CandidateMatchSuccess extends Component {
   constructor(props) {
     super(props);
