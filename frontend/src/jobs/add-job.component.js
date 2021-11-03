@@ -1,5 +1,81 @@
 import React, { Component } from 'react';
+import {
+  Form,
+  Input,
+  Button,
+  Checkbox,
+  Card,
+  Radio,
+  Space,
+  message,
+  DatePicker,
+  InputNumber,
+} from 'antd';
+import { useHistory } from 'react-router-dom';
+import axios from 'axios';
+import moment from 'moment';
 
+
+const AddJobForm = () => {
+  const history = useHistory();
+  const [form] = Form.useForm();
+
+  const postForm = () => {
+    console.log(form);
+    axios.post('projects', form.getFieldsValue()).then(data => {
+      if (data.status != 200) message.error('Error');
+      else history.push('/projects');
+    });
+  };
+
+  const onFinish = values => {
+    console.log('Success:', values);
+  };
+
+  const onFinishFailed = errorInfo => {
+    console.log('Failed:', errorInfo);
+  };
+
+  return (<Card>
+    <b>Project Details</b>
+    <Form
+      form={form}
+      name="basic"
+      onFinish={onFinish}
+      onFinishFailed={onFinishFailed}
+      labelCol={{ span: 8 }}
+      wrapperCol={{ span: 16 }}
+      autoComplete="off"
+    >
+      <Form.Item
+        label="Job Name"
+        name="name"
+        rules={[
+          {
+            required: true,
+            message: 'Please input your project name!',
+          },
+        ]}
+      >
+        <Input />
+      </Form.Item>
+
+      <Form.Item
+        label="Project Id"
+        name="projectId"
+        rules={[
+          {
+            required: true,
+            message: 'Please input your project name!',
+          },
+        ]}
+      >
+        <Input />
+      </Form.Item>
+
+    </Form>
+  </Card>)
+}
 export default class AddJob extends Component {
   constructor(props) {
     super(props);

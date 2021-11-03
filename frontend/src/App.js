@@ -32,23 +32,13 @@ class App extends Component {
         <Route exact path="/register" component={Register} />
         <Route exact path="/profile" component={Profile} />
         <Route path="/user" component={BoardUser} />
-        <Route path="/team_match" component={TeamMatch} />
         <Route path="/add_project" component={AddProject} />
         <Route path="/admin" component={BoardAdmin} />
         <Route path="/members" component={Member} />
         <Route path="/add_member" component={AddMember} />
-        <Route path="/candidate_match" component={CandidateMatch} />
         <Route path="/add_job" component={AddJob} />
         <Route path="/jobs" component={Job} />
         <Route path="/projects" component={Project} />
-        <Route path="/add_job_success" component={AddJobSuccess} />
-        <Route path="/add_member_success" component={AddMemberSuccess} />
-        <Route path="/add_project_success" component={AddProjectSuccess} />
-        <Route
-          path="/candidate_match_success"
-          component={CandidateMatchSuccess}
-        />
-        <Route path="/team_match_success" component={TeamMatchSuccess} />
       </div>
     );
   }
