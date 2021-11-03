@@ -1,3 +1,5 @@
+import { Button } from 'antd';
+import axios from 'axios';
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import AuthService from '../services/auth.service';
@@ -11,6 +13,10 @@ export default class Profile extends Component {
       userReady: false,
       currentUser: { username: '' },
     };
+  }
+
+  gen_fake() {
+    axios.post('fake/gen')
   }
 
   componentDidMount() {
@@ -55,6 +61,12 @@ export default class Profile extends Component {
                   <li key={index}>{role}</li>
                 ))}
             </ul>
+
+            {currentUser.roles == 'ROLE_ADMIN' && (
+              <Button type="primary" onClick="gen_fake">
+                Generate Fake Data (Only for presentation)
+              </Button>
+            )}
           </div>
         ) : null}
       </div>
