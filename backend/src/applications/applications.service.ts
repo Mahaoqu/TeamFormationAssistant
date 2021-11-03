@@ -28,7 +28,7 @@ export class ApplicationsService {
     return `This action updates a #${id} application`;
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} application`;
+  async remove(id: number): Promise<void>{
+    await this.applicationsRepository.delete(id);
   }
 }
