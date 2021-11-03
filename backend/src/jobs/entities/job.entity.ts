@@ -16,4 +16,11 @@ export class Job {
 
   @Column()
   description: string;
+
+  @Column()
+  projectId: string;
+
+  @Column()
+  address: string;
+
 }
