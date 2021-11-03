@@ -27,11 +27,14 @@ export class CandidatesService {
   async assign() {
     const requirementsIDs = await this.requirementRepository.find();
     const employee = await this.applicationRepository.find();
-    // for (const proj of projs) {
-    //   for (const r of proj.requirements) {
+    for (const requirementsID of requirementsIDs) {
+      
+
+
+      for (const employ of employee) {
         
-    //   }
-    // }
+      }
+    }
 
     const c = new Candidate();
     // c.project = 
