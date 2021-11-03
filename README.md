@@ -8,7 +8,7 @@
 
 # Introduction
 
-Creating teams has always been an issue in large companies, especially with ones who have employees spread out over a country or even with employees in differents countries. The larger the company, the harder it is to choose employees who have different skill levels, avalibility for a specific project. Thus, this project aims to provide an easy to way to build teams by creating an assistant that will aid with project and job management. The project management side will allow for you to assign employees to projects based on the project requirements, team members availability, skill level, tools preferred, etc. The job management side will allow users to apply to jobs and the manager to review the applications or audit applications automatically by Machine Learning algorithm.
+Creating teams has always been an issue in large companies, especially with ones who have employees spread out over a country or even with employees in differents countries. The larger the company, the harder it is to choose employees who have different skill levels, avalibility for a specific project. Thus, this project aims to provide an easy to way to build teams by creating an assistant that will aid with project and job management. The project management side will allow for you to assign employees to projects based on the project requirements, team members availability, skill level, tools preferred, etc. The job management side will allow users to apply to jobs and the manager to review the applications or audit applications automatically.
 
 In addition, this project has the following features to aid team creation:
 ➢ A form for the manager to enter projects requirements & new jobs informations.<br/>
@@ -36,11 +36,6 @@ docker-compose up --build -d
 
 ## Project Details
 
-### Algorithm Implementation
-
-We coded the application in Python3. Python ML libraries will be used for
-Cluster identification.<br/>
-
 ### Database Implementation:
 
 We store team members into an MySQL database. Python files import the
@@ -51,7 +46,7 @@ data and process it and store the final result back to the database.<br/>
 Team members will be able to submit a form to consider them as part of project
 assignment.
 Final team assignment will posted on the homepage dashboard. We 
-implement the dashboard and form using HTML, CSS, JavaScript
+implement the dashboard and form using HTML, CSS, and JavaScript.
 
 ### Linting: Code Styling, Formatting and Syntax Checking:
 Flake8, ESlint, Prettier
