@@ -1,13 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Application } from 'src/applications/entities/application.entity';
-import { Candidate } from 'src/candidates/entities/candidate.entity';
+import * as faker from 'faker';
 import { Member } from 'src/members/entities/member.entity';
 import { Project } from 'src/projects/entities/project.entity';
-import { Repository } from 'typeorm';
-import faker, { random } from 'faker';
 import { Requirement } from 'src/projects/entities/requirement.entity';
-import { platform } from 'os';
+import { Repository } from 'typeorm';
 
 function getRandomInt(min, max) {
   min = Math.ceil(min);
@@ -74,7 +71,7 @@ export class FakeService {
 
   generate_random_member() {
     const m = new Member();
-    m.name = faker.name.findName();
+    m.name = faker.name.findName()
     m.isAssigned = false;
     m.role = 'SDE' + getRandomInt(1, 3);
     m.hourlyRate = getRandomInt(60, 100);
@@ -95,6 +92,7 @@ export class FakeService {
     p.priority = getRandomInt(0, 3);
     p.endDate = faker.date.future();
     p.tools = randomLanguage(1);
+    p.requirements = [];
 
     for (let i = 0; i < getRandomInt(1, 3); i++) {
       const r = new Requirement();

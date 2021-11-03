@@ -12,19 +12,20 @@ export class JobsService {
     private readonly jobsRepository: Repository<Job>,
   ) {}
 
-  async onModuleInit(){
-    console.log('initialize some jobs');
-    const p0: Job={
-      id: 0,
-      name: 'TestInitJob1',
-      projectId: '545456465',
-      phone: '1234567777',
-      role: 'sde',
-      description: 'SDE',
-      address: 'Raleigh',
-    };
-    await this.jobsRepository.save(p0);
-  }
+  // Object with no id will insert in database every time restarting server
+  // async onModuleInit(){
+  //   console.log('initialize some jobs');
+  //   const p0: Job={
+  //     id: 0,
+  //     name: 'TestInitJob1',
+  //     projectId: '545456465',
+  //     phone: '1234567777',
+  //     role: 'sde',
+  //     description: 'SDE',
+  //     address: 'Raleigh',
+  //   };
+  //   await this.jobsRepository.save(p0);
+  // }
 
   async create(createJobDto: CreateJobDto) {
     const jobs = new Job();

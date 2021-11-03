@@ -15,10 +15,6 @@ export default class Profile extends Component {
     };
   }
 
-  gen_fake() {
-    axios.post('fake/gen')
-  }
-
   componentDidMount() {
     const currentUser = AuthService.getCurrentUser();
 
@@ -27,6 +23,10 @@ export default class Profile extends Component {
   }
 
   render() {
+    const gen_fake = () => {
+      axios.post('fake/generate')
+    }
+
     if (this.state.redirect) {
       return <Redirect to={this.state.redirect} />;
     }
@@ -63,7 +63,7 @@ export default class Profile extends Component {
             </ul>
 
             {currentUser.roles == 'ROLE_ADMIN' && (
-              <Button type="primary" onClick="gen_fake">
+              <Button type="primary" onClick={gen_fake}>
                 Generate Fake Data (Only for presentation)
               </Button>
             )}

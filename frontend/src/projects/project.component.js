@@ -76,54 +76,6 @@ const Content = () => {
       <Table columns={columns} dataSource={detail} />
     </Spin>
   );
-  // console.log(this.state);
-  // return (
-  //   <div className="Home" align="center">
-  //     <br />
-  //     <div className="midpart">
-  //       <h2 align="center">Projects</h2>
-  //       <div style={{ display: 'flex', justifyContent: 'right' }}>
-  //         <Button href="/add_project">Add Project</Button>
-  //       </div>
-  //     </div>
-
-  //     <div className="test">
-  //       <div className="formblock" align="center">
-  //         <ReactBootstrap.Table striped bordered hover variant="dark">
-  //           <thead className="thead-dark">
-  //             <tr>
-  //               <th>Project Id</th>
-  //               <th>Project Name</th>
-  //               <th>ProjectEndDate</th>
-  //               <th>ProjectTeamSize</th>
-  //               <th>Budget</th>
-  //               <th>isAssignmentComplete</th>
-  //               <th>priority</th>
-  //               <th>Tools</th>
-  //             </tr>
-  //           </thead>
-  //           <tbody>{this.state.data.map(this.renderMember)}</tbody>
-  //         </ReactBootstrap.Table>
-  //       </div>
-  //     </div>
-  //     <Switch>
-  //       <Route path="/add_project" component={AddProject} />
-  //     </Switch>
-  //   </div>
-  // );
 };
 
-/*
-  render(){
-    return (
-      <div>
-       <ul>
-          {
-            this.state.data
-          }
-       </ul>
-      </div>
-    )
-  }
-   */
 export default App;
