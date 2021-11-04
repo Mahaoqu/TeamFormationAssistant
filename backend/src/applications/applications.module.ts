@@ -4,6 +4,12 @@ import { ApplicationsController } from './applications.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Application } from './entities/application.entity';
 
+/**
+ * common model files with relationships defined
+ * we can use application.modules like:
+ * applicationController -> applicationService -> applicationRepository -> applicationModel
+ */
+
 @Module({
   imports: [TypeOrmModule.forFeature([Application])],
   controllers: [ApplicationsController],

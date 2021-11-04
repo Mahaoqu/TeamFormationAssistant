@@ -5,6 +5,9 @@ import { CreateMemberDto } from './dto/create-member.dto';
 import { UpdateMemberDto } from './dto/update-member.dto';
 import { Member } from './entities/member.entity';
 
+/**
+ * Collect data from the controller, perform validation and business logic, and call the repository for data manipulation.
+ */
 @Injectable()
 export class MembersService {
   constructor(

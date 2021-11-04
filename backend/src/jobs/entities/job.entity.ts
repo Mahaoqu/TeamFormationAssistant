@@ -1,5 +1,10 @@
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
+/**
+ * job's entity 
+ * which contain the table name in the database.
+ */
+
 @Entity()
 export class Job {
   @PrimaryGeneratedColumn()

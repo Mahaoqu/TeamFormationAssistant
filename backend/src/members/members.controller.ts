@@ -11,6 +11,11 @@ import { MembersService } from './members.service';
 import { CreateMemberDto } from './dto/create-member.dto';
 import { UpdateMemberDto } from './dto/update-member.dto';
 
+/**
+ * member controller
+ * which contains application logic and passing user input data to service.
+ */
+
 @Controller('members')
 export class MembersController {
   constructor(private readonly membersService: MembersService) {}

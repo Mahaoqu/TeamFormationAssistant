@@ -6,6 +6,10 @@ import { Project } from 'src/projects/entities/project.entity';
 import { Requirement } from 'src/projects/entities/requirement.entity';
 import { Repository } from 'typeorm';
 
+/**
+ * Collect data from the controller, perform validation and business logic, and call the repository for data manipulation.
+ */
+
 function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);

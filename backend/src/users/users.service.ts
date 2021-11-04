@@ -6,6 +6,10 @@ import { UpdateUserDto } from './dto/update-user.dto';
 import { User, UserRole } from './entities/user.entity';
 import * as bcrypt from 'bcrypt';
 
+/**
+ * Collect data from the controller, perform validation and business logic, and call the repository for data manipulation.
+ */
+
 @Injectable()
 export class UsersService {
   constructor(

@@ -1,3 +1,7 @@
+/**
+ * Data Transfer Object for creating projects.
+ * To encapsulate the data
+ */
 export class CreateProjectDto {
   name: any;
   budget: any;

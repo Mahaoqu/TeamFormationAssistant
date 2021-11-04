@@ -11,6 +11,11 @@ import { CandidatesService } from './candidates.service';
 import { CreateCandidateDto } from './dto/create-candidate.dto';
 import { UpdateCandidateDto } from './dto/update-candidate.dto';
 
+/**
+ * candidate controller
+ * which contains application logic and passing user input data to service
+ */
+
 @Controller('candidates')
 export class CandidatesController {
   constructor(private readonly candidatesService: CandidatesService) {}

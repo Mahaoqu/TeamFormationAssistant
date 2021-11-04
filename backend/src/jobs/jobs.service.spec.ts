@@ -1,6 +1,11 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { JobsService } from './jobs.service';
 
+/**
+ * spec file of jobs service
+ * is an unit test for your source files
+ */
+
 describe('JobsService', () => {
   let service: JobsService;
 

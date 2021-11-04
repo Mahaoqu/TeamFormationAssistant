@@ -6,6 +6,9 @@ import { UpdateProjectDto } from './dto/update-project.dto';
 import { Project } from './entities/project.entity';
 import { Requirement } from './entities/requirement.entity';
 
+/**
+ * Collect data from the controller, perform validation and business logic, and call the repository for data manipulation.
+ */
 @Injectable()
 export class ProjectsService {
   constructor(

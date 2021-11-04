@@ -8,6 +8,10 @@ import { Application } from '../applications/entities/application.entity';
 import { Candidate } from './entities/candidate.entity';
 import { Requirement } from '../projects/entities/requirement.entity';
 
+/**
+ * Collect data from the controller, perform validation and business logic, and call the repository for data manipulation.
+ */
+
 /*
   Match Team
 */

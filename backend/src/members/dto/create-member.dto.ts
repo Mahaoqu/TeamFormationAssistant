@@ -1,3 +1,7 @@
+/**
+ * Data Transfer Object for creating members.
+ * To encapsulate the data
+ */
 export class CreateMemberDto {
   name: string;
   enddate: Date;

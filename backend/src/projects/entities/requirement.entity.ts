@@ -1,6 +1,11 @@
 import { Project } from 'src/projects/entities/project.entity';
 import { Column, Entity, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
 
+/**
+ * requirement's entity 
+ * which contain the table name in the database mentioned with the help of an annotation.
+ */
+
 @Entity()
 export class Requirement {
   @PrimaryGeneratedColumn()

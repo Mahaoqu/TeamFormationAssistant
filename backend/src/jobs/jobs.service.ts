@@ -5,6 +5,10 @@ import { CreateJobDto } from './dto/create-job.dto';
 import { UpdateJobDto } from './dto/update-job.dto';
 import { Job } from './entities/job.entity';
 
+/**
+ * Collect data from the controller, perform validation and business logic, and call the repository for data manipulation.
+ */
+
 @Injectable()
 export class JobsService {
   constructor(
