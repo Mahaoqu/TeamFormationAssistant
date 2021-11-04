@@ -1,3 +1,7 @@
+/** this class, Profile
+ *  is designed to render the basic information
+ *  of the user
+ */
 import { Button } from 'antd';
 import axios from 'axios';
 import React, { Component } from 'react';
