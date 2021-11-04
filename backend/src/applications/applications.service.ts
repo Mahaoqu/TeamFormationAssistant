@@ -23,8 +23,8 @@ export class ApplicationsService {
     return this.applicationsRepository.find();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} application`;
+  findOne(id: number): Promise<Application> {
+    return this.applicationsRepository.findOne(id);
   }
 
   update(id: number, updateApplicationDto: UpdateApplicationDto) {

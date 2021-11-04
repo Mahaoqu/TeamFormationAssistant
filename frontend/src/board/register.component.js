@@ -1,3 +1,8 @@
+/** this class, Register,
+ *  is designed to render th register form
+ *  and add new user information to datebase
+ */
+
 import React, { Component } from 'react';
 import Form from 'react-validation/build/form';
 import Input from 'react-validation/build/input';
