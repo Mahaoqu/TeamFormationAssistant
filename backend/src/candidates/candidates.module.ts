@@ -7,6 +7,11 @@ import { Application } from 'src/applications/entities/application.entity';
 import { Candidate } from './entities/candidate.entity';
 import { Requirement } from 'src/projects/entities/requirement.entity';
 
+/**
+ * common model files with relationships defined
+ * we can use candidate.modules like:
+ * candidateController -> candidateService -> candidateRepository -> candidateModel
+ */
 @Module({
   imports: [
     TypeOrmModule.forFeature([Project, Application, Candidate, Requirement]),

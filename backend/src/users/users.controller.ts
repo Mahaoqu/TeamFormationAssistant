@@ -11,6 +11,11 @@ import { UsersService } from './users.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 
+/**
+ * user controller
+ * which contains application logic and passing user input data to service.
+ */
+
 @Controller('users')
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}

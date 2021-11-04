@@ -15,6 +15,10 @@ import { join } from 'path';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { FakeModule } from './fake/fake.module';
 
+/**
+ * web application module
+ * common model files with relationships defined
+ */
 @Module({
   imports: [
     ConfigModule.forRoot({

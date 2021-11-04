@@ -11,6 +11,11 @@ import { JobApplicationsService } from './job-applications.service';
 import { CreateJobApplicationDto } from './dto/create-job-application.dto';
 import { UpdateJobApplicationDto } from './dto/update-job-application.dto';
 
+/**
+ * job application controller
+ * which contains application logic and passing user input data to service.
+ */
+
 @Controller('job-applications')
 export class JobApplicationsController {
   constructor(

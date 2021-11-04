@@ -2,6 +2,10 @@ import { Application } from 'src/applications/entities/application.entity';
 import { User } from 'src/users/entities/user.entity';
 import { Column, Entity, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
 
+/**
+ * job application's entity 
+ * which contain the table name in the database.
+ */
 @Entity()
 export class JobApplication {
   @PrimaryGeneratedColumn()

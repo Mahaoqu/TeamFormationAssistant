@@ -1,3 +1,7 @@
+/**
+ * Data Transfer Object for creating jobs.
+ * To encapsulate the data
+ */
 export class CreateJobDto {
     name: any;
     projectId: any;

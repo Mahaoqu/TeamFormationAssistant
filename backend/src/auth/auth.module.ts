@@ -8,6 +8,11 @@ import { jwtConstants } from './constants';
 import { JwtStrategy } from './strategies/jwt.strategy';
 import { LocalStrategy } from './strategies/local.strategy';
 
+/**
+ * common model files with relationships defined
+ * we can use auth.modules like:
+ * authController -> authService -> authRepository -> authModel
+ */
 @Module({
   imports: [
     UsersModule,

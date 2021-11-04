@@ -2,6 +2,10 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { MembersController } from './members.controller';
 import { MembersService } from './members.service';
 
+/**
+ * to simulate a single HTTP request
+ */
+
 describe('MembersController', () => {
   let controller: MembersController;
 

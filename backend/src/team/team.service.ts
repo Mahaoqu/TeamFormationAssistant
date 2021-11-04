@@ -9,6 +9,10 @@ import { CreateTeamDto } from './dto/create-team.dto';
 import { UpdateTeamDto } from './dto/update-team.dto';
 import { Team } from './entities/team.entity';
 
+/**
+ * Collect data from the controller, perform validation and business logic, and call the repository for data manipulation.
+ */
+
 function teamMatch(employees: Member[], requirements: Requirement[]): Team[] {
   let teams: Team[] = [];
 

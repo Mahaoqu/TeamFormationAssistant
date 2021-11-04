@@ -4,6 +4,11 @@ import { UsersService } from '../users/users.service';
 import { LoginDto } from './dto/login.dto';
 import { SignUpDto } from './dto/signup.dto';
 
+/**
+ * auth controller
+ * which contains application logic and passing user input data to service.
+ */
+
 @Controller('auth')
 export class AuthController {
   constructor(

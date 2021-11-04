@@ -1,5 +1,9 @@
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
+/**
+ * application's entity 
+ * which contain the table name in the databasen.
+ */
 @Entity()
 export class Application {
   @PrimaryGeneratedColumn()

@@ -5,6 +5,9 @@ import { CreateApplicationDto } from './dto/create-application.dto';
 import { UpdateApplicationDto } from './dto/update-application.dto';
 import { Application } from './entities/application.entity';
 
+/**
+ * Collect data from the controller, perform validation and business logic, and call the repository for data manipulation.
+ */
 @Injectable()
 export class ApplicationsService {
   constructor(

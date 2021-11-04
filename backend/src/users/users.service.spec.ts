@@ -4,6 +4,11 @@ import { UsersService } from './users.service';
 import { Repository } from 'typeorm';
 import { User } from './entities/user.entity';
 
+/**
+ * spec file of users service
+ * is an unit test for your source files
+ */
+
 const userArray = [
   {
     name: 'timm',

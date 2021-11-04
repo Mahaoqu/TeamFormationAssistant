@@ -2,6 +2,10 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { JobApplicationsController } from './job-applications.controller';
 import { JobApplicationsService } from './job-applications.service';
 
+/**
+ * to simulate a single HTTP request
+ */
+
 describe('JobApplicationsController', () => {
   let controller: JobApplicationsController;
 

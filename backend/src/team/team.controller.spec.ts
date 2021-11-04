@@ -2,6 +2,10 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { TeamController } from './team.controller';
 import { TeamService } from './team.service';
 
+/**
+ * to simulate a single HTTP request
+ */
+
 describe('TeamController', () => {
   let controller: TeamController;
 

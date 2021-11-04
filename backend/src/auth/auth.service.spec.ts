@@ -7,6 +7,11 @@ import { jwtConstants } from './constants';
 import { JwtStrategy } from './strategies/jwt.strategy';
 import { LocalStrategy } from './strategies/local.strategy';
 
+/**
+ * spec file of auth service
+ * is an unit test for your source files
+ */
+
 describe('AuthService', () => {
   let service: AuthService;
 

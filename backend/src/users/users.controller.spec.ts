@@ -3,6 +3,10 @@ import { CreateUserDto } from './dto/create-user.dto';
 import { UsersController } from './users.controller';
 import { UsersService } from './users.service';
 
+/**
+ * to simulate a single HTTP request
+ */
+
 const createUserDto: CreateUserDto = {
   username: 'name',
   email: 'email',

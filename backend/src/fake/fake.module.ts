@@ -6,6 +6,12 @@ import { Project } from 'src/projects/entities/project.entity';
 import { FakeController } from './fake.controller';
 import { FakeService } from './fake.service';
 
+/**
+ * common model files with relationships defined
+ * we can use fake.modules like:
+ * fakeController -> fakeService -> fakeRepository -> fakeModel
+ */
+
 @Module({
   imports: [TypeOrmModule.forFeature([Member, Project, Application])],
   controllers: [FakeController],

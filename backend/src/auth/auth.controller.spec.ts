@@ -1,6 +1,10 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { AuthController } from './auth.controller';
 
+/**
+ * to simulate a single HTTP request
+ */
+
 describe('AuthController', () => {
   let controller: AuthController;
 

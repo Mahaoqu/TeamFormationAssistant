@@ -11,6 +11,11 @@ import { TeamService } from './team.service';
 import { CreateTeamDto } from './dto/create-team.dto';
 import { UpdateTeamDto } from './dto/update-team.dto';
 
+/**
+ * team controller
+ * which contains application logic and passing user input data to service.
+ */
+
 @Controller('team')
 export class TeamController {
   constructor(private readonly teamService: TeamService) {}
