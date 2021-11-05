@@ -5,6 +5,8 @@
 [![Documentation Status](https://readthedocs.org/projects/ansicolortags/badge/?version=latest)](http://ansicolortags.readthedocs.io/?badge=latest)
 ![GitHub language count](https://img.shields.io/github/languages/count/AmitMandliya/TeamFormationAssistant?style=flat-square)
 <img src=https://img.shields.io/github/license/yliang123/TeamFormationAssistant>
+![GitHub Action Build](https://github.com/Mahaoqu/TeamFormationAssistant/actions/workflows/master_teamformationassistant.yml/badge.svg)
+![Codecov](https://img.shields.io/codecov/c/github/Mahaoqu/TeamformationAssistant?style=flat-square)
 
 # Introduction
 

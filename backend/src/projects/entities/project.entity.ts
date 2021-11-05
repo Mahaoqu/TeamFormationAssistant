@@ -1,4 +1,4 @@
-import { Requirement } from 'src/projects/entities/requirement.entity';
+import { Requirement } from '../../projects/entities/requirement.entity';
 import { Column, Entity, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
 
 /**

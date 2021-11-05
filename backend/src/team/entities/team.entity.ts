@@ -1,5 +1,5 @@
-import { Member } from 'src/members/entities/member.entity';
-import { Project } from 'src/projects/entities/project.entity';
+import { Member } from '../../members/entities/member.entity';
+import { Project } from '../../projects/entities/project.entity';
 import { Column, Entity, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
 
 /**

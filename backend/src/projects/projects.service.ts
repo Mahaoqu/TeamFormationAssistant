@@ -13,79 +13,78 @@ import { Requirement } from './entities/requirement.entity';
 export class ProjectsService {
   constructor(
     @InjectRepository(Project)
-    private readonly projectRepository: Repository<Project>,
-  ) // @InjectRepository(Requirement)
-  // private readonly requirementsRepository: Repository<Requirement>,
+    private readonly projectRepository: Repository<Project>, // @InjectRepository(Requirement)
+  ) // private readonly requirementsRepository: Repository<Requirement>,
   {}
-  async onModuleInit(){
-    console.log('initialize some projects');
-    const p0: Project={
-      id: 0,
-      name: 'CaloriesTracker',
-      endDate: new Date('December 17, 1995 03:24:00'),
-      teamSize: 2,
-      budget: 10000,
-      tools: 'Python',
-      isAssignmentComplete: false,
-      priority: 1,
-      requirements: []
-    };
-    const p1: Project={
-      id: 1,
-      name: 'CaloriesTracker II',
-      endDate: new Date('December 18, 1995 03:24:00'),
-      teamSize: 1,
-      budget: 500,
-      tools: 'Python',
-      isAssignmentComplete: false,
-      priority: 1,
-      requirements: []
-    };
-    const p2: Project={
-      id: 2,
-      name: 'CaloriesTracker III',
-      endDate: new Date('December 18, 1995 03:24:00'),
-      teamSize: 20,
-      budget: 10000,
-      tools: 'C++',
-      isAssignmentComplete: false,
-      priority: 1,
-      requirements: []
-    };
-    await this.projectRepository.save(p0);
-    await this.projectRepository.save(p1);
-    await this.projectRepository.save(p2);
-  }
+  // async onModuleInit() {
+  //   console.log('initialize some projects');
+  //   const p0: Project = {
+  //     id: 0,
+  //     name: 'CaloriesTracker',
+  //     endDate: new Date('December 17, 1995 03:24:00'),
+  //     teamSize: 2,
+  //     budget: 10000,
+  //     tools: 'Python',
+  //     isAssignmentComplete: false,
+  //     priority: 1,
+  //     requirements: [],
+  //   };
+  //   const p1: Project = {
+  //     id: 1,
+  //     name: 'CaloriesTracker II',
+  //     endDate: new Date('December 18, 1995 03:24:00'),
+  //     teamSize: 1,
+  //     budget: 500,
+  //     tools: 'Python',
+  //     isAssignmentComplete: false,
+  //     priority: 1,
+  //     requirements: [],
+  //   };
+  //   const p2: Project = {
+  //     id: 2,
+  //     name: 'CaloriesTracker III',
+  //     endDate: new Date('December 18, 1995 03:24:00'),
+  //     teamSize: 20,
+  //     budget: 10000,
+  //     tools: 'C++',
+  //     isAssignmentComplete: false,
+  //     priority: 1,
+  //     requirements: [],
+  //   };
+  //   await this.projectRepository.save(p0);
+  //   await this.projectRepository.save(p1);
+  //   await this.projectRepository.save(p2);
+  // }
 
   async create(createProjectDto: CreateProjectDto) {
     const proj = new Project();
-    const n = this.projectRepository.findAndCount({
-      name:createProjectDto.name
-    });
-    const b = this.projectRepository.findAndCount({
-      budget:createProjectDto.budget
-    });
-    const e = this.projectRepository.findAndCount({
-      endDate:createProjectDto.endDate
-    });
-    const p = this.projectRepository.findAndCount({
-      priority:createProjectDto.priority
-    });
-    const a = this.projectRepository.findAndCount({
-      isAssignmentComplete:createProjectDto.isAssignmentComplete
-    });
-    const te = this.projectRepository.findAndCount({
-      teamSize:createProjectDto.teamSize
-    });
-    const to = this.projectRepository.findAndCount({
-      tools:createProjectDto.tools
-    });
+    // const n = this.projectRepository.findAndCount({
+    //   name: createProjectDto.name,
+    // });
+    // const b = this.projectRepository.findAndCount({
+    //   budget: createProjectDto.budget,
+    // });
+    // const e = this.projectRepository.findAndCount({
+    //   endDate: createProjectDto.endDate,
+    // });
+    // const p = this.projectRepository.findAndCount({
+    //   priority: createProjectDto.priority,
+    // });
+    // const a = this.projectRepository.findAndCount({
+    //   isAssignmentComplete: createProjectDto.isAssignmentComplete,
+    // });
+    // const te = this.projectRepository.findAndCount({
+    //   teamSize: createProjectDto.teamSize,
+    // });
+    // const to = this.projectRepository.findAndCount({
+    //   tools: createProjectDto.tools,
+    // });
     proj.name = createProjectDto.name;
     proj.budget = createProjectDto.budget;
     proj.endDate = createProjectDto.endDate;
     proj.priority = createProjectDto.priority;
     proj.isAssignmentComplete = createProjectDto.isAssignmentComplete;
-    proj.teamSize = createProjectDto.teamSize
+    proj.teamSize = createProjectDto.teamSize;
     proj.tools = createProjectDto.tools;
 
     await this.projectRepository.save(proj);

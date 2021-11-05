@@ -1,12 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Application } from 'src/applications/entities/application.entity';
-import { Member } from 'src/members/entities/member.entity';
-import { Project } from 'src/projects/entities/project.entity';
-import { Requirement } from 'src/projects/entities/requirement.entity';
 import { Repository } from 'typeorm';
-import { CreateTeamDto } from './dto/create-team.dto';
-import { UpdateTeamDto } from './dto/update-team.dto';
+import { Member } from '../members/entities/member.entity';
+import { Project } from '../projects/entities/project.entity';
+import { Requirement } from '../projects/entities/requirement.entity';
 import { Team } from './entities/team.entity';
 
 /**
@@ -63,10 +60,10 @@ export class TeamService {
 
   async assign() {
     const members = await this.memberRepository.find({
-      isAssigned: false
+      isAssigned: false,
     });
     const projs = await this.projectRepository.find({
-      isAssignmentComplete: false
+      isAssignmentComplete: false,
     });
 
     for (const proj of projs) {
