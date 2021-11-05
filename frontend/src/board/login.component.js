@@ -1,3 +1,6 @@
+/** 
+ * design and render the login-form
+ */
 import React, { Component } from 'react';
 import AuthService from '../services/auth.service';
 import { Form, Input, Button, Checkbox, message } from 'antd';

@@ -1,3 +1,7 @@
+/** this class, BoardAdmin, 
+ *  is for the admin to login and logout
+ */
+
 import React, { Component } from 'react';
 
 import UserService from '../services/user.service';

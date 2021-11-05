@@ -1,3 +1,6 @@
+/** this class, BoardUser
+ *  is for the user to login and logout
+ */
 import React, { Component } from 'react';
 
 import UserService from '../services/user.service';

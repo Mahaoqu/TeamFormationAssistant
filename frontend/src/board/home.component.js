@@ -1,3 +1,6 @@
+/** this class, Home, 
+ *  is to render the home page of our website
+ */
 import React, { Component } from 'react';
 
 import UserService from '../services/user.service';
