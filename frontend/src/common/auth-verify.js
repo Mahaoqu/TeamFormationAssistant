@@ -1,3 +1,8 @@
+/** the class, AuthVerify,
+ *  is to verify the user's
+ *  authentication status if expired
+ */
+
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 

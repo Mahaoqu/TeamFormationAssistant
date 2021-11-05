@@ -1,3 +1,7 @@
+/** the class, CandidateMatch
+ *  is to match candidates to projects
+ */
+
 import React, { Component } from 'react';
 
 import * as ReactBootstrap from 'react-bootstrap';
