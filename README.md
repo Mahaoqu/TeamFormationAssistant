@@ -22,8 +22,7 @@ In addition, this project has the following features to aid team creation:
 
 [![Team Formation Assistant](https://github.com/lokesh45/TeamFormationAssistant/blob/master/Assistant.png)](https://www.youtube.com/watch?v=LmKjp3aQPEI&feature=youtu.be)
 
-[![Team Formation Assistant Project 2 DEMO](https://github.com/Mahaoqu/TeamFormationAssistant/tree/master/docs/teamFormationAssistant.png)]
-(https://www.youtube.com/watch?v=Zev_PW6lhZM)
+[![Team Formation Assistant Project 2 DEMO](https://github.com/Mahaoqu/TeamFormationAssistant/blob/master/docs/teamFormationAssistant.png)](https://www.youtube.com/watch?v=Zev_PW6lhZM&t=5s)
 
 Steps for execution:
 
