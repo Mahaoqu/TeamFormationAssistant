@@ -1,5 +1,5 @@
-import { Application } from 'src/applications/entities/application.entity';
-import { User } from 'src/users/entities/user.entity';
+import { Application } from '../../applications/entities/application.entity';
+import { User } from '../../users/entities/user.entity';
 import { Column, Entity, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
 
 /**

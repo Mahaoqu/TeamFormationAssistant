@@ -15,7 +15,7 @@ axios.interceptors.response.use(
     return response;
   },
   function (error) {
-    message.error(error);
+    message.error("Network Error");
     return Promise.reject(error);
   },
 );

@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
+import { JobApplication } from '../job-applications/entities/job-application.entity';
 import { Repository } from 'typeorm';
 import { CreateJobDto } from './dto/create-job.dto';
 import { UpdateJobDto } from './dto/update-job.dto';
@@ -14,6 +15,8 @@ export class JobsService {
   constructor(
     @InjectRepository(Job)
     private readonly jobsRepository: Repository<Job>,
+    @InjectRepository(JobApplication)
+    private readonly jobsApplicationRepository: Repository<JobApplication>,
   ) {}
 
   // Object with no id will insert in database every time restarting server
@@ -33,24 +36,6 @@ export class JobsService {
 
   async create(createJobDto: CreateJobDto) {
     const jobs = new Job();
-    const a = this.jobsRepository.findAndCount({
-      name: createJobDto.name,
-    });
-    const b = this.jobsRepository.findAndCount({
-      projectId: createJobDto.projectId,
-    });
-    const c = this.jobsRepository.findAndCount({
-      phone: createJobDto.phone,
-    });
-    const d = this.jobsRepository.findAndCount({
-      role: createJobDto.role,
-    });
-    const e = this.jobsRepository.findAndCount({
-      description: createJobDto.description,
-    });
-    const f = this.jobsRepository.findAndCount({
-      address: createJobDto.address,
-    });
 
     jobs.name = createJobDto.name;
     jobs.projectId = createJobDto.projectId;
@@ -67,6 +52,14 @@ export class JobsService {
   }
 
   findOne(id: number) {
+    return this.jobsRepository.findOne(id);
+  }
+
+  apply(id: number, user_id: number) {
+    const j = this.jobsRepository.findOne(id);
+    const ja = new JobApplication();
+    ja.application;
+    ja.status = 'Going';
     return this.jobsRepository.findOne(id);
   }
 

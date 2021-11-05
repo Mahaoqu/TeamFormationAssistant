@@ -32,6 +32,9 @@ export class Project {
   @Column()
   priority: number;
 
-  @OneToMany(() => Requirement, (requirement) => requirement.project)
+  @OneToMany(() => Requirement, (requirement) => requirement.project, {
+    cascade: true,
+    eager: true,
+  })
   requirements: Requirement[];
 }

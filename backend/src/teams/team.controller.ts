@@ -10,7 +10,7 @@ import { TeamService } from './team.service';
 export class TeamController {
   constructor(private readonly teamService: TeamService) {}
 
-  @Post()
+  @Post('match')
   team_match() {
     return this.teamService.assign();
   }

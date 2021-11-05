@@ -1,6 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { getRepositoryToken } from '@nestjs/typeorm';
 import { Job } from '../jobs/entities/job.entity';
+import { JobApplication } from './entities/job-application.entity';
 import { JobApplicationsService } from './job-applications.service';
 
 /**
@@ -16,11 +17,11 @@ describe('JobApplicationsService', () => {
       providers: [
         JobApplicationsService,
         {
-          provide: getRepositoryToken(Job),
+          provide: getRepositoryToken(JobApplication),
           useValue: {
             find: jest.fn().mockResolvedValue([]),
-            findOne: jest.fn().mockResolvedValue(new Job()),
-            save: jest.fn().mockResolvedValue(new Job()),
+            findOne: jest.fn().mockResolvedValue(new JobApplication()),
+            save: jest.fn().mockResolvedValue(new JobApplication()),
             remove: jest.fn(),
             delete: jest.fn(),
           },

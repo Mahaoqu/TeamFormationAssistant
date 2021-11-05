@@ -15,11 +15,11 @@ function teamMatch(employees: Member[], requirements: Requirement[]): Team[] {
 
   // Choose each requirement from application
   // find the highest score
-  for (const r of requirements) {
+  requirements.forEach((r) => {
     let selected_employ: Member = null;
     let highScore = 0;
 
-    for (const e of employees) {
+    employees.forEach((e) => {
       const memscore =
         (r.skillWeight * e.skillScore) / 100 +
         (r.experienceWeight * e.experience) / 10 +
@@ -31,7 +31,7 @@ function teamMatch(employees: Member[], requirements: Requirement[]): Team[] {
         selected_employ = e;
         highScore = memscore;
       }
-    }
+    });
 
     // TODO: Remove from list?
     // employees.remove()
@@ -40,7 +40,7 @@ function teamMatch(employees: Member[], requirements: Requirement[]): Team[] {
     t.project = r.project;
 
     teams.push(t);
-  }
+  });
 
   return teams;
 }
@@ -67,8 +67,10 @@ export class TeamService {
     });
 
     for (const proj of projs) {
-      const c = teamMatch(members, proj.requirements);
-      await this.teamRepository.save(c);
+      if (proj.requirements) {
+        const c = teamMatch(members, proj.requirements || []);
+        await this.teamRepository.save(c);
+      }
     }
   }
 
@@ -81,7 +83,7 @@ export class TeamService {
   }
 
   findOne(id: number) {
-    return this.teamRepository.findOne(id)
+    return this.teamRepository.findOne(id);
   }
 
   // update(id: number, updateTeamDto: UpdateTeamDto) {
@@ -89,6 +91,6 @@ export class TeamService {
   // }
 
   remove(id: number) {
-    return this.teamRepository.delete(id)
+    return this.teamRepository.delete(id);
   }
 }

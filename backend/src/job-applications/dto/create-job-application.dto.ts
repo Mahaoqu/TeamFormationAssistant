@@ -2,4 +2,7 @@
  * Data Transfer Object for creating job application.
  * To encapsulate the data
  */
-export class CreateJobApplicationDto {}
+export class CreateJobApplicationDto {
+  jobId: number;
+  userId: number;
+}

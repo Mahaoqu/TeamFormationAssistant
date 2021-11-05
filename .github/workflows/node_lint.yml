@@ -18,8 +18,7 @@ jobs:
       matrix:
         node-version: [16.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-        cache-dependency-path: backend/package-lock.json
-
+        
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
@@ -27,4 +26,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: cd backend && npm ci && npm run lint
+        cache-dependency-path: backend/package-lock.json
+    - run: cd backend && npm ci && npm run lint && npm run test
+    

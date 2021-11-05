@@ -2,11 +2,14 @@
 
 [![Build Status](https://app.travis-ci.com/yliang123/TeamFormationAssistant.svg?branch=master)](https://app.travis-ci.com/yliang123/TeamFormationAssistant)
 [![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.5542332.svg)](https://zenodo.org/badge/latestdoi/408224049)
-[![Documentation Status](https://readthedocs.org/projects/ansicolortags/badge/?version=latest)](http://ansicolortags.readthedocs.io/?badge=latest)
-![GitHub language count](https://img.shields.io/github/languages/count/AmitMandliya/TeamFormationAssistant?style=flat-square)
+![GitHub language count](https://img.shields.io/github/languages/count/Mahaoqu/TeamFormationAssistant?style=flat-square)
 <img src=https://img.shields.io/github/license/yliang123/TeamFormationAssistant>
 ![GitHub Action Build](https://github.com/Mahaoqu/TeamFormationAssistant/actions/workflows/master_teamformationassistant.yml/badge.svg)
-![Codecov](https://img.shields.io/codecov/c/github/Mahaoqu/TeamformationAssistant?style=flat-square)
+[![Codecov](https://img.shields.io/codecov/c/github/Mahaoqu/TeamformationAssistant?style=flat-square)](https://app.codecov.io/gh/Mahaoqu/TeamFormationAssistant)
+
+Now this project are deployed on Azure App Service:
+
+https://teamformationassistant.azurewebsites.net/
 
 # Introduction
 
@@ -18,14 +21,11 @@ In addition, this project has the following features to aid team creation:
 ➢ A database using MySQL to store the employees, projects, assignments data.<br/>
 ➢ An algorithm which will take the project requirements, team members availability, skill level, tools preferred, etc. as input and assigns the applicants for new jobs and employees for the new projects.<br/>
 
-# Click for video:
-
-[![Team Formation Assistant Project 2](https://github.com/yliang123/CSC510-Group18/blob/main/teamformation.png)](https://www.youtube.com/watch?v=U7m2TXdxnak)
-
-[![Team Formation Assistant](https://github.com/lokesh45/TeamFormationAssistant/blob/master/Assistant.png)](https://www.youtube.com/watch?v=LmKjp3aQPEI&feature=youtu.be)
+## Click for new video
 
 [![Team Formation Assistant Project 2 DEMO](https://github.com/Mahaoqu/TeamFormationAssistant/blob/master/docs/teamFormationAssistant.png)](https://www.youtube.com/watch?v=Zev_PW6lhZM&t=5s)
 
+## Build and Run
 Steps for execution:
 
 1. Download [Docker](https://docs.docker.com/get-docker/).
@@ -33,10 +33,12 @@ Steps for execution:
 3. In the terminal, navigate to the TeamFormationAssistant directory.
 4. Run the following command:
 ```
-npm i
 docker-compose up --build -d
 ```
 6. Next, open your browser and type in localhost:8080 in the search bar to open the web UI of the application
+
+## Development
+
 
 ## Project Details
 

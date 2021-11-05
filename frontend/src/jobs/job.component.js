@@ -1,7 +1,13 @@
 import {
-  Button, Spin, Form,
-  Input, message, Select,
-  Space, Modal, Table
+  Button,
+  Spin,
+  Form,
+  Input,
+  message,
+  Select,
+  Space,
+  Modal,
+  Table,
 } from 'antd';
 import axios from 'axios';
 import moment from 'moment';
@@ -11,25 +17,14 @@ import authService from '../services/auth.service';
 const { Option } = Select;
 const { TextArea } = Input;
 
-const App = () => {
-  return (
-    <div className="midpart">
-      <h2 align="center">Jobs</h2>
-      <div style={{ display: 'flex', justifyContent: 'right' }}>
-        <Link to="/add_job">
-          <Button>Add Job</Button>
-        </Link>
-      </div>
-
-      <Content />
-    </div>
-  );
-};
-
 const Content = () => {
   const [detail, setDetail] = useState();
   const [loading, setLoading] = useState(true);
-  const [userRole, setUserRole] = useState();
+  const [userRole, setUserRole] = useState({
+    currentUser: null,
+    showAdminBoard: false,
+    showManagerBoard: false,
+  });
   const user = authService.getCurrentUser();
 
   const [proj, setproj] = useState([]);
@@ -37,27 +32,35 @@ const Content = () => {
 
   const getData = () => {
     return axios.get('jobs').then(data => {
-      console.log(data)
+      console.log(data);
       setDetail(data.data);
       setLoading(false);
     });
-  }
+  };
 
   const showModal = id => {
     axios.get(`jobs/${id}`).then(data => {
-      const d = { ...data.data }
-      d.endDate = new moment(data.data.endDate)
-      form.setFieldsValue(d)
+      const d = { ...data.data };
+      d.endDate = new moment(data.data.endDate);
+      form.setFieldsValue(d);
       setIsModalVisible(true);
-    })
+    });
   };
 
   const handleOk = () => {
     const id = form.getFieldValue('id');
     axios.patch(`jobs/${id}`, form.getFieldsValue()).then(data => {
-      message.success("Update Success");
+      message.success('Update Success');
       getData().then(d => setIsModalVisible(false));
-    })
+    });
+  };
+
+  const handleApply = () => {
+    const id = form.getFieldValue('id');
+    axios.patch(`jobs/${id}`, form.getFieldsValue()).then(data => {
+      message.success('Update Success');
+      getData().then(d => setIsModalVisible(false));
+    });
   };
 
   const handleCancel = () => {
@@ -67,7 +70,6 @@ const Content = () => {
   const [form] = Form.useForm();
 
   const options = proj.map(d => <Option key={d.id}>{d.name}</Option>);
-
 
   useEffect(() => {
     getData();
@@ -118,114 +120,138 @@ const Content = () => {
       title: 'Action',
       key: 'action',
       render: (text, record) => {
-        const handleshow = () => { showModal(record.id) }
+        const handleshow = () => {
+          showModal(record.id);
+        };
         const handledelete = () => {
           axios.delete(`jobs/${record.id}`).then(data => getData());
-        }
+        };
+        const handleapply = () => {
+          axios.post(`application/${record.id}`).then(data => getData());
+        };
         return (
           <Space size="middle">
-            <Button onClick={handleshow}>Modify</Button>
-            {userRole.showAdminBoard &&
-              (<Button danger onClick={handledelete}>Delete</Button>)}
+            {!userRole.showAdminBoard && !userRole.showManagerBoard && (
+              <Button onClick={handleapply}>Apply</Button>
+            )}
+            {(userRole.showAdminBoard || userRole.showManagerBoard) && (
+              <Button onClick={handleshow}>Modify</Button>
+            )}
+            {userRole.showAdminBoard && (
+              <Button danger onClick={handledelete}>
+                Delete
+              </Button>
+            )}
           </Space>
-        )
+        );
       },
     },
   ];
 
   return (
-    <div>
-      <Spin spinning={loading}>
-        <Table columns={columns} dataSource={detail} />
-      </Spin>
-      <Modal title="Modify Project" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
-        <Form
-          form={form}
-          name="basic"
-          autoComplete="off"
+    <div className="midpart">
+      <h2 align="center">Jobs</h2>
+      {(userRole.showAdminBoard || userRole.showManagerBoard) && (
+        <div style={{ display: 'flex', justifyContent: 'right' }}>
+          <Link to="/add_job">
+            <Button>Add Job</Button>
+          </Link>
+        </div>
+      )}
+
+      <div>
+        <Spin spinning={loading}>
+          <Table columns={columns} dataSource={detail} />
+        </Spin>
+        <Modal
+          title="Modify Project"
+          visible={isModalVisible}
+          onOk={handleOk}
+          onCancel={handleCancel}
         >
-          <Form.Item
-            label="Job Name"
-            name="name"
-            rules={[
-              {
-                required: true,
-                message: 'Please input your project name!',
-              },
-            ]}
-          >
-            <Input />
-          </Form.Item>
+          <Form form={form} name="basic" autoComplete="off">
+            <Form.Item
+              label="Job Name"
+              name="name"
+              rules={[
+                {
+                  required: true,
+                  message: 'Please input your project name!',
+                },
+              ]}
+            >
+              <Input />
+            </Form.Item>
 
-          <Form.Item
-            label="Project"
-            name="projectId"
-            rules={[
-              {
-                required: true,
-                message: 'Please input your project name!',
-              },
-            ]}
-          >
-            <Select defaultValue="">
-              {options}
-            </Select>
-          </Form.Item>
+            <Form.Item
+              label="Project"
+              name="projectId"
+              rules={[
+                {
+                  required: true,
+                  message: 'Please input your project name!',
+                },
+              ]}
+            >
+              <Select defaultValue="">{options}</Select>
+            </Form.Item>
 
-          <Form.Item
-            label="Phone Number"
-            name="phone"
-            rules={[
-              {
-                required: true,
-                message: 'Please input your project name!',
-              },
-            ]}
-          >
-            <Input />
-          </Form.Item>
+            <Form.Item
+              label="Phone Number"
+              name="phone"
+              rules={[
+                {
+                  required: true,
+                  message: 'Please input your project name!',
+                },
+              ]}
+            >
+              <Input />
+            </Form.Item>
 
-          <Form.Item
-            label="Role"
-            name="role"
-            rules={[
-              {
-                required: true,
-                message: 'Please input your project!',
-              },
-            ]}
-          >
-            <Input />
-          </Form.Item>
+            <Form.Item
+              label="Role"
+              name="role"
+              rules={[
+                {
+                  required: true,
+                  message: 'Please input your project!',
+                },
+              ]}
+            >
+              <Input />
+            </Form.Item>
 
-          <Form.Item
-            label="Description"
-            name="description"
-            rules={[
-              {
-                required: true,
-                message: 'Please input your description!',
-              },
-            ]}
-          >
-            <TextArea />
-          </Form.Item>
+            <Form.Item
+              label="Description"
+              name="description"
+              rules={[
+                {
+                  required: true,
+                  message: 'Please input your description!',
+                },
+              ]}
+            >
+              <TextArea />
+            </Form.Item>
 
-          <Form.Item
-            label="Address"
-            name="address"
-            rules={[
-              {
-                required: true,
-                message: 'Please input your address!',
-              },
-            ]}
-          >
-            <Input />
-          </Form.Item>
-        </Form>
-      </Modal>
+            <Form.Item
+              label="Address"
+              name="address"
+              rules={[
+                {
+                  required: true,
+                  message: 'Please input your address!',
+                },
+              ]}
+            >
+              <Input />
+            </Form.Item>
+          </Form>
+        </Modal>
+      </div>
     </div>
   );
-}
-export default App;
+};
+
+export default Content;

@@ -11,16 +11,16 @@ export class Requirement {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @Column({ nullable: true })
   languagePreferred: string;
 
-  @Column({ nullable: false })
+  @Column({ nullable: true })
   skill: number;
 
-  @Column()
+  @Column({ nullable: true })
   memberRole: string;
 
-  @Column()
+  @Column({ nullable: true })
   availableHoursPerWeek: number;
 
   @Column()

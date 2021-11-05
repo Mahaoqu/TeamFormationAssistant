@@ -23,11 +23,13 @@ function candidateMatch(
 
   // Choose each requirement from application
   // find the highest score
-  for (const r of requirements) {
-    let selected_employ = null;
+  requirements.forEach((r) => {
+    console.log(r);
+
+    let selected_employ: Application;
     let highScore = 0;
 
-    for (const e of employees) {
+    employees.forEach((e) => {
       const memscore =
         (r.skillWeight * e.skillScore +
           r.experienceWeight * 1 +
@@ -38,7 +40,7 @@ function candidateMatch(
         selected_employ = e;
         highScore = memscore;
       }
-    }
+    });
 
     // TODO: Remove from list?
     // employees.remove()
@@ -46,8 +48,12 @@ function candidateMatch(
     c.application = selected_employ;
     c.project = r.project;
 
+    console.log(
+      `Match.. candidate in ${selected_employ.name} proj: ${r.project.name}`,
+    );
+
     candidates.push(c);
-  }
+  });
 
   return candidates;
 }
@@ -69,16 +75,20 @@ export class CandidatesService {
     const projs = await this.projectRepository.find({
       isAssignmentComplete: false,
     });
+    console.log(`finding... ${projs.length} projs`);
     const applications = await this.applicationRepository.find();
 
     for (const proj of projs) {
-      const c = candidateMatch(applications, proj.requirements);
-      await this.candidateRepository.save(c);
+      if (proj.requirements) {
+        console.log(`Matching... ${proj.id}`);
+        const c = candidateMatch(applications, proj.requirements || []);
+        await this.candidateRepository.save(c);
 
-      if (c.length == proj.requirements.length)
-        proj.isAssignmentComplete = true;
+        if (c.length == proj.requirements.length)
+          proj.isAssignmentComplete = true;
 
-      await this.projectRepository.save(proj);
+        await this.projectRepository.save(proj);
+      }
     }
   }
 
@@ -91,11 +101,11 @@ export class CandidatesService {
   }
 
   findOne(id: number) {
-    return this.candidateRepository.findOne(id)
+    return this.candidateRepository.findOne(id);
   }
 
   remove(id: number) {
-    return this.candidateRepository.delete(id)
+    return this.candidateRepository.delete(id);
   }
 
   update(id: number, updateCandidateDto: UpdateCandidateDto) {

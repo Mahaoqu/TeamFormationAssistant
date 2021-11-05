@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Req } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { CreateProjectDto } from './dto/create-project.dto';
@@ -57,34 +57,24 @@ export class ProjectsService {
 
   async create(createProjectDto: CreateProjectDto) {
     const proj = new Project();
-    // const n = this.projectRepository.findAndCount({
-    //   name: createProjectDto.name,
-    // });
-    // const b = this.projectRepository.findAndCount({
-    //   budget: createProjectDto.budget,
-    // });
-    // const e = this.projectRepository.findAndCount({
-    //   endDate: createProjectDto.endDate,
-    // });
-    // const p = this.projectRepository.findAndCount({
-    //   priority: createProjectDto.priority,
-    // });
-    // const a = this.projectRepository.findAndCount({
-    //   isAssignmentComplete: createProjectDto.isAssignmentComplete,
-    // });
-    // const te = this.projectRepository.findAndCount({
-    //   teamSize: createProjectDto.teamSize,
-    // });
-    // const to = this.projectRepository.findAndCount({
-    //   tools: createProjectDto.tools,
-    // });
     proj.name = createProjectDto.name;
     proj.budget = createProjectDto.budget;
     proj.endDate = createProjectDto.endDate;
     proj.priority = createProjectDto.priority;
-    proj.isAssignmentComplete = createProjectDto.isAssignmentComplete;
+    proj.isAssignmentComplete = false;
     proj.teamSize = createProjectDto.teamSize;
     proj.tools = createProjectDto.tools;
+
+    proj.requirements = createProjectDto.requirements.map((r) => {
+      console.log(r);
+      const req = new Requirement();
+      req.budgetWeight = r.budgetWeight;
+      req.experienceWeight = r.experienceWeight;
+      req.hoursWeight = r.hoursWeight;
+      req.languageWeight = r.languageWeight;
+      req.skillWeight = r.skillWeight;
+      return req;
+    });
 
     await this.projectRepository.save(proj);
   }
