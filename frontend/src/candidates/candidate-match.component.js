@@ -2,21 +2,17 @@
  *  is to match candidates to projects
  */
 
-import React, { Component } from 'react';
-
-import * as ReactBootstrap from 'react-bootstrap';
-import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { Button, Spin, Table, Space, Card } from 'antd';
 
 const App = () => {
+
+
   return (
     <div className="midpart">
       <h2 align="center">Candidate Match Result</h2>
-      <div style={{ display: 'flex', justifyContent: 'right' }}>
-        <Link to="candidate/match">
-          <Button>Match Candidate Now</Button>
-        </Link>
-      </div>
-
       <CandidateMatchTable />
     </div>
   );
@@ -25,6 +21,11 @@ const App = () => {
 const CandidateMatchTable = () => {
   const [detail, setDetail] = useState();
   const [loading, setLoading] = useState(true);
+
+  const onMatch = () => {
+    axios.post('candidates/match')
+    setLoading(false)
+  }
 
   useEffect(() => {
     axios.get('candidates').then(data => {
@@ -35,9 +36,14 @@ const CandidateMatchTable = () => {
   }, []);
 
   return (
-    <Spin spinning={loading}>
-      <Table columns={columns} dataSource={detail} />
-    </Spin>
+    <div>
+      <div style={{ display: 'flex', justifyContent: 'right' }}>
+        <Button onClick={onMatch}>Match Candidate Now</Button>
+      </div>
+      <Spin spinning={loading}>
+        <Table columns={columns} dataSource={detail} />
+      </Spin>
+    </div>
   );
 };
 
@@ -58,8 +64,8 @@ const columns = [
     key: 'action',
     render: (text, record) => (
       <Space size="middle">
-        <a>Send Offer</a>
-        <a>Delete</a>
+        <Button>Send Offer</Button>
+        <Button danger>Delete</Button>
       </Space>
     ),
   },

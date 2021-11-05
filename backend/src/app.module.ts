@@ -8,7 +8,7 @@ import { ProjectsModule } from './projects/projects.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { JobApplicationsModule } from './job-applications/job-applications.module';
 import { CandidatesModule } from './candidates/candidates.module';
-import { TeamModule } from './team/team.module';
+import { TeamModule } from './teams/team.module';
 import { AppController } from './app.controller';
 import { AuthModule } from './auth/auth.module';
 import { join } from 'path';

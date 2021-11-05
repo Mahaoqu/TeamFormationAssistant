@@ -12,7 +12,7 @@ const columns = [
   },
   {
     title: 'Languages',
-    dataIndex: 'aanguages',
+    dataIndex: 'languages',
     key: 'languages',
   },
   {
@@ -28,8 +28,8 @@ const columns = [
   },
   {
     title: 'Member Role',
-    dataIndex: 'memberRole',
-    key: 'memberRole',
+    dataIndex: 'role',
+    key: 'role',
   },
   {
     title: 'Experience',
@@ -45,6 +45,16 @@ const columns = [
     title: 'Available Hours Per Week',
     dataIndex: 'availableHoursPerWeek',
     key: 'availableHoursPerWeek',
+  },
+  {
+    title: 'Action',
+    key: 'action',
+    render: (text, record) => (
+      <Space size="middle">
+        <Button>Modify</Button>
+        <Button danger>Delete</Button>
+      </Space>
+    ),
   },
 ];
 

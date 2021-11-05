@@ -87,18 +87,18 @@ export class CandidatesService {
   }
 
   findAll() {
-    return `This action returns all candidates`;
+    return this.candidateRepository.find();
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} candidate`;
+    return this.candidateRepository.findOne(id)
+  }
+
+  remove(id: number) {
+    return this.candidateRepository.delete(id)
   }
 
   update(id: number, updateCandidateDto: UpdateCandidateDto) {
     return `This action updates a #${id} candidate`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} candidate`;
   }
 }

@@ -15,12 +15,16 @@ import AddMember from './members/add-member.component';
 import Member from './members/member.component';
 import AddProject from './projects/add-project.component';
 import Project from './projects/project.component';
+import Candidate from './candidates/candidate-match.component'
+import Team from './teams/team-match.component'
+import Application from './applications/applications.component'
+import ManageApplication from './applications/manage-applications.component'
 
 const { Content, Footer } = Layout;
 
 const App = () => {
   return (
-    <Layout className="layout">
+    <Layout className="layout" style={{ minHeight: "100vh" }}>
       <BrowserRouter>
         <Header />
 
@@ -38,15 +42,18 @@ const App = () => {
             <Route path="/add_job" component={AddJob} />
             <Route path="/jobs" component={Job} />
             <Route path="/projects" component={Project} />
-            <Route path="/application" component={Project} />
-            <Route path="/application_management" component={Project} />
+            <Route path="/candidate_match" component={Candidate} />
+            <Route path="/team_match" component={Team} />
+            <Route path="/application_management" component={ManageApplication} />
+            <Route path="/application" component={Application} />
           </div>
         </Content>
-
-        <Footer style={{ textAlign: 'center' }}>
-          Teamformation Assistant - 2021
-        </Footer>
       </BrowserRouter>
+      <Footer style={{
+        textAlign: 'center',
+      }}>
+        Teamformation Assistant - 2021
+      </Footer>
     </Layout>
   );
 };

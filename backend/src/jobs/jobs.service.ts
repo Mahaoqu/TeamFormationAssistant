@@ -67,7 +67,7 @@ export class JobsService {
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} job`;
+    return this.jobsRepository.findOne(id);
   }
 
   async update(id: number, updateJobDto: UpdateJobDto) {

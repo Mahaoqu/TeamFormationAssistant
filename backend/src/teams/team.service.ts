@@ -76,19 +76,19 @@ export class TeamService {
   //   return 'This action adds a new team';
   // }
 
-  // findAll() {
-  //   return `This action returns all team`;
-  // }
+  findAll() {
+    return this.teamRepository.find();
+  }
 
-  // findOne(id: number) {
-  //   return `This action returns a #${id} team`;
-  // }
+  findOne(id: number) {
+    return this.teamRepository.findOne(id)
+  }
 
   // update(id: number, updateTeamDto: UpdateTeamDto) {
   //   return `This action updates a #${id} team`;
   // }
 
-  // remove(id: number) {
-  //   return `This action removes a #${id} team`;
-  // }
+  remove(id: number) {
+    return this.teamRepository.delete(id)
+  }
 }

@@ -6,9 +6,9 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-// axios.defaults.baseURL =
-//   window.location.protocol + '//' + window.location.host + '/api/';
-axios.defaults.baseURL = 'http://localhost:8080/api/';
+axios.defaults.baseURL =
+  window.location.protocol + '//' + window.location.host + '/api/';
+// axios.defaults.baseURL = 'http://localhost:8080/api/';
 
 axios.interceptors.response.use(
   function (response) {

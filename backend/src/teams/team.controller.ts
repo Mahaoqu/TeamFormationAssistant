@@ -1,4 +1,4 @@
-import { Controller, Post } from '@nestjs/common';
+import { Controller, Get, Param, Post } from '@nestjs/common';
 import { TeamService } from './team.service';
 
 /**
@@ -6,7 +6,7 @@ import { TeamService } from './team.service';
  * which contains application logic and passing user input data to service.
  */
 
-@Controller('team')
+@Controller('teams')
 export class TeamController {
   constructor(private readonly teamService: TeamService) {}
 
@@ -19,15 +19,15 @@ export class TeamController {
   //   return this.teamService.create(createTeamDto);
   // }
 
-  // @Get()
-  // findAll() {
-  //   return this.teamService.findAll();
-  // }
+  @Get()
+  findAll() {
+    return this.teamService.findAll();
+  }
 
-  // @Get(':id')
-  // findOne(@Param('id') id: string) {
-  //   return this.teamService.findOne(+id);
-  // }
+  @Get(':id')
+  findOne(@Param('id') id: string) {
+    return this.teamService.findOne(+id);
+  }
 
   // @Patch(':id')
   // update(@Param('id') id: string, @Body() updateTeamDto: UpdateTeamDto) {

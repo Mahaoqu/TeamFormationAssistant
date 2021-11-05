@@ -20,7 +20,7 @@ const AddMemberForm = () => {
         <Input />
       </Form.Item>
       <Form.Item name="Date" label="Date of Birth" rules={[{ required: true }]}>
-        <DatePicker disabledDate={day => day < moment().add(30, 'days')} />
+        <DatePicker defaultValue={moment('1998-1-1')} disabledDate={day => day > moment().subtract(18, 'years')} />
       </Form.Item>
       <Form.Item name="programming" label="Programming Languages" rules={[{ required: true }]}>
         <Input />

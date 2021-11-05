@@ -15,7 +15,7 @@ import { UpdateCandidateDto } from './dto/update-candidate.dto';
  * candidate controller
  * which contains application logic and passing user input data to service
  */
-
+ 
 @Controller('candidates')
 export class CandidatesController {
   constructor(private readonly candidatesService: CandidatesService) {}
@@ -23,6 +23,11 @@ export class CandidatesController {
   @Post()
   create(@Body() createCandidateDto: CreateCandidateDto) {
     return this.candidatesService.create(createCandidateDto);
+  }
+
+  @Post('match')
+  assign() {
+    return this.candidatesService.assign();
   }
 
   @Get()
