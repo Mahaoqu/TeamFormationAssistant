@@ -1,7 +1,7 @@
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 /**
- * member's entity 
+ * member's entity
  * which contain the table name in the database.
  */
 
@@ -11,7 +11,7 @@ export class Member {
   id: number;
 
   @Column()
-  name: string; 
+  name: string;
 
   @Column()
   birthday: Date;

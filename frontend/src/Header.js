@@ -63,10 +63,10 @@ class Header extends Component {
                 {showManagerBoard && (
                   <NavDropdown title="Project" id="collasible-nav-dropdown">
                     <NavDropdown.Item href="/team_match">
-                      Team match
+                      Team Match
                     </NavDropdown.Item>
                     <NavDropdown.Item href="/projects">
-                      Project management
+                      Project Management
                     </NavDropdown.Item>
                   </NavDropdown>
                 )}
@@ -74,10 +74,10 @@ class Header extends Component {
                 {showManagerBoard && (
                   <NavDropdown title="Recruit" id="collasible-nav-dropdown">
                     <NavDropdown.Item href="/candidate_match">
-                      Candidate match
+                      Candidate Match
                     </NavDropdown.Item>
                     <NavDropdown.Item href="/jobs">
-                      Job management
+                      Job Management
                     </NavDropdown.Item>
                   </NavDropdown>
                 )}
@@ -85,7 +85,7 @@ class Header extends Component {
                 {showAdminBoard && (
                   <NavDropdown title="Employee" id="collasible-nav-dropdown">
                     <NavDropdown.Item href="/members">
-                      Employee management
+                      Employee Management
                     </NavDropdown.Item>
                   </NavDropdown>
                 )}
@@ -95,14 +95,14 @@ class Header extends Component {
                       <fragment>
                         <NavDropdown.Item href="/jobs">Jobs</NavDropdown.Item>
                         <NavDropdown.Item href="/application">
-                          My application
+                          My Application
                         </NavDropdown.Item>
                       </fragment>
                     )}
                     {showManagerBoard && (
                       <fragment>
-                        <NavDropdown.Item href="/man">
-                          application management
+                        <NavDropdown.Item href="/application_management">
+                          Application Management
                         </NavDropdown.Item>
                       </fragment>
                     )}

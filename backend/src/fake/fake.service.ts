@@ -17,13 +17,14 @@ function getRandomInt(min, max) {
 }
 
 function getRandomFromArr(arr, n) {
-  var result = new Array(n),
-    len = arr.length,
+  let len = arr.length;
+  const result = new Array(n),
     taken = new Array(len);
+
   if (n > len)
     throw new RangeError('getRandom: more elements taken than available');
   while (n--) {
-    var x = Math.floor(Math.random() * len);
+    const x = Math.floor(Math.random() * len);
     result[n] = arr[x in taken ? taken[x] : x];
     taken[x] = --len in taken ? taken[len] : len;
   }
@@ -75,7 +76,7 @@ export class FakeService {
 
   generate_random_member() {
     const m = new Member();
-    m.name = faker.name.findName()
+    m.name = faker.name.findName();
     m.isAssigned = false;
     m.role = 'SDE' + getRandomInt(1, 3);
     m.hourlyRate = getRandomInt(60, 100);
@@ -104,9 +105,9 @@ export class FakeService {
       r.memberRole = 'SDE' + getRandomInt(1, 3);
 
       let weight = 100;
-      let weights = [];
+      const weights = [];
       for (let i = 0; i < 4; i++) {
-        let w = Math.floor(weight * Math.random());
+        const w = Math.floor(weight * Math.random());
         weights.push(w);
         weight -= w;
       }

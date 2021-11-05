@@ -1,7 +1,7 @@
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 /**
- * job's entity 
+ * job's entity
  * which contain the table name in the database.
  */
 
@@ -27,5 +27,4 @@ export class Job {
 
   @Column()
   address: string;
-
 }

@@ -1,20 +1,12 @@
-import React, { Component } from 'react';
 import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons';
 import {
-  Form,
-  Input,
-  Button,
-  Checkbox,
-  Card,
-  Radio,
-  Space,
-  message,
-  DatePicker,
-  InputNumber,
+  Button, Card, DatePicker, Form,
+  Input, InputNumber, message, Radio
 } from 'antd';
-import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import moment from 'moment';
+import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 const AddProjForm = () => {
   const history = useHistory();

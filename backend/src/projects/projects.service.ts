@@ -13,9 +13,8 @@ import { Requirement } from './entities/requirement.entity';
 export class ProjectsService {
   constructor(
     @InjectRepository(Project)
-    private readonly projectRepository: Repository<Project>, // @InjectRepository(Requirement)
-  ) // private readonly requirementsRepository: Repository<Requirement>,
-  {}
+    private readonly projectRepository: Repository<Project>, // @InjectRepository(Requirement) // private readonly requirementsRepository: Repository<Requirement>,
+  ) {}
   // async onModuleInit() {
   //   console.log('initialize some projects');
   //   const p0: Project = {

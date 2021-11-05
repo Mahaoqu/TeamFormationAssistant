@@ -1,9 +1,8 @@
-import React, { Component, useEffect, useState } from 'react';
-
-import AddProject from './add-project.component';
-import { Table, Tag, Space, Spin, Button } from 'antd';
+import { Button, Space, Spin, Table } from 'antd';
 import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import AuthService from '../services/auth.service';
 
 const App = () => {
   return (
@@ -23,6 +22,8 @@ const App = () => {
 const Content = () => {
   const [detail, setDetail] = useState();
   const [loading, setLoading] = useState(true);
+  const [userRole, setUserRole] = useState();
+  const user = AuthService.getCurrentUser();
 
   useEffect(() => {
     axios.get('projects').then(data => {
@@ -30,6 +31,16 @@ const Content = () => {
       setDetail(data.data);
       setLoading(false);
     });
+
+    if (user) {
+      setUserRole({
+        currentUser: user,
+        showManagerBoard:
+          user.roles.includes('ROLE_MANAGER') ||
+          user.roles.includes('ROLE_ADMIN'),
+        showAdminBoard: user.roles.includes('ROLE_ADMIN'),
+      });
+    }
   }, []);
 
   const columns = [
@@ -42,6 +53,7 @@ const Content = () => {
       title: 'End Date',
       dataIndex: 'endDate',
       key: 'endDate',
+      render: d => new Date(d).toLocaleDateString()
     },
     {
       title: 'Team Size',
@@ -63,11 +75,22 @@ const Content = () => {
       title: 'Priority',
       dataIndex: 'priority',
       key: 'priority',
+      render: p => ['Very High', 'High', 'Low', 'Very Low'][parseInt(p)]
     },
     {
       title: 'Tools',
       dataIndex: 'tools',
       key: 'tools',
+    },
+    {
+      title: 'Action',
+      key: 'action',
+      render: (text, record) => (
+        <Space size="middle">
+          <Button>Invite</Button>
+          {userRole.showAdminBoard && (<Button>Delete</Button>)}
+        </Space>
+      ),
     },
   ];
 

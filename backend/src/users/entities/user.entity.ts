@@ -2,7 +2,7 @@ import { IsEmail } from 'class-validator';
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 /**
- * user's entity 
+ * user's entity
  * which contain the table name in the database
  */
 

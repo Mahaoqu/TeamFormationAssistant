@@ -88,7 +88,7 @@ export class UsersService {
   async login(name: string, password: string): Promise<User> {
     const user = await this.usersRepository.findOneOrFail({ name: name });
 
-    var passwordIsValid = await bcrypt.compare(password, user.password);
+    const passwordIsValid = await bcrypt.compare(password, user.password);
     if (!passwordIsValid) {
       throw new HttpException(
         'Username or password invalid',

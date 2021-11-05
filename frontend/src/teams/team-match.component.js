@@ -15,12 +15,12 @@ const App = () => {
         </Link>
       </div>
 
-      <CandidateMatchTable />
+      <TeamMatchTable />
     </div>
   );
 };
 
-const CandidateMatchTable = () => {
+const TeamMatchTable = () => {
   const [detail, setDetail] = useState();
   const [loading, setLoading] = useState(true);
 

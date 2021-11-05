@@ -11,7 +11,7 @@ import { Team } from './entities/team.entity';
  */
 
 function teamMatch(employees: Member[], requirements: Requirement[]): Team[] {
-  let teams: Team[] = [];
+  const teams: Team[] = [];
 
   // Choose each requirement from application
   // find the highest score

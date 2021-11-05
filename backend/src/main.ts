@@ -5,7 +5,7 @@ import { AppModule } from './app.module';
  * to run the web application
  */
 async function bootstrap() {
-  const port = process.env.PORT || 8080
+  const port = process.env.PORT || 8080;
   const app = await NestFactory.create(AppModule);
   app.enableCors();
   app.setGlobalPrefix('/api');

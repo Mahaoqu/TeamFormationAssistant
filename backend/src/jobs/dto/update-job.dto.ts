@@ -6,10 +6,10 @@ import { CreateJobDto } from './create-job.dto';
  * To encapsulate the data
  */
 export class UpdateJobDto extends PartialType(CreateJobDto) {
-    name: any;
-    projectId: any;
-    phone: any;
-    role: any;
-    description: any;
-    address: any;
+  name: any;
+  projectId: any;
+  phone: any;
+  role: any;
+  description: any;
+  address: any;
 }

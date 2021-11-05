@@ -1,7 +1,7 @@
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 /**
- * application's entity 
+ * application's entity
  * which contain the table name in the database.
  */
 @Entity()

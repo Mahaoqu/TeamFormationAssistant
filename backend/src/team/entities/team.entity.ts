@@ -3,7 +3,7 @@ import { Project } from '../../projects/entities/project.entity';
 import { Column, Entity, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
 
 /**
- * team's entity 
+ * team's entity
  * which contain the table name in the database
  */
 

@@ -38,6 +38,8 @@ const App = () => {
             <Route path="/add_job" component={AddJob} />
             <Route path="/jobs" component={Job} />
             <Route path="/projects" component={Project} />
+            <Route path="/application" component={Project} />
+            <Route path="/application_management" component={Project} />
           </div>
         </Content>
 

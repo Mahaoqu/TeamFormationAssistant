@@ -2,7 +2,7 @@ import { Requirement } from '../../projects/entities/requirement.entity';
 import { Column, Entity, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
 
 /**
- * project's entity 
+ * project's entity
  * which contain the table name in the database
  */
 

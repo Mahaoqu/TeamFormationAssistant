@@ -1,9 +1,69 @@
 import React, { Component } from 'react';
-import './add-member.component.css';
+import { Form, Input, Button, Select, Card, DatePicker, InputNumber } from 'antd';
+import moment from 'moment';
 
+const layout = {
+  labelCol: { span: 12 },
+  wrapperCol: { span: 8 },
+};
 
+const AddMemberForm = () => {
+  const [form] = Form.useForm();
 
-export default class AddMember extends Component {
+  const onBtn = () => {
+    console.log(form.getFieldsValue())
+  }
+
+  return (
+    <Form {...layout} form={form}>
+      <Form.Item name="name" label="name" rules={[{ required: true }]}>
+        <Input />
+      </Form.Item>
+      <Form.Item name="Date" label="Date of Birth" rules={[{ required: true }]}>
+        <DatePicker disabledDate={day => day < moment().add(30, 'days')} />
+      </Form.Item>
+      <Form.Item name="programming" label="Programming Languages" rules={[{ required: true }]}>
+        <Input />
+      </Form.Item>
+      <Form.Item name="hourlyRate" label="Hourly Rate (in dollars)" rules={[{ required: true }]}>
+        <InputNumber
+          defaultValue={20} min={1} max={100}
+          formatter={value => `$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+          parser={value => value.replace(/\$\s?|(,*)/g, '')}
+        />
+      </Form.Item>
+      <Form.Item name="role" label="Role" rules={[{ required: true }]}>
+        <Input />
+      </Form.Item>
+      <Form.Item name="experience" label="Experience (in years)" rules={[{ required: true }]}>
+        <InputNumber min={0} />
+      </Form.Item>
+      <Form.Item name="skill" label="Skill/Assessment Score(On a scale of 1-100)" rules={[{ required: true }]}>
+        <InputNumber min={1} max={100} />
+      </Form.Item>
+      <Form.Item name="availableHours" label="Available Hours (per week)" rules={[{ required: true }]}>
+        <InputNumber min={1} max={168} />
+      </Form.Item>
+      <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 12 }}>
+        <Button type="primary" htmlType="submit" onClick={onBtn}>
+          Submit
+        </Button>
+      </Form.Item>
+    </Form>
+  )
+}
+
+const AddMember = () => {
+  return (<Card>
+    <b>New Member</b>
+    <AddMemberForm />
+  </Card>
+  )
+}
+
+export default AddMember
+
+class AM extends Component {
   state = {
     name: '',
     nameerror: '',

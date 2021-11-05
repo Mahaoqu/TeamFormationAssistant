@@ -19,7 +19,7 @@ function candidateMatch(
   employees: Application[],
   requirements: Requirement[],
 ): Candidate[] {
-  let candidates: Candidate[] = [];
+  const candidates: Candidate[] = [];
 
   // Choose each requirement from application
   // find the highest score
@@ -67,7 +67,7 @@ export class CandidatesService {
 
   async assign() {
     const projs = await this.projectRepository.find({
-      isAssignmentComplete: false
+      isAssignmentComplete: false,
     });
     const applications = await this.applicationRepository.find();
 

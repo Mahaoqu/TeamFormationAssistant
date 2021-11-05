@@ -3,7 +3,7 @@ import { User } from 'src/users/entities/user.entity';
 import { Column, Entity, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
 
 /**
- * job application's entity 
+ * job application's entity
  * which contain the table name in the database.
  */
 @Entity()

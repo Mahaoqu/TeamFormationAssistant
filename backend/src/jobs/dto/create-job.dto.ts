@@ -3,10 +3,10 @@
  * To encapsulate the data
  */
 export class CreateJobDto {
-    name: any;
-    projectId: any;
-    phone: any;
-    role: any;
-    description: any;
-    address: any;
+  name: any;
+  projectId: any;
+  phone: any;
+  role: any;
+  description: any;
+  address: any;
 }

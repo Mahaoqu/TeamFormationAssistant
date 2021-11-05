@@ -34,22 +34,22 @@ export class JobsService {
   async create(createJobDto: CreateJobDto) {
     const jobs = new Job();
     const a = this.jobsRepository.findAndCount({
-      name:createJobDto.name
+      name: createJobDto.name,
     });
     const b = this.jobsRepository.findAndCount({
-      projectId:createJobDto.projectId
+      projectId: createJobDto.projectId,
     });
     const c = this.jobsRepository.findAndCount({
-      phone:createJobDto.phone
+      phone: createJobDto.phone,
     });
     const d = this.jobsRepository.findAndCount({
-      role:createJobDto.role
+      role: createJobDto.role,
     });
     const e = this.jobsRepository.findAndCount({
-      description:createJobDto.description
+      description: createJobDto.description,
     });
     const f = this.jobsRepository.findAndCount({
-      address:createJobDto.address
+      address: createJobDto.address,
     });
 
     jobs.name = createJobDto.name;
@@ -57,7 +57,7 @@ export class JobsService {
     jobs.phone = createJobDto.phone;
     jobs.role = createJobDto.role;
     jobs.description = createJobDto.description;
-    jobs.address = createJobDto.address
+    jobs.address = createJobDto.address;
 
     await this.jobsRepository.save(jobs);
   }

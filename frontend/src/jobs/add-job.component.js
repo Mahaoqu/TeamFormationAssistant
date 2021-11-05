@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import {
   Form,
   Input,
@@ -10,19 +10,27 @@ import {
   message,
   DatePicker,
   InputNumber,
+  Select,
 } from 'antd';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import moment from 'moment';
+const { Option } = Select;
+const { TextArea } = Input;
 
+const layout = {
+  labelCol: { span: 6 },
+  wrapperCol: { span: 8 },
+};
 
 const AddJobForm = () => {
   const history = useHistory();
   const [form] = Form.useForm();
+  const [proj, setproj] = useState([]);
 
   const postForm = () => {
     console.log(form);
-    axios.post('projects', form.getFieldsValue()).then(data => {
+    axios.post('jobs', form.getFieldsValue()).then(data => {
       if (data.status != 200) message.error('Error');
       else history.push('/projects');
     });
@@ -36,15 +44,22 @@ const AddJobForm = () => {
     console.log('Failed:', errorInfo);
   };
 
+  useEffect(() => {
+    axios.get('projects').then(data => {
+      setproj(data.data);
+    });
+  }, [])
+
+  const options = proj.map(d => <Option key={d.id}>{d.name}</Option>);
+
   return (<Card>
-    <b>Project Details</b>
+    <b>New Job</b>
     <Form
       form={form}
       name="basic"
+      {...layout}
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
-      labelCol={{ span: 8 }}
-      wrapperCol={{ span: 16 }}
       autoComplete="off"
     >
       <Form.Item
@@ -61,8 +76,23 @@ const AddJobForm = () => {
       </Form.Item>
 
       <Form.Item
-        label="Project Id"
+        label="Project"
         name="projectId"
+        rules={[
+          {
+            required: true,
+            message: 'Please input your project name!',
+          },
+        ]}
+      >
+        <Select defaultValue="">
+          {options}
+        </Select>
+      </Form.Item>
+
+      <Form.Item
+        label="Phone Number"
+        name="phone"
         rules={[
           {
             required: true,
@@ -73,6 +103,50 @@ const AddJobForm = () => {
         <Input />
       </Form.Item>
 
+      <Form.Item
+        label="Role"
+        name="role"
+        rules={[
+          {
+            required: true,
+            message: 'Please input your project!',
+          },
+        ]}
+      >
+        <Input />
+      </Form.Item>
+
+      <Form.Item
+        label="Description"
+        name="description"
+        rules={[
+          {
+            required: true,
+            message: 'Please input your description!',
+          },
+        ]}
+      >
+        <TextArea />
+      </Form.Item>
+
+      <Form.Item
+        label="Address"
+        name="address"
+        rules={[
+          {
+            required: true,
+            message: 'Please input your address!',
+          },
+        ]}
+      >
+        <Input />
+      </Form.Item>
+
+      <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: layout.labelCol.span }}>
+        <Button type="primary" htmlType="submit" onClick={postForm}>
+          Submit
+        </Button>
+      </Form.Item>
     </Form>
   </Card>)
 }

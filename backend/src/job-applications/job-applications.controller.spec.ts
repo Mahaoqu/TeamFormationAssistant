@@ -14,7 +14,8 @@ describe('JobApplicationsController', () => {
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       controllers: [JobApplicationsController],
-      providers: [JobApplicationsService,
+      providers: [
+        JobApplicationsService,
         {
           provide: getRepositoryToken(Job),
           useValue: {
