@@ -12,7 +12,9 @@ import { JobApplication } from './entities/job-application.entity';
 
 @Injectable()
 export class JobApplicationsService {
-  create(createJobApplicationDto: CreateJobApplicationDto) {}
+  create(createJobApplicationDto: CreateJobApplicationDto) {
+    return '';
+  }
 
   findAll() {
     return `This action returns all jobApplications`;
