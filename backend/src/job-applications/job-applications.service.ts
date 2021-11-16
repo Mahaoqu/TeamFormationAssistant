@@ -12,13 +12,9 @@ import { JobApplication } from './entities/job-application.entity';
 
 @Injectable()
 export class JobApplicationsService {
-  constructor(
-    @InjectRepository(JobApplication)
-    private readonly jobsRepository: Repository<JobApplication>,
-  ) {}
-
+  
   create(createJobApplicationDto: CreateJobApplicationDto) {
-    return this.jobsRepository.create();
+    
   }
 
   findAll() {

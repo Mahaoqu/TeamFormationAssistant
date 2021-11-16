@@ -3,6 +3,7 @@ import { JobsService } from './jobs.service';
 import { JobsController } from './jobs.controller';
 import { Job } from './entities/job.entity';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { JobApplication } from '../job-applications/entities/job-application.entity';
 
 /**
  * common model files with relationships defined
@@ -11,7 +12,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
  */
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Job])],
+  imports: [TypeOrmModule.forFeature([Job]), TypeOrmModule.forFeature([JobApplication])],
   controllers: [JobsController],
   providers: [JobsService],
 })
