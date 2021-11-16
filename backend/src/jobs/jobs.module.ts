@@ -12,7 +12,10 @@ import { JobApplication } from '../job-applications/entities/job-application.ent
  */
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Job]), TypeOrmModule.forFeature([JobApplication])],
+  imports: [
+    TypeOrmModule.forFeature([Job]),
+    TypeOrmModule.forFeature([JobApplication]),
+  ],
   controllers: [JobsController],
   providers: [JobsService],
 })
